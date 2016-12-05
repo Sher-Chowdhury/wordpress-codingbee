@@ -1,17 +1,17 @@
 
-class { '::mysql::server':
-  root_password           => 'strongpassword',
-  remove_default_accounts => true,
-  override_options        => $override_options
-}
+#class { '::mysql::server':
+#  root_password           => 'strongpassword',
+#  remove_default_accounts => true,
+#  override_options        => $override_options
+#}
 
 
-mysql::db { 'wordpress_db':
-  host     => 'localhost',
-  user     => 'myuser',
-  password => 'mypass',
-  grant    => 'ALL',
-}
+#mysql::db { 'wordpress_db':
+#  host     => 'localhost',
+#  user     => 'myuser',
+#  password => 'mypass',
+#  grant    => 'ALL',
+#}
 
 user { "wordpress":
   ensure      => present,
@@ -33,9 +33,10 @@ package { "php-mysql":
 class { 'wordpress':
   wp_owner    => 'wordpress',
   install_dir => '/var/www/html',
+  version     => '4.6.1',
   wp_group    => 'wordpress',
   db_user     => 'wordpress',
-  db_password => 'hvyH(S%t(\"0\"16',
+  db_password => 'password123',
   notify      => Service['httpd'],
 }
 
@@ -45,8 +46,9 @@ service { "httpd" :
 }
 
 
-Class['::mysql::server']
--> User['wordpress']
+#Class['::mysql::server']
+#-> 
+User['wordpress']
 -> Package['php']
 -> Package['php-mysql']
 -> Class['wordpress']
