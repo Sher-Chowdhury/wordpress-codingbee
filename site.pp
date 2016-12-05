@@ -55,6 +55,5 @@ Class['::mysql::server']
 -> Package['mysql']
 -> Package['php']
 -> Package['php-mysql']
--> Class['wordpress']
 -> Service['httpd']
 
