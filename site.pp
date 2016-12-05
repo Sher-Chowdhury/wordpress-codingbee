@@ -14,10 +14,12 @@ user { "wordpress":
 
 package { "php":
   ensure  => present,
+  notify  => Service['httpd'],
 }
 
 package { "php-mysql":
   ensure  => present,
+  notify  => Service['httpd'],
 }
 
 class { 'wordpress':
@@ -26,6 +28,12 @@ class { 'wordpress':
   wp_group    => 'wordpress',
   db_user     => 'wordpress',
   db_password => 'hvyH(S%t(\"0\"16',
+  notify      => Service['httpd'],
+}
+
+service { "httpd" :
+  ensure    => running,
+  enable    => true,
 }
 
 
@@ -34,4 +42,5 @@ Class['::mysql::server']
 -> Package['php']
 -> Package['php-mysql']
 -> Class['wordpress']
+-> Service['httpd']
 
