@@ -34,15 +34,15 @@ package { "php-mysql":
   notify  => Service['httpd'],
 }
 
-class { 'wordpress':
-  wp_owner    => 'wordpress',
-  install_dir => '/var/www/html',
-  version     => '4.6.1',
-  wp_group    => 'wordpress',
-  db_user     => 'wordpress',
-  db_password => 'password123',
-  notify      => Service['httpd'],
-}
+#class { 'wordpress':
+#  wp_owner    => 'wordpress',
+#  install_dir => '/var/www/html',
+#  version     => '4.6.1',
+#  wp_group    => 'wordpress',
+#  db_user     => 'wordpress',
+#  db_password => 'password123',
+#  notify      => Service['httpd'],
+#}
 
 service { "httpd" :
   ensure    => running,
