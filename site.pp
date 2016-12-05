@@ -1,9 +1,8 @@
 
-#class { '::mysql::server':
-#  root_password           => 'strongpassword',
-#  remove_default_accounts => true,
-#  override_options        => $override_options
-#}
+class { '::mysql::server':
+  root_password           => 'strongpassword',
+  remove_default_accounts => true,
+}
 
 
 #mysql::db { 'wordpress_db':
@@ -18,6 +17,11 @@ user { "wordpress":
   comment     => "wordpress",
   managehome  => true,
   home        => "/home/wordpress",
+}
+
+package { "mysql":
+  ensure  => present,
+  notify  => Service['httpd'],
 }
 
 package { "php":
@@ -46,9 +50,9 @@ service { "httpd" :
 }
 
 
-#Class['::mysql::server']
-#-> 
-User['wordpress']
+Class['::mysql::server']
+-> User['wordpress']
+-> Package['mysql']
 -> Package['php']
 -> Package['php-mysql']
 -> Class['wordpress']

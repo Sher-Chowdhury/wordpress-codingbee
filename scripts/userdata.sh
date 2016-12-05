@@ -8,6 +8,7 @@ echo '##################################################################'
 yum install git -y || exit 1
 yum install epel-release -y || exit 1
 yum install vim -y || exit 1
+yum install wget -y || exit 1
 
 
 echo -e "\n\n\n" | ssh-keygen -P ""
@@ -26,13 +27,9 @@ echo "PATH=$PATH:/opt/puppetlabs/bin" >> /root/.bashrc || exit 1
 PATH=$PATH:/opt/puppetlabs/bin || exit 1
 
 
-# restarting bash session
-# http://unix.stackexchange.com/questions/22721/completely-restart-bash
-exec bash -l || exit 1
-
-puppet module install hunner-wordpress --version 1.0.0 || exit 1
+/opt/puppetlabs/bin/puppet module install hunner-wordpress --version 1.0.0 || exit 1
 
 cd ~/wordpress-codingbee
 
-puppet apply site.pp
+/opt/puppetlabs/bin/puppet apply site.pp
 
