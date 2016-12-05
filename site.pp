@@ -5,6 +5,14 @@ class { '::mysql::server':
   override_options        => $override_options
 }
 
+
+mysql::db { 'wordpress_db':
+  host     => 'localhost',
+  user     => 'myuser',
+  password => 'mypass',
+  grant    => 'ALL',
+}
+
 user { "wordpress":
   ensure      => present,
   comment     => "wordpress",
