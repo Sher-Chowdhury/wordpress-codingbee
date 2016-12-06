@@ -67,6 +67,10 @@ wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --adm
 
 chown -R apache:apache /var/www/html/
 
+
+wp plugin uninstall hello-dolly  # removing default plugin
+wp plugin uninstall akismet      # removing default plugin
+
 wp plugin install 'coming-soon' --activate --path='/var/www/html/'
 # wp plugin install 'custom-admin-bar' --activate --path='/var/www/html/'   # broken - try installing manually. 
 # wp plugin install 'contact-form-7' --activate --path='/var/www/html/'     # gives a warning message, try installing manually. 
