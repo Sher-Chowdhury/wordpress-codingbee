@@ -30,6 +30,11 @@ package { "php":
   notify  => Service['httpd'],
 }
 
+package { "php-gd":
+  ensure  => present,
+  notify  => Service['httpd'],
+}
+
 package { "php-mysql":
   ensure  => present,
   notify  => Service['httpd'],

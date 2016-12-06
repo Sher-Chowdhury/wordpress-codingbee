@@ -44,61 +44,60 @@ echo "PATH=$PATH:/usr/local/bin" >> ~/.bashrc || exit 1
 PATH=$PATH:/usr/local/bin
 export PATH
 
+chown -R apache:apache /var/www/html/ || exit 1
 
-wp --info || exit 1
+su -s /bin/bash apache -c 'wp --info' || exit 1
 
-wp cli update || exit 1
-
-
-wp core download --path=/var/www/html || exit 1
+su -s /bin/bash apache -c 'wp cli update' || exit 1
 
 
-wp core config --path=/var/www/html --dbname=wordpress_db --dbuser=wordpress --dbpass=password123 --extra-php <<PHP
+su -s /bin/bash apache -c 'wp core download --path=/var/www/html' || exit 1
+
+
+su -s /bin/bash apache -c "wp core config --path=/var/www/html --dbname=wordpress_db --dbuser=wordpress --dbpass=password123 --extra-php <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
 define('WP_MEMORY_LIMIT', '256M');
-PHP
+PHP"
 
 
 
 
-wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.com
+su -s /bin/bash apache -c 'wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.com'
 
 
-chown -R apache:apache /var/www/html/
 
+su -s /bin/bash apache -c 'wp plugin delete hello-dolly'  # removing default plugin
+su -s /bin/bash apache -c 'wp plugin delete akismet'      # removing default plugin
 
-wp plugin delete hello-dolly  # removing default plugin
-wp plugin delete akismet      # removing default plugin
-
-wp plugin install 'coming-soon' --activate --path='/var/www/html/'
-# wp plugin install 'custom-admin-bar' --activate --path='/var/www/html/'   # broken - try installing manually. 
+su -s /bin/bash apache -c 'wp plugin install coming-soon --activate --path=/var/www/html/'
+su -s /bin/bash apache -c '# wp plugin install custom-admin-bar --activate --path=/var/www/html/'  # broken - try installing manually. 
 # wp plugin install 'contact-form-7' --activate --path='/var/www/html/'     # gives a warning message, try installing manually. 
-wp plugin install 'custom-menu-wizard' --activate --path='/var/www/html/'
-wp plugin install 'disable-comments' --activate --path='/var/www/html/'
-wp plugin install 'display-widgets' --activate --path='/var/www/html/'
-wp plugin install 'duplicate-post' --activate --path='/var/www/html/'
-wp plugin install 'google-analytics-for-wordpress' --activate --path='/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install custom-menu-wizard --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install disable-comments --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install display-widgets --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install duplicate-post --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install google-analytics-for-wordpress --activate --path=/var/www/html/'
 # wp plugin install 'save-grab' --activate --path='/var/www/html/'           # broken - try installing manually.
-wp plugin install 'olevmedia-shortcodes' --activate --path='/var/www/html/'
-wp plugin install 'image-elevator' --activate --path='/var/www/html/'
-wp plugin install 'post-content-shortcodes' --activate --path='/var/www/html/'
-wp plugin install 'post-editor-buttons-fork' --activate --path='/var/www/html/'
-wp plugin install 'publish-view' --activate --path='/var/www/html/'
-wp plugin install 'recently-edited-content-widget' --activate --path='/var/www/html/'
-wp plugin install 'rel-nofollow-checkbox' --activate --path='/var/www/html/'
-wp plugin install 'search-filter' --activate --path='/var/www/html/'
-wp plugin install 'simple-custom-css' --activate --path='/var/www/html/'
-wp plugin install 'syntaxhighlighter' --activate --path='/var/www/html/'
-wp plugin install 'table-of-contents-plus' --activate --path='/var/www/html/'
-wp plugin install 'tablepress' --activate --path='/var/www/html/'
-wp plugin install 'wp-github-gist' --activate --path='/var/www/html/'
-wp plugin install 'wedocs' --activate --path='/var/www/html/'
-wp plugin install https://www.dropbox.com/s/y6ojfpy802gsaq6/backupbuddy-7.2.1.1.zip?dl=1 --activate --path='/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install olevmedia-shortcodes --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install image-elevator --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install post-content-shortcodes --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install post-editor-buttons-fork --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install publish-view --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install recently-edited-content-widget --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install rel-nofollow-checkbox --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install search-filter --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install simple-custom-css --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install syntaxhighlighter --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install table-of-contents-plus --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install tablepress --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install wp-github-gist --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install wedocs --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy802gsaq6/backupbuddy-7.2.1.1.zip?dl=1 --activate --path=/var/www/html/'
 
-wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path='/var/www/html/'
 
-chown -R apache:apache /var/www/html/
+su -s /bin/bash apache -c 'wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path=/var/www/html/'
+
 
 
