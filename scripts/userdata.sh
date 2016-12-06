@@ -68,7 +68,7 @@ wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --adm
 chown -R apache:apache /var/www/html/
 
 wp plugin install 'coming-soon' --activate --path='/var/www/html/'
-wp plugin install 'custom-admin-bar' --activate --path='/var/www/html/'
+# wp plugin install 'custom-admin-bar' --activate --path='/var/www/html/'   # broken
 wp plugin install 'contact-form-7' --activate --path='/var/www/html/'
 wp plugin install 'custom-menu-wizard' --activate --path='/var/www/html/'
 wp plugin install 'disable-comments' --activate --path='/var/www/html/'
@@ -89,8 +89,10 @@ wp plugin install 'syntaxhighlighter' --activate --path='/var/www/html/'
 wp plugin install 'table-of-contents-plus' --activate --path='/var/www/html/'
 wp plugin install 'tablepress' --activate --path='/var/www/html/'
 wp plugin install 'wp-github-gist' --activate --path='/var/www/html/'
+wp plugin install 'wedocs' --activate --path='/var/www/html/'
 
 
 
+chown -R apache:apache /var/www/html/
 
 
