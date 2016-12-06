@@ -68,8 +68,8 @@ su -s /bin/bash apache -c 'wp core install --path=/var/www/html --url=codingbee.
 
 
 
-su -s /bin/bash apache -c 'wp plugin delete hello-dolly'  # removing default plugin
-su -s /bin/bash apache -c 'wp plugin delete akismet'      # removing default plugin
+su -s /bin/bash apache -c 'wp plugin delete hello-dolly --path=/var/www/html/'  # removing default plugin
+su -s /bin/bash apache -c 'wp plugin delete akismet --path=/var/www/html/'      # removing default plugin
 
 su -s /bin/bash apache -c 'wp plugin install coming-soon --activate --path=/var/www/html/'
 su -s /bin/bash apache -c '# wp plugin install custom-admin-bar --activate --path=/var/www/html/'  # broken - try installing manually. 
