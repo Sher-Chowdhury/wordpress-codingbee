@@ -47,3 +47,19 @@ export PATH
 wp --info
 
 wp cli update || exit 1
+
+
+wp core download --path=/var/www/html
+
+
+wp core config --path=/var/www/html --dbname=wordpress_db --dbuser=wordpress --dbpass=password123 --extra-php <<PHP
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', true);
+define('WP_MEMORY_LIMIT', '256M');
+PHP
+
+
+
+
+wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.com
