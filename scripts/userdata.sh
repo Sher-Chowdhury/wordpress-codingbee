@@ -63,3 +63,10 @@ PHP
 
 
 wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.com
+
+
+chown -R apache:apache /var/www/html/
+
+
+
+
