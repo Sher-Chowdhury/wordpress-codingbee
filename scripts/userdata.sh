@@ -48,7 +48,7 @@ chown -R apache:apache /var/www/html/ || exit 1
 
 su -s /bin/bash apache -c 'wp --info' || exit 1
 
-su -s /bin/bash apache -c 'wp cli update' || exit 1
+wp cli update || exit 1
 
 
 su -s /bin/bash apache -c 'wp core download --path=/var/www/html' || exit 1
