@@ -5,12 +5,12 @@ class { '::mysql::server':
 }
 
 
-#mysql::db { 'wordpress_db':
-#  host     => 'localhost',
-#  user     => 'myuser',
-#  password => 'mypass',
-#  grant    => 'ALL',
-#}
+mysql::db { 'wordpress_db':
+  host     => 'localhost',
+  user     => 'wordpress',
+  password => 'password123',
+  grant    => 'ALL',
+}
 
 user { "wordpress":
   ensure      => present,
