@@ -38,8 +38,6 @@ cd ~/wordpress-codingbee || exit 1
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar || exit 1
 
-php wp-cli.phar --info || exit 1
-
 chmod +x wp-cli.phar || exit 1
 mv wp-cli.phar /usr/local/bin/wp || exit 1
 echo "PATH=$PATH:/usr/local/bin" >> ~/.bashrc || exit 1
@@ -47,12 +45,12 @@ PATH=$PATH:/usr/local/bin
 export PATH
 
 
-wp --info
+wp --info || exit 1
 
 wp cli update || exit 1
 
 
-wp core download --path=/var/www/html
+wp core download --path=/var/www/html || exit 1
 
 
 wp core config --path=/var/www/html --dbname=wordpress_db --dbuser=wordpress --dbpass=password123 --extra-php <<PHP
