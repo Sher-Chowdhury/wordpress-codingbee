@@ -91,7 +91,7 @@ wp plugin install 'tablepress' --activate --path='/var/www/html/'
 wp plugin install 'wp-github-gist' --activate --path='/var/www/html/'
 wp plugin install 'wedocs' --activate --path='/var/www/html/'
 
-
+wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate
 
 chown -R apache:apache /var/www/html/
 
