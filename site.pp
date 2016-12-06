@@ -19,10 +19,11 @@ user { "wordpress":
   home        => "/home/wordpress",
 }
 
-package { "mysql":
-  ensure  => present,
-  notify  => Service['httpd'],
+class { '::php':
+  ensure       => latest,
+  manage_repos => true,
 }
+
 
 package { "php":
   ensure  => present,
@@ -52,8 +53,7 @@ service { "httpd" :
 
 Class['::mysql::server']
 -> User['wordpress']
--> Package['mysql']
--> Package['php']
+-> Class['php']
 -> Package['php-mysql']
 -> Service['httpd']
 

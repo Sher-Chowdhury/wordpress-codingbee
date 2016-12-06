@@ -28,6 +28,9 @@ PATH=$PATH:/opt/puppetlabs/bin || exit 1
 
 
 /opt/puppetlabs/bin/puppet module install hunner-wordpress --version 1.0.0 || exit 1
+/opt/puppetlabs/bin/puppet module install mayflower-php --version 4.0.0-beta1
+
+
 
 cd ~/wordpress-codingbee || exit 1
 
