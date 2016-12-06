@@ -68,8 +68,8 @@ wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --adm
 chown -R apache:apache /var/www/html/
 
 
-wp plugin uninstall hello-dolly  # removing default plugin
-wp plugin uninstall akismet      # removing default plugin
+wp plugin delete hello-dolly  # removing default plugin
+wp plugin delete akismet      # removing default plugin
 
 wp plugin install 'coming-soon' --activate --path='/var/www/html/'
 # wp plugin install 'custom-admin-bar' --activate --path='/var/www/html/'   # broken - try installing manually. 
@@ -94,6 +94,7 @@ wp plugin install 'table-of-contents-plus' --activate --path='/var/www/html/'
 wp plugin install 'tablepress' --activate --path='/var/www/html/'
 wp plugin install 'wp-github-gist' --activate --path='/var/www/html/'
 wp plugin install 'wedocs' --activate --path='/var/www/html/'
+wp plugin install https://www.dropbox.com/s/y6ojfpy802gsaq6/backupbuddy-7.2.1.1.zip?dl=1 --activate --path='/var/www/html/'
 
 wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path='/var/www/html/'
 
