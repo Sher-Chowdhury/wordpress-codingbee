@@ -66,6 +66,8 @@ PHP"
 
 su -s /bin/bash apache -c 'wp core install --path=/var/www/html --url=codingbee.net --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.com'
 
+su -s /bin/bash apache -c 'wp option update blogdescription "Infrastructure as Code is the future" --path=/var/www/html/'
+
 
 
 su -s /bin/bash apache -c 'wp plugin delete hello --path=/var/www/html/'  # removing default plugin
