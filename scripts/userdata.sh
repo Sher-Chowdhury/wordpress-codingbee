@@ -68,7 +68,7 @@ su -s /bin/bash apache -c 'wp core install --path=/var/www/html --url=codingbee.
 
 
 
-su -s /bin/bash apache -c 'wp plugin delete hello-dolly --path=/var/www/html/'  # removing default plugin
+su -s /bin/bash apache -c 'wp plugin delete hello --path=/var/www/html/'  # removing default plugin
 su -s /bin/bash apache -c 'wp plugin delete akismet --path=/var/www/html/'      # removing default plugin
 
 su -s /bin/bash apache -c 'wp plugin install coming-soon --activate --path=/var/www/html/'
@@ -81,7 +81,7 @@ su -s /bin/bash apache -c 'wp plugin install duplicate-post --activate --path=/v
 su -s /bin/bash apache -c 'wp plugin install google-analytics-for-wordpress --activate --path=/var/www/html/'
 # wp plugin install 'save-grab' --activate --path='/var/www/html/'           # broken - try installing manually.
 su -s /bin/bash apache -c 'wp plugin install olevmedia-shortcodes --activate --path=/var/www/html/'
-su -s /bin/bash apache -c 'wp plugin install image-elevator --activate --path=/var/www/html/'
+# su -s /bin/bash apache -c 'wp plugin install image-elevator --activate --path=/var/www/html/'         # not best practice to use this. will end up making backups too big. 
 su -s /bin/bash apache -c 'wp plugin install post-content-shortcodes --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install post-editor-buttons-fork --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install publish-view --activate --path=/var/www/html/'
