@@ -26,7 +26,6 @@ user { "wordpress":
 class { '::php':
   ensure       => latest,
   manage_repos => true,
-  },
   settings   => {
     'PHP/max_execution_time'  => '300',
     'PHP/max_input_time'      => '300',
