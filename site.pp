@@ -1,8 +1,5 @@
 
-
-
 class { '::mysql::server':
-  package_name            => 'mariadb-server',
   root_password           => 'strongpassword',
   remove_default_accounts => true,
 }
@@ -22,21 +19,15 @@ user { "wordpress":
   home        => "/home/wordpress",
 }
 
-
 class { '::php':
   ensure       => latest,
   manage_repos => true,
-  settings   => {
-    'PHP/max_execution_time'  => '300',
-    'PHP/max_input_time'      => '300',
-    'PHP/memory_limit'        => '256M',
-    'PHP/post_max_size'       => '32M',
-    'PHP/upload_max_filesize' => '32M',
-    'Date/date.timezone'      => 'Europe/London',
-  },
 }
 
-
+package { "php":
+  ensure  => present,
+  notify  => Service['httpd'],
+}
 
 package { "php-gd":
   ensure  => present,
