@@ -63,7 +63,7 @@ PHP"
 
 
 
-su -s /bin/bash apache -c 'wp core install --path=/var/www/html --url="${1}" --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.com'
+su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${1}\" --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.comi"
 
 su -s /bin/bash apache -c 'wp option update blogdescription "Infrastructure as Code is the future" --path=/var/www/html/'
 
