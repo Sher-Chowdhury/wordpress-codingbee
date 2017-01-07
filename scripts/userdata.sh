@@ -60,6 +60,8 @@ gpgcheck=1
 EOM
 
 yum install -y MariaDB-server || exit 1
+yum install -y php70w-mysqlnd || exit 1
+systemctl restart httpd || exit 1
 
 systemctl enable mariadb || exit 1
 systemctl start mariadb || exit 1
