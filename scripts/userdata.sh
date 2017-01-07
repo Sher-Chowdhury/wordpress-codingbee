@@ -4,11 +4,13 @@ echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
 
+# https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
+
 yum install git -y || exit 1
 yum install epel-release -y || exit 1
 yum install vim -y || exit 1
 yum install wget -y || exit 1
-
+yum install php-gd || exit 1
 
 echo -e "\n\n\n" | ssh-keygen -P ""
 echo 'Host *' > ~/.ssh/config || exit 1
@@ -36,9 +38,9 @@ cd ~/wordpress-codingbee || exit 1
 ##
 ## Install apache
 ##
-yum install -y httpd
-systemctl enable httpd
-systemctl start httpd
+yum install -y httpd  || exit 1
+systemctl enable httpd || exit 1
+systemctl start httpd  || exit 1
 
 ##
 ## Install mysql/mariadb
@@ -57,20 +59,34 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOM
 
-yum install -y  MariaDB-server
+yum install -y MariaDB-server || exit 1
 
-systemctl enable mariadb
-systemctl start mariadb
+systemctl enable mariadb || exit 1
+systemctl start mariadb || exit 1
+
+# https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+
+# This creates new db user account
+mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123';" || exit 1
+
+# This creates new db
+mysql -u root -e "CREATE DATABASE wordpress_db" || exit 1
+
+# grant full privelegez of db user to wordpress db:
+mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress_db.* TO wordpress@localhost IDENTIFIED BY 'password123';" || exit 1
+
+mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
+
 
 ##
 ## Install php 7
 ##
-rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
-yum -y install php70w
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm || exit 1
+yum -y install php70w || exit 1
 
 # check that the correct version is installed:
 
-php -v
+php -v || exit 1
 
 
 
