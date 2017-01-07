@@ -37,7 +37,8 @@ cd ~/wordpress-codingbee || exit 1
 ## Install apache
 ##
 yum install -y httpd
-
+systemctl enable httpd
+systemctl start httpd
 
 ##
 ## Install mysql/mariadb
@@ -57,6 +58,9 @@ gpgcheck=1
 EOM
 
 yum install -y  MariaDB-server
+
+systemctl enable mariadb
+systemctl start mariadb
 
 ##
 ## Install php 7
