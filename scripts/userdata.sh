@@ -18,22 +18,62 @@ cd ~
 git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 
 
-rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm || exit 1
-yum install -y puppet-agent || exit 1
+#rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm || exit 1
+#yum install -y puppet-agent || exit 1
 
 
-echo "PATH=$PATH:/opt/puppetlabs/bin" >> /root/.bashrc || exit 1
-PATH=$PATH:/opt/puppetlabs/bin || exit 1
+#echo "PATH=$PATH:/opt/puppetlabs/bin" >> /root/.bashrc || exit 1
+#PATH=$PATH:/opt/puppetlabs/bin || exit 1
 
 
-/opt/puppetlabs/bin/puppet module install hunner-wordpress --version 1.0.0 || exit 1
-/opt/puppetlabs/bin/puppet module install mayflower-php --version 4.0.0-beta1
+#/opt/puppetlabs/bin/puppet module install hunner-wordpress --version 1.0.0 || exit 1
+#/opt/puppetlabs/bin/puppet module install mayflower-php --version 4.0.0-beta1
 
 
 
 cd ~/wordpress-codingbee || exit 1
 
-/opt/puppetlabs/bin/puppet apply site.pp  || exit 1
+##
+## Install apache
+##
+yum install -y httpd
+
+
+##
+## Install mysql/mariadb
+##
+
+# https://downloads.mariadb.org/mariadb/repositories/#mirror=exascale&distro=CentOS&distro_release=centos7-amd64--centos7&version=10.1
+
+
+cat > /etc/yum.repos.d/mariadb.repo  <<- EOM
+# MariaDB 10.1 CentOS repository list - created 2017-01-07 15:53 UTC
+# http://downloads.mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.1/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOM
+
+yum install -y  MariaDB-server
+
+##
+## Install php 7
+##
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+yum -y install php70w
+
+# check that the correct version is installed:
+
+php -v
+
+
+
+
+
+
+#/opt/puppetlabs/bin/puppet apply site.pp  || exit 1
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar || exit 1
 
@@ -99,6 +139,13 @@ su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy80
 
 
 su -s /bin/bash apache -c 'wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path=/var/www/html/'
+
+
+# here's a guide on how to access a droplet's metadata and userdata:
+# https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
+# e.g. the following will pull down the userdata:
+curl http://169.254.169.254/metadata/v1/user-data
+ 
 
 
 
