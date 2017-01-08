@@ -15,7 +15,7 @@ yum install -y git          || exit 1
 yum install -y epel-release || exit 1
 yum install -y vim          || exit 1
 yum install -y wget         || exit 1
-yum install -y php-gd       || exit 1
+#yum install -y php-gd       || exit 1
 
 echo -e "\n\n\n" | ssh-keygen -P ""
 echo 'Host *' > ~/.ssh/config || exit 1
