@@ -35,16 +35,16 @@ git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 
 cd ~/wordpress-codingbee || exit 1
 
-##
-## Install apache
-##
+echo '##################################################################'
+echo '######################### Install apache #########################'
+echo '##################################################################'
 yum install -y httpd  || exit 1
 systemctl enable httpd || exit 1
 systemctl start httpd  || exit 1
 
-##
-## Install mysql/mariadb
-##
+echo '##################################################################'
+echo '##################### Install mariadb ############################'
+echo '##################################################################'
 
 # https://downloads.mariadb.org/mariadb/repositories/#mirror=exascale&distro=CentOS&distro_release=centos7-amd64--centos7&version=10.1
 
@@ -74,15 +74,15 @@ mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123
 # This creates new db
 mysql -u root -e "CREATE DATABASE wordpress_db" || exit 1
 
-# grant full privelegez of db user to wordpress db:
+# grant full priveleges of db user to wordpress db:
 mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress_db.* TO wordpress@localhost IDENTIFIED BY 'password123';" || exit 1
 
 mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
 
 
-##
-## Install php 7
-##
+echo '##################################################################'
+echo '####################### Install php 7 ############################'
+echo '##################################################################'
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm || exit 1
 yum -y install php70w || exit 1
 
