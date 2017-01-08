@@ -192,7 +192,8 @@ su -s /bin/bash apache -c 'wp plugin install syntaxhighlighter --activate --path
 su -s /bin/bash apache -c 'wp plugin install table-of-contents-plus --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install tablepress --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install wp-github-gist --activate --path=/var/www/html/'
-su -s /bin/bash apache -c 'wp plugin install wedocs --activate --path=/var/www/html/'
+#su -s /bin/bash apache -c 'wp plugin install wedocs --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install wordpress-importer --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy802gsaq6/backupbuddy-7.2.1.1.zip?dl=1 --activate --path=/var/www/html/'
 
 
