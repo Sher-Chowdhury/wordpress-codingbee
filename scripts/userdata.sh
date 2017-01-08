@@ -4,6 +4,19 @@
 # chmod u+x ~/userdata.sh
 # ~/userdata.sh codingbee.net
 
+# 1. url
+# 2. wordpress db name
+# 3. db username
+# 4. db user password
+# 5. wp admin username
+# 6. wp admin user's password
+# 7. slogan
+#
+#
+#
+#
+
+
 
 echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
@@ -96,8 +109,9 @@ systemctl restart httpd || exit 1
 
 php -v || exit 1
 
+echo '<?php phpinfo(); ?>' > /var/www/html/php-info.php
 
-
+chown apache:apache /var/www/html/php-info.php
 
 
 echo '##################################################################'
