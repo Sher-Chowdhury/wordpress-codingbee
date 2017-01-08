@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# curl https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh -s
+# chmod u+x ~/userdata.sh
+# ~/userdata.sh
+
+
 echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
