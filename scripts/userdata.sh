@@ -60,6 +60,10 @@ yum install -y httpd  || exit 1
 systemctl enable httpd || exit 1
 systemctl start httpd  || exit 1
 
+# needed to apply the following otherwise unable to bulk delete lots of posts 
+echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf || exit 1
+systemctl restart httpd  || exit 1
+
 echo '##################################################################'
 echo '##################### Install mariadb ############################'
 echo '##################################################################'
@@ -120,6 +124,7 @@ php --ini
 sed -i 's/^memory_limit.*/memory_limit = 512M/g' /etc/php.ini
 sed -i 's/^upload_max_filesize.*/upload_max_filesize = 100M/g' /etc/php.ini
 sed -i 's/^post_max_size.*/post_max_size = 100M/g' /etc/php.ini
+sed -i 's/^max_execution_time.*/max_execution_time = 300/g' /etc/php.ini
 systemctl restart httpd
 
 echo '##################################################################'
