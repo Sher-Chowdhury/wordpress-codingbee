@@ -103,6 +103,8 @@ rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm || exit 1
 yum -y install php70w || exit 1
 
 yum install -y php70w-mysqlnd || exit 1
+yum install -y php70w-xml
+
 systemctl restart httpd || exit 1
 
 # check that the correct version is installed:
@@ -113,6 +115,12 @@ echo '<?php phpinfo(); ?>' > /var/www/html/php-info.php
 
 chown apache:apache /var/www/html/php-info.php
 
+php --ini
+
+sed -i 's/^memory_limit.*/memory_limit = 512M/g' /etc/php.ini
+sed -i 's/^upload_max_filesize.*/upload_max_filesize = 100M/g' /etc/php.ini
+sed -i 's/^post_max_size.*/post_max_size = 100M/g' /etc/php.ini
+systemctl restart httpd
 
 echo '##################################################################'
 echo '####################### Install wp-cli ###########################'
