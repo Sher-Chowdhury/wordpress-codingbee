@@ -11,11 +11,11 @@ echo '##################################################################'
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
-yum install git -y || exit 1
-yum install epel-release -y || exit 1
-yum install vim -y || exit 1
-yum install wget -y || exit 1
-yum install php-gd || exit 1
+yum install -y git          || exit 1
+yum install -y epel-release || exit 1
+yum install -y vim          || exit 1
+yum install -y wget         || exit 1
+yum install -y php-gd       || exit 1
 
 echo -e "\n\n\n" | ssh-keygen -P ""
 echo 'Host *' > ~/.ssh/config || exit 1
