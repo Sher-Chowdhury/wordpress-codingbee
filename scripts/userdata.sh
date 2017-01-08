@@ -65,8 +65,6 @@ gpgcheck=1
 EOM
 
 yum install -y MariaDB-server || exit 1
-yum install -y php70w-mysqlnd || exit 1
-systemctl restart httpd || exit 1
 
 systemctl enable mariadb || exit 1
 systemctl start mariadb || exit 1
@@ -91,6 +89,9 @@ echo '##################################################################'
 rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm || exit 1
 yum -y install php70w || exit 1
 
+yum install -y php70w-mysqlnd || exit 1
+systemctl restart httpd || exit 1
+
 # check that the correct version is installed:
 
 php -v || exit 1
@@ -99,6 +100,9 @@ php -v || exit 1
 
 
 
+echo '##################################################################'
+echo '####################### Install wp-cli ###########################'
+echo '##################################################################'
 
 #/opt/puppetlabs/bin/puppet apply site.pp  || exit 1
 
