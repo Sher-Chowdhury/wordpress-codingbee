@@ -126,7 +126,7 @@ sed -i 's/^memory_limit.*/memory_limit = 512M/g' /etc/php.ini
 sed -i 's/^upload_max_filesize.*/upload_max_filesize = 100M/g' /etc/php.ini
 sed -i 's/^post_max_size.*/post_max_size = 100M/g' /etc/php.ini
 sed -i 's/^max_execution_time.*/max_execution_time = 300/g' /etc/php.ini
-systemctl restart httpd
+systemctl restart httpd || exit 1
 
 echo '##################################################################'
 echo '####################### Install wp-cli ###########################'
@@ -232,10 +232,21 @@ get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::
 save
 quit
 EOF
-systemctl restart httpd
+systemctl restart httpd || exit 1
+sleep 10
 
 
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
+
+wget https://www.dropbox.com/s/5s5s3bvuong527u/codingbee.wordpress.2017-01-14-just-all-posts.xml || exit 1
+
+
+#cat codingbee.wordpress.2017-01-14-just-all-posts.xml | grep "<title>.*</title>" | sed -e "s/^.*<title>//" -e "s:</title>::"
+
+yum install -y rubygems
+yum install -y ruby-devel
+gem install nokogiri -v 1.6.8.1
+
 
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
