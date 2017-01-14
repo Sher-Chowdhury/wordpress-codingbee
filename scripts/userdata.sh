@@ -200,6 +200,26 @@ su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy80
 su -s /bin/bash apache -c 'wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path=/var/www/html/'
 
 
+rm -f categories.csv
+wget https://www.dropbox.com/s/yfc5uqq1x0iuqqx/categories.csv
+
+for line in `cat categories.csv` ; do
+
+  echo $line
+  name=`echo $line | cut -d',' -f1`
+  slug=`echo $line | cut -d',' -f2`
+  parent=`echo $line | cut -d',' -f3`
+  echo "The name is ${name}"
+  echo "The name is ${slug}"
+  echo "The name is ${parent}"
+
+  parent_id=`wp term list category --fields=name,term_id --path=/var/www/html/ | grep ${parent} | awk '{print $4;}'`
+
+  wp term create category ${name} --slug=${slug} --parent=${parent_id} --path=/var/www/html/
+done
+
+
+
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
 # e.g. the following will pull down the userdata:
