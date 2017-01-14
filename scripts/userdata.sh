@@ -218,7 +218,7 @@ for line in `cat categories.csv` ; do
   wp term create category ${name} --slug=${slug} --parent=${parent_id} --path=/var/www/html/
 done
 
-
+su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
 
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
