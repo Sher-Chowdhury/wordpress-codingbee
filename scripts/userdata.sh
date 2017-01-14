@@ -28,7 +28,8 @@ yum install -y git          || exit 1
 yum install -y epel-release || exit 1
 yum install -y vim          || exit 1
 yum install -y wget         || exit 1
-#yum install -y php-gd       || exit 1
+yum install -y augeas       || exit 1
+#yum install -y php-gd      || exit 1
 
 echo -e "\n\n\n" | ssh-keygen -P ""
 echo 'Host *' > ~/.ssh/config || exit 1
@@ -217,6 +218,22 @@ for line in `cat categories.csv` ; do
 
   wp term create category ${name} --slug=${slug} --parent=${parent_id} --path=/var/www/html/
 done
+
+
+
+augtool <<-EOF
+ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
+set /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg ALL
+ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
+save
+quit
+EOF
+systemctl restart httpd
+
 
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
 
