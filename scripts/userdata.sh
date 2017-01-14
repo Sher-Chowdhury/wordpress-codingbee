@@ -193,12 +193,12 @@ su -s /bin/bash apache -c 'wp plugin install syntaxhighlighter --activate --path
 su -s /bin/bash apache -c 'wp plugin install table-of-contents-plus --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install tablepress --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install wp-github-gist --activate --path=/var/www/html/'
-#su -s /bin/bash apache -c 'wp plugin install wedocs --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install wordpress-importer --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy802gsaq6/backupbuddy-7.2.1.1.zip?dl=1 --activate --path=/var/www/html/'
 
 
-su -s /bin/bash apache -c 'wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path=/var/www/html/'
+#su -s /bin/bash apache -c 'wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp theme install customizr --activate --path=/var/www/html/'
 
 
 rm -f categories.csv
@@ -211,14 +211,14 @@ for line in `cat categories.csv` ; do
   slug=`echo $line | cut -d',' -f2`
   parent=`echo $line | cut -d',' -f3`
   echo "The name is ${name}"
-  echo "The name is ${slug}"
-  echo "The name is ${parent}"
+  echo "The slug is ${slug}"
+  echo "The parent is ${parent}"
 
   parent_id=`wp term list category --fields=name,term_id --path=/var/www/html/ | grep ${parent} | awk '{print $4;}'`
 
+  echo "The parent_id is ${parent_id}"
   wp term create category ${name} --slug=${slug} --parent=${parent_id} --path=/var/www/html/
 done
-
 
 
 augtool <<-EOF
