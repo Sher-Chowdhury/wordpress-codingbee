@@ -16,19 +16,19 @@ echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
 
-if [ $# -ne 16 ] ; then
+if [ $# -ne 16 ]; then
   echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 8 parameters required"
   exit 1
 fi
 
 while [ $# -gt 0 ]; do
-
-  if [[ ! ${1} =~ ^-- ]] ; then
+  echo "about to process ${1} and ${2}"
+  if [[ ! ${1} =~ ^-- ]]; then
     echo "ERROR: line ${LINENO}: The parameter '${1}' is not a parameter option"
     exit 1
   fi 
 
-  if [[ ! ${2} =~ ^-- ]] ; then
+  if [[ ${2} =~ ^-- ]]; then
     echo "ERROR: line ${LINENO}: The parameter '${2}' is not a parameter option"
     exit 1
   fi 
