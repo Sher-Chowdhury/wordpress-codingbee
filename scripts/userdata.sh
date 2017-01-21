@@ -1,4 +1,5 @@
 #!/bin/bash
+yum install -y gitsss       || { echo "ERROR: line ${BASH_LINENO}: failed to install git"; exit 1; }
 
 # curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
 # chmod u+x ~/userdata.sh 
