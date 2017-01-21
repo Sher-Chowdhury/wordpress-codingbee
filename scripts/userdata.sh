@@ -11,7 +11,7 @@
 # 5. wp admin username
 # 6. wp admin user's password
 # 7. slogan
-#
+# 8. dropbox download link with dl=1 paramter at the end. 
 #
 #
 #
@@ -24,12 +24,13 @@ echo '##################################################################'
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
-yum install -y git          || exit 1
-yum install -y epel-release || exit 1
-yum install -y vim          || exit 1
-yum install -y wget         || exit 1
-yum install -y augeas       || exit 1
-#yum install -y php-gd      || exit 1
+yum install -y git          || { echo "ERROR: line ${LINENO}: failed to install git"; exit 1; }
+yum install -y gitsss       || { echo "ERROR: line ${LINENO}: failed to install gitsss"; exit 1; }
+yum install -y epel-release || { echo "ERROR: line ${LINENO}: failed to install epel-release"; exit 1; } 
+yum install -y vim          || { echo "ERROR: line ${LINENO}: failed to install vim"; exit 1; }
+yum install -y wget         || { echo "ERROR: line ${LINENO}: failed to install wget"; exit 1; }
+yum install -y augeas       || { echo "ERROR: line ${LINENO}: failed to install augeas"; exit 1; }
+#yum install -y php-gd      || { echo "ERROR: line ${LINENO}: failed to install php-gd"; exit 1; }
 
 echo -e "\n\n\n" | ssh-keygen -P ""
 echo 'Host *' > ~/.ssh/config || exit 1
