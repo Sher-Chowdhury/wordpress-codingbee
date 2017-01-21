@@ -138,7 +138,7 @@ systemctl start mariadb || exit 1
 # mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123';" || exit 1
 
 
-mysql -u root -e "CREATE USER 'mush'@'localhost' IDENTIFIED BY 'password123';" || exit 1
+mysql -u root -e "CREATE USER '$db_username'@'localhost' IDENTIFIED BY '$db_password';" || exit 1
 mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 
