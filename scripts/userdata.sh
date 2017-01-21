@@ -139,6 +139,7 @@ systemctl start mariadb || exit 1
 echo "db_username is ${db_username}"
 echo "db_password is ${db_password}"
 
+# note: you can user curly brackets here. 
 mysql -u root -e "CREATE USER '$db_username'@'localhost' IDENTIFIED BY '$db_password';" || exit 1
 mysql --user='root' -e 'select host, user, password from mysql.user;'
 
@@ -205,7 +206,7 @@ su -s /bin/bash apache -c 'wp --info' || exit 1
 
 wp cli update || exit 1
 
-wp package install wp-cli/restful  || exit 1
+# wp package install wp-cli/restful  || exit 1
 
 su -s /bin/bash apache -c 'wp core download --path=/var/www/html' || exit 1
 
