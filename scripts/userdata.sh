@@ -139,7 +139,7 @@ systemctl start mariadb || exit 1
 
 echo "db_username is ${db_username}"
 echo "db_password is ${db_password}"
-query="CREATE USER ${db_username}@localhost IDENTIFIED BY '${db_password}';"
+query="CREATE USER ${db_username}@'localhost' IDENTIFIED BY '${db_password}';"
 echo $query
 mysql --user="root" --execute="$query" || exit 1
 
