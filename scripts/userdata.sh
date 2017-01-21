@@ -107,23 +107,6 @@ yum install -y httpd  || exit 1
 systemctl enable httpd || exit 1
 systemctl start httpd  || exit 1
 
-# needed to apply the following otherwise unable to bulk delete lots of posts 
-echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf || exit 1
-systemctl restart httpd  || exit 1
-
-augtool <<-EOF
-ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
-set /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg ALL
-ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
-save
-quit
-EOF
-systemctl restart httpd || exit 1
-
 
 echo '##################################################################'
 echo '##################### Install mariadb ############################'
@@ -297,8 +280,29 @@ done
 
 
 
+# needed to apply the following otherwise unable to bulk delete lots of posts 
+echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf || exit 1
+systemctl restart httpd  || exit 1
+
+# The following is needed for our custom permalink structure to work. 
+augtool <<-EOF
+ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
+set /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg ALL
+ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
+save
+quit
+EOF
+systemctl restart httpd || exit 1
+
 
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
+
+
+
 
 cd exports
 
