@@ -1,5 +1,4 @@
 #!/bin/bash
-yum install -y gitsss       || { echo "ERROR: line ${BASH_LINENO}: failed to install git"; exit 1; }
 
 # curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
 # chmod u+x ~/userdata.sh 
@@ -74,12 +73,12 @@ done
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
-yum install -y gitsss       || { echo "ERROR: line ${BASH_LINENO}: failed to install git"; exit 1; }
-yum install -y epel-release || { echo "ERROR: line ${LINENO}: failed to install epel-release"; exit 1; } 
-yum install -y vim          || { echo "ERROR: line ${LINENO}: failed to install vim"; exit 1; }
-yum install -y wget         || { echo "ERROR: line ${LINENO}: failed to install wget"; exit 1; }
-yum install -y augeas       || { echo "ERROR: line ${LINENO}: failed to install augeas"; exit 1; }
-#yum install -y php-gd      || { echo "ERROR: line ${LINENO}: failed to install php-gd"; exit 1; }
+yum install -y git          || { echo "ERROR: failed to install git"; exit 1; }
+yum install -y epel-release || { echo "ERROR: failed to install epel-release"; exit 1; } 
+yum install -y vim          || { echo "ERROR: failed to install vim"; exit 1; }
+yum install -y wget         || { echo "ERROR: failed to install wget"; exit 1; }
+yum install -y augeas       || { echo "ERROR: failed to install augeas"; exit 1; }
+#yum install -y php-gd      || { echo "ERROR: failed to install php-gd"; exit 1; }
 
 echo -e "\n\n\n" | ssh-keygen -P ""
 echo 'Host *' > ~/.ssh/config || exit 1
