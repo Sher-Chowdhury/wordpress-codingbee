@@ -135,7 +135,6 @@ systemctl start mariadb || exit 1
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 
 # This creates new db user account
-# mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123';" || exit 1
 
 echo "db_username is ${db_username}"
 echo "db_password is ${db_password}"
@@ -150,12 +149,12 @@ mysql --user='root' -e 'select host, user, password from mysql.user;'
 #mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 # This creates new db
-#mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
+mysql -u root -e "CREATE DATABASE $wp_db_name" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
 # grant full priveleges of db user to wordpress db:
-#mysql -u root -e "GRANT ALL PRIVILEGES ON $wp_db_name.* TO $db_username@localhost IDENTIFIED BY $db_password;" || exit 1
+mysql -u root -e "GRANT ALL PRIVILEGES ON $wp_db_name.* TO $db_username@localhost IDENTIFIED BY $db_password;" || exit 1
 
-#mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
+mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
 
 
 echo '##################################################################'
