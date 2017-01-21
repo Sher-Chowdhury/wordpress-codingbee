@@ -4,13 +4,13 @@
 # chmod u+x ~/userdata.sh 
 # ~/userdata.sh                     \
 # --url codingbee.net               \
-# --wp-db-name xxxx                 \ 
-# --db-username xxxx                \
-# --db-password xxxx                \
-# --wp-web-admin-username xxxx      \
-# --wp-web-admin-user-password xxxx \
+# --wp_db_name xxxx                 \ 
+# --db_username xxxx                \
+# --db_password xxxx                \
+# --wp_web_admin_username xxxx      \
+# --wp_web_admin_user_password xxxx \
 # --slogan xxxx                     \
-# --dropbox-folder-link xxxx
+# --dropbox_folder_link xxxx
 
 echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
@@ -37,26 +37,26 @@ while [ $# -gt 0 ]; do
     --url) 
       url=${2}
       ;;
-    --wp-db-name) 
-      wp-db-name=${2} 
+    --wp_db_name) 
+      wp_db_name=${2} 
       ;;
-    --db-username) 
-      db-username=${2} 
+    --db_username) 
+      db_username=${2} 
       ;;
-    --db-password) 
-      db-password=${2} 
+    --db_password) 
+      db_password=${2} 
       ;;
-    --wp-web-admin-username) 
-      wp-web-admin-username=${2}
+    --wp_web_admin_username) 
+      wp_web_admin_username=${2}
       ;;
-    --wp-web-admin-user-password) 
-      wp-web-admin-user-password=${2}
+    --wp_web_admin_user_password) 
+      wp_web_admin_user_password=${2}
       ;;
     --slogan) 
       slogan=${2}
       ;;
-    --dropbox-folder-link) 
-      dropbox-folder-link=${2}
+    --dropbox_folder_link) 
+      dropbox_folder_link=${2}
       ;;
     *) 
       echo "ERROR: The parameter ${1} is not a valid parameter option"
@@ -135,14 +135,14 @@ systemctl start mariadb || exit 1
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 
 # This creates new db user account
-#mysql -u root -e "CREATE USER ${db-username}@'localhost' IDENTIFIED BY 'password123';" || exit 1
-mysql -u root -e "CREATE USER ${db-username}@'localhost' IDENTIFIED BY ${db-password};" || { echo "ERROR: line ${LINENO}: failed to create db user account"; exit 1; }
+#mysql -u root -e "CREATE USER ${db_username}@'localhost' IDENTIFIED BY 'password123';" || exit 1
+mysql -u root -e "CREATE USER ${db_username}@'localhost' IDENTIFIED BY ${db_password};" || { echo "ERROR: line ${LINENO}: failed to create db user account"; exit 1; }
 
 # This creates new db
-mysql -u root -e "CREATE DATABASE ${wp-db-name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
+mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
 # grant full priveleges of db user to wordpress db:
-mysql -u root -e "GRANT ALL PRIVILEGES ON ${wp-db-name}.* TO ${db-username}@localhost IDENTIFIED BY ${db-password};" || exit 1
+mysql -u root -e "GRANT ALL PRIVILEGES ON ${wp_db_name}.* TO ${db_username}@localhost IDENTIFIED BY ${db_password};" || exit 1
 
 mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
 
@@ -199,7 +199,7 @@ wp package install wp-cli/restful  || exit 1
 su -s /bin/bash apache -c 'wp core download --path=/var/www/html' || exit 1
 
 
-su -s /bin/bash apache -c "wp core config --path=/var/www/html --dbname=${wp-db-name} --dbuser=${db-username} --dbpass=${db-password} --extra-php <<PHP
+su -s /bin/bash apache -c "wp core config --path=/var/www/html --dbname=${wp_db_name} --dbuser=${db_username} --dbpass=${db_password} --extra-php <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
@@ -209,7 +209,7 @@ PHP"
 
 
 
-su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${url}\" --title=Codingbee --admin_user=${wp-web-admin-username} --admin_password=${wp-web-admin-user-password} --admin_email=YOU@YOURDOMAIN.comi"
+su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${url}\" --title=Codingbee --admin_user=${wp_web_admin_username} --admin_password=${wp_web_admin_user_password} --admin_email=YOU@YOURDOMAIN.comi"
 
 su -s /bin/bash apache -c "wp option update blogdescription \"$slogan\" --path=/var/www/html/"
 
@@ -248,7 +248,7 @@ su -s /bin/bash apache -c 'wp theme install customizr --activate --path=/var/www
 
 mkdir ~/downloads
 cd ~/downloads
-curl -L ${dropbox-folder-link} > download.zip
+curl -L ${dropbox_folder_link} > download.zip
 unzip download.zip
 rm download.zip
 
