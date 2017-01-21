@@ -141,7 +141,7 @@ echo "db_username is ${db_username}"
 echo "db_password is ${db_password}"
 query="mysql --user='root' --execute=\"CREATE USER ${db_username}@'localhost' IDENTIFIED BY '${db_password}';\""
 echo $query
-eval"$query" 
+eval "$query" 
 
 exit 0
 
