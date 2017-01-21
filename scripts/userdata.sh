@@ -152,7 +152,8 @@ mysql --user='root' -e 'select host, user, password from mysql.user;'
 mysql -u root -e "CREATE DATABASE $wp_db_name" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
 # grant full priveleges of db user to wordpress db:
-mysql -u root -e "GRANT ALL PRIVILEGES ON $wp_db_name.* TO $db_username@localhost IDENTIFIED BY $db_password;" || exit 1
+echo "About to grant priveleges"
+mysql -u root -e "GRANT ALL PRIVILEGES ON $wp_db_name.* TO '$db_username'@'localhost' IDENTIFIED BY '$db_password';" || exit 1
 
 mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
 
