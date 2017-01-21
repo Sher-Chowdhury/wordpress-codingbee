@@ -136,7 +136,13 @@ systemctl start mariadb || exit 1
 
 # This creates new db user account
 # mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123';" || exit 1
-mysql -u root -e "CREATE USER '${db_username}'@'localhost' IDENTIFIED BY '${db_password}';" || { echo "ERROR: line ${LINENO}: failed to create db user account"; exit 1; }
+
+sleep 20
+set -xv
+echo "db_username is ${db_username}"
+echo "db_password is ${db_password}"
+mysql -u root -e "CREATE USER '${db_username}'@'localhost' IDENTIFIED BY '${db_password}';" || { echo "ERROR: failed to create db user account"; exit 1; }
+set +xv
 
 # This creates new db
 mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
