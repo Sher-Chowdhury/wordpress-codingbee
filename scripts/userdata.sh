@@ -111,6 +111,20 @@ systemctl start httpd  || exit 1
 echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf || exit 1
 systemctl restart httpd  || exit 1
 
+augtool <<-EOF
+ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
+set /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg ALL
+ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
+get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
+save
+quit
+EOF
+systemctl restart httpd || exit 1
+
+
 echo '##################################################################'
 echo '##################### Install mariadb ############################'
 echo '##################################################################'
@@ -265,7 +279,7 @@ curl -L ${dropbox_folder_link} > /root/downloads/download.zip || exit 1
 unzip download.zip || exit 1
 rm download.zip || exit 1
 
-for line in `cat categories.csv` ; do
+for line in `cat /root/downloads/categories.csv` ; do
 
   echo $line
   name=`echo $line | cut -d',' -f1`
@@ -282,19 +296,6 @@ for line in `cat categories.csv` ; do
 done
 
 
-augtool <<-EOF
-ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
-set /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg ALL
-ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
-get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']/arg
-save
-quit
-EOF
-systemctl restart httpd || exit 1
-sleep 10
 
 
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
