@@ -143,10 +143,9 @@ echo "db_password is ${db_password}"
 mysql -u root -e "CREATE USER '$db_username'@'localhost' IDENTIFIED BY '$db_password';" || exit 1
 mysql --user='root' -e 'select host, user, password from mysql.user;'
 
-
+# another approach that should work
 #query="CREATE USER '${db_username}'@'localhost' IDENTIFIED BY '${db_password}';"
 #echo $query > /tmp/createuser.sql
-# the following passes even though it give syntax error message.
 #mysql --user='root' < /tmp/createuser.sql 
 #mysql --user='root' -e 'select host, user, password from mysql.user;'
 
@@ -154,7 +153,7 @@ mysql --user='root' -e 'select host, user, password from mysql.user;'
 mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
 # grant full priveleges of db user to wordpress db:
-mysql -u root -e "GRANT ALL PRIVILEGES ON $wp_db_name.* TO ${db_username}@localhost IDENTIFIED BY $db_password;" || exit 1
+mysql -u root -e "GRANT ALL PRIVILEGES ON $wp_db_name.* TO $db_username@localhost IDENTIFIED BY $db_password;" || exit 1
 
 mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
 
