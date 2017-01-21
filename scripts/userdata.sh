@@ -276,7 +276,7 @@ su -s /bin/bash apache -c 'wp theme install customizr --activate --path=/var/www
 mkdir /root/downloads  || exit 1
 cd /root/downloads || exit 1
 curl -L ${dropbox_folder_link} > /root/downloads/download.zip || exit 1
-unzip download.zip || exit 1
+unzip download.zip -x / || exit 1
 rm download.zip || exit 1
 
 for line in `cat /root/downloads/categories.csv` ; do
