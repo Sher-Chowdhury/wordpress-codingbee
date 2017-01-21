@@ -23,12 +23,12 @@ fi
 
 while [ $# -gt 0 ]; do
 
-  if [[ ! ${1} =~ ^-- ]]
+  if [[ ! ${1} =~ ^-- ]] ; then
     echo "ERROR: line ${LINENO}: The parameter '${1}' is not a parameter option"
     exit 1
   fi 
 
-  if [[ ! ${2} =~ ^-- ]]
+  if [[ ! ${2} =~ ^-- ]] ; then
     echo "ERROR: line ${LINENO}: The parameter '${2}' is not a parameter option"
     exit 1
   fi 
