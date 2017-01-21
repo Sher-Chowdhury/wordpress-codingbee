@@ -137,18 +137,18 @@ systemctl start mariadb || exit 1
 # This creates new db user account
 # mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123';" || exit 1
 
+echo "db_username is ${db_username}"
+echo "db_password is ${db_password}"
 
 mysql -u root -e "CREATE USER '$db_username'@'localhost' IDENTIFIED BY '$db_password';" || exit 1
 mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 
-echo "db_username is ${db_username}"
-echo "db_password is ${db_password}"
-query="CREATE USER '${db_username}'@'localhost' IDENTIFIED BY '${db_password}';"
-echo $query > /tmp/createuser.sql
+#query="CREATE USER '${db_username}'@'localhost' IDENTIFIED BY '${db_password}';"
+#echo $query > /tmp/createuser.sql
 # the following passes even though it give syntax error message.
-mysql --user='root' < /tmp/createuser.sql 
-mysql --user='root' -e 'select host, user, password from mysql.user;'
+#mysql --user='root' < /tmp/createuser.sql 
+#mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 # This creates new db
 mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
