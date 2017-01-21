@@ -308,6 +308,8 @@ cd exports
 
 yum install -y rubygems
 yum install -y ruby-devel
+yum install -y gcc
+yum install -y zlib-devel
 gem install nokogiri -v 1.6.8.1
 
 
