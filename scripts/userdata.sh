@@ -258,11 +258,11 @@ su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy80
 
 su -s /bin/bash apache -c 'wp theme install customizr --activate --path=/var/www/html/'
 
-mkdir ~/downloads
-cd ~/downloads
-curl -L ${dropbox_folder_link} > download.zip
-unzip download.zip
-rm download.zip
+mkdir /root/downloads  || exit 1
+cd /root/downloads || exit 1
+curl -L ${dropbox_folder_link} > /root/downloads/download.zip || exit 1
+unzip download.zip || exit 1
+rm download.zip || exit 1
 
 for line in `cat categories.csv` ; do
 
