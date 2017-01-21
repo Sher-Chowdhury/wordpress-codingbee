@@ -59,7 +59,7 @@ while [ $# -gt 0 ]; do
       dropbox-folder-link=${2}
       ;;
     *) 
-      ERROR: line ${LINENO}: The parameter ${1} is not a valid parameter option"
+      echo "ERROR: The parameter ${1} is not a valid parameter option"
       exit 1
       ;;
   esac
