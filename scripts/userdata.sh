@@ -1,31 +1,79 @@
 #!/bin/bash
 
-# curl https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh -s
-# chmod u+x ~/userdata.sh
-# ~/userdata.sh codingbee.net
-
-# 1. url
-# 2. wordpress db name
-# 3. db username
-# 4. db user password
-# 5. wp admin username
-# 6. wp admin user's password
-# 7. slogan
-# 8. dropbox download link with dl=1 paramter at the end. 
-#
-#
-#
-
-
+# curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
+# chmod u+x ~/userdata.sh 
+# ~/userdata.sh                     \
+# --url codingbee.net               \
+# --wp-db-name xxxx                 \ 
+# --db-username xxxx                \
+# --db-password xxxx                \
+# --wp-web-admin-username xxxx      \
+# --wp-web-admin-user-password xxxx \
+# --slogan xxxx                     \
+# --dropbox-folder-link xxxx
 
 echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
 
+if [ $# -ne 16 ] ; then
+  echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 8 parameters required"
+  exit 1
+fi
+
+while [ $# -gt 0 ]; do
+
+  if [[ ! ${1} =~ ^-- ]]
+    echo "ERROR: line ${LINENO}: The parameter '${1}' is not a parameter option"
+    exit 1
+  fi 
+
+  if [[ ! ${2} =~ ^-- ]]
+    echo "ERROR: line ${LINENO}: The parameter '${2}' is not a parameter option"
+    exit 1
+  fi 
+
+  case "$1" in
+    --url) 
+      url=${2}
+      ;;
+    --wp-db-name) 
+      wp-db-name=${2} 
+      ;;
+    --db-username) 
+      db-username=${2} 
+      ;;
+    --db-password) 
+      db-password=${2} 
+      ;;
+    --wp-web-admin-username) 
+      wp-web-admin-username=${2}
+      ;;
+    --wp-web-admin-user-password) 
+      wp-web-admin-user-password=${2}
+      ;;
+    --slogan) 
+      slogan=${2}
+      ;;
+    --dropbox-folder-link) 
+      dropbox-folder-link=${2}
+      ;;
+    *) 
+      ERROR: line ${LINENO}: The parameter ${1} is not a valid parameter option"
+      exit 1
+      ;;
+  esac
+
+  echo "INFO: line ${LINENO}: The value for ${1} is ${2}"
+
+  shift
+  shift
+done
+
+
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
-yum install -y git          || { echo "ERROR: line ${LINENO}: failed to install git"; exit 1; }
-yum install -y gitsss       || { echo "ERROR: line ${LINENO}: failed to install gitsss"; exit 1; }
+yum install -y gitsss       || { echo "ERROR: line ${BASH_LINENO}: failed to install git"; exit 1; }
 yum install -y epel-release || { echo "ERROR: line ${LINENO}: failed to install epel-release"; exit 1; } 
 yum install -y vim          || { echo "ERROR: line ${LINENO}: failed to install vim"; exit 1; }
 yum install -y wget         || { echo "ERROR: line ${LINENO}: failed to install wget"; exit 1; }
@@ -42,12 +90,8 @@ git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 
 #rpm -Uvh https://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm || exit 1
 #yum install -y puppet-agent || exit 1
-
-
 #echo "PATH=$PATH:/opt/puppetlabs/bin" >> /root/.bashrc || exit 1
 #PATH=$PATH:/opt/puppetlabs/bin || exit 1
-
-
 #/opt/puppetlabs/bin/puppet module install hunner-wordpress --version 1.0.0 || exit 1
 #/opt/puppetlabs/bin/puppet module install mayflower-php --version 4.0.0-beta1
 
@@ -91,13 +135,14 @@ systemctl start mariadb || exit 1
 # https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
 
 # This creates new db user account
-mysql -u root -e "CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'password123';" || exit 1
+#mysql -u root -e "CREATE USER ${db-username}@'localhost' IDENTIFIED BY 'password123';" || exit 1
+mysql -u root -e "CREATE USER ${db-username}@'localhost' IDENTIFIED BY ${db-password};" || { echo "ERROR: line ${LINENO}: failed to create db user account"; exit 1; }
 
 # This creates new db
-mysql -u root -e "CREATE DATABASE wordpress_db" || exit 1
+mysql -u root -e "CREATE DATABASE ${wp-db-name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
 # grant full priveleges of db user to wordpress db:
-mysql -u root -e "GRANT ALL PRIVILEGES ON wordpress_db.* TO wordpress@localhost IDENTIFIED BY 'password123';" || exit 1
+mysql -u root -e "GRANT ALL PRIVILEGES ON ${wp-db-name}.* TO ${db-username}@localhost IDENTIFIED BY ${db-password};" || exit 1
 
 mysql -u root -e "FLUSH PRIVILEGES;" || exit 1
 
@@ -154,7 +199,7 @@ wp package install wp-cli/restful  || exit 1
 su -s /bin/bash apache -c 'wp core download --path=/var/www/html' || exit 1
 
 
-su -s /bin/bash apache -c "wp core config --path=/var/www/html --dbname=wordpress_db --dbuser=wordpress --dbpass=password123 --extra-php <<PHP
+su -s /bin/bash apache -c "wp core config --path=/var/www/html --dbname=${wp-db-name} --dbuser=${db-username} --dbpass=${db-password} --extra-php <<PHP
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
@@ -164,9 +209,9 @@ PHP"
 
 
 
-su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${1}\" --title=Codingbee --admin_user=admin --admin_password=password --admin_email=YOU@YOURDOMAIN.comi"
+su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${url}\" --title=Codingbee --admin_user=${wp-web-admin-username} --admin_password=${wp-web-admin-user-password} --admin_email=YOU@YOURDOMAIN.comi"
 
-su -s /bin/bash apache -c 'wp option update blogdescription "Infrastructure as Code is the future" --path=/var/www/html/'
+su -s /bin/bash apache -c "wp option update blogdescription \"$slogan\" --path=/var/www/html/"
 
 
 
@@ -199,12 +244,13 @@ su -s /bin/bash apache -c 'wp plugin install wordpress-importer --activate --pat
 su -s /bin/bash apache -c 'wp plugin install https://www.dropbox.com/s/y6ojfpy802gsaq6/backupbuddy-7.2.1.1.zip?dl=1 --activate --path=/var/www/html/'
 
 
-#su -s /bin/bash apache -c 'wp theme install https://github.com/tareq1988/wedocs/archive/develop.zip --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp theme install customizr --activate --path=/var/www/html/'
 
-
-rm -f categories.csv
-wget https://www.dropbox.com/s/yfc5uqq1x0iuqqx/categories.csv
+mkdir ~/downloads
+cd ~/downloads
+curl -L ${dropbox-folder-link} > download.zip
+unzip download.zip
+rm download.zip
 
 for line in `cat categories.csv` ; do
 
@@ -240,10 +286,7 @@ sleep 10
 
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
 
-wget https://www.dropbox.com/s/5s5s3bvuong527u/codingbee.wordpress.2017-01-14-just-all-posts.xml || exit 1
-
-
-#cat codingbee.wordpress.2017-01-14-just-all-posts.xml | grep "<title>.*</title>" | sed -e "s/^.*<title>//" -e "s:</title>::"
+cd exports
 
 yum install -y rubygems
 yum install -y ruby-devel
