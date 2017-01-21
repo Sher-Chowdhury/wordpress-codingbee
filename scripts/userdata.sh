@@ -139,11 +139,11 @@ systemctl start mariadb || exit 1
 
 echo "db_username is ${db_username}"
 echo "db_password is ${db_password}"
-query="CREATE USER ${db_username}@'localhost' IDENTIFIED BY '${db_password}';"
+query="mysql --user='root' --execute=\"CREATE USER ${db_username}@'localhost' IDENTIFIED BY '${db_password}';\""
 echo $query
-eval mysql --user="root" --execute="$query" 
+eval"$query" 
 
-exit 1
+exit 0
 
 # This creates new db
 mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
