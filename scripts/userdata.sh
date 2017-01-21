@@ -142,6 +142,8 @@ echo "db_password is ${db_password}"
 query="CREATE USER ${db_username}@'localhost' IDENTIFIED BY '${db_password}';"
 echo $query > /tmp/createuser.sql
 mysql --user='root' < /tmp/createuser.sql
+mysql --user='root' -e 'select host, user, password from mysql.user;'
+
 # This creates new db
 mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
