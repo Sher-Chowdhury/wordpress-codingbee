@@ -143,8 +143,6 @@ query="mysql --user='root' --execute=\"CREATE USER ${db_username}@'localhost' ID
 echo $query
 eval "$query" 
 
-exit 0
-
 # This creates new db
 mysql -u root -e "CREATE DATABASE ${wp_db_name}" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
