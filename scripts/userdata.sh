@@ -341,11 +341,21 @@ RewriteRule . /index.php [L]
 chown apache:apache /var/www/html/.htaccess
 
 
-yum install -y rubygems
-yum install -y ruby-devel
-yum install -y gcc
-yum install -y zlib-devel
-gem install nokogiri -v 1.6.8.1
+#yum install -y rubygems
+#yum install -y ruby-devel
+#yum install -y gcc
+#yum install -y zlib-devel
+#gem install nokogiri -v 1.6.8.1
+
+
+
+
+
+
+
+
+
+
 
 # the following script doesn't work yet because post content contains special characters.
 #ruby /root/wordpress-codingbee/scripts/import_posts.rb
