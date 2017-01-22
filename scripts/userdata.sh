@@ -261,7 +261,7 @@ rm download.zip || exit 1
 chown -R apache:apache /root/downloads
 
 mv /root/downloads/premium-plugins /var/www/html
-cd /root/downloads/premium-plugins
+cd /var/www/html/premium-plugins
 su -s /bin/bash apache -c 'wp plugin install ./backupbuddy/backupbuddy.zip --activate --path=/var/www/html/'
 
 su -s /bin/bash apache -c 'wp plugin install ./wp-all-export-pro.zip --activate --path=/var/www/html/'
