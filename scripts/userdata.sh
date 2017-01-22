@@ -301,10 +301,30 @@ systemctl restart httpd || exit 1
 
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
 
+echo 'php_value suhosin.post.max_vars 5000
+php_value suhosin.request.max_vars 5000
+php_value memory_limit 256M
+php_value max_execution_time 600
+php_value upload_max_filesize 70M
+php_value post_max_size 128M
+php_value upload_tmp_dir 70M
+php_value max_input_vars 5000
 
 
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
 
-cd exports
+# END WordPress' > /var/www/html/.htaccess
+
+chown apache:apache /var/www/html/.htaccess
+
 
 yum install -y rubygems
 yum install -y ruby-devel
@@ -312,6 +332,7 @@ yum install -y gcc
 yum install -y zlib-devel
 gem install nokogiri -v 1.6.8.1
 
+ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
