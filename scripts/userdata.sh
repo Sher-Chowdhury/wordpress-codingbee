@@ -260,18 +260,20 @@ rm download.zip || exit 1
 
 chown -R apache:apache /root/downloads
 
+mv /root/downloads/premium-plugins /var/www/html
 cd /root/downloads/premium-plugins
-su -s /bin/bash apache -c 'wp plugin install ./backupbuddy.zip --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install ./backupbuddy/backupbuddy.zip --activate --path=/var/www/html/'
 
 su -s /bin/bash apache -c 'wp plugin install ./wp-all-export-pro.zip --activate --path=/var/www/html/'
 
 su -s /bin/bash apache -c 'wp plugin install ./wp-all-import-pro.zip --activate --path=/var/www/html/'
+#rm -rf /root/downloads/premium-plugins
 
 
-
-cd /root/downloads/premium-themes
+mv /root/downloads/premium-themes /var/www/html
+cd /var/www/html/premium-themes
 su -s /bin/bash apache -c 'wp theme install ./customizr-pro.zip --activate --path=/var/www/html/'
-
+rm -rf /var/www/html/premium-themes
 
 
 
@@ -345,7 +347,8 @@ yum install -y gcc
 yum install -y zlib-devel
 gem install nokogiri -v 1.6.8.1
 
-ruby /root/wordpress-codingbee/scripts/import_posts.rb
+# the following script doesn't work yet because post content contains special characters.
+#ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
