@@ -260,16 +260,17 @@ rm download.zip || exit 1
 
 chown -R apache:apache /root/downloads
 
-su -s /bin/bash apache -c 'wp plugin install /root/downloads/premium-plugins/backupbuddy.zip --activate --path=/var/www/html/'
+cd /root/downloads/premium-plugins
+su -s /bin/bash apache -c 'wp plugin install ./backupbuddy.zip --activate --path=/var/www/html/'
 
-su -s /bin/bash apache -c 'wp plugin install /root/downloads/premium-plugins/wp-all-export-pro.zip --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install ./wp-all-export-pro.zip --activate --path=/var/www/html/'
 
-su -s /bin/bash apache -c 'wp plugin install /root/downloads/premium-plugins/wp-all-import-pro.zip --activate --path=/var/www/html/'
-
-
+su -s /bin/bash apache -c 'wp plugin install ./wp-all-import-pro.zip --activate --path=/var/www/html/'
 
 
-su -s /bin/bash apache -c 'wp theme install /root/downloads/premium-themes/customizr-pro.zip --activate --path=/var/www/html/'
+
+cd /root/downloads/premium-themes
+su -s /bin/bash apache -c 'wp theme install ./customizr-pro.zip --activate --path=/var/www/html/'
 
 
 
