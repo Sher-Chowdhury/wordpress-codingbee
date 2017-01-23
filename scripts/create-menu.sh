@@ -28,4 +28,5 @@ for csvfile in `ls /root/downloads/menus`; do
 
 
   done
+  # wp widget add "Custom Menu Wizard" left --path=/var/www/html
 done
