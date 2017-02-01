@@ -59,5 +59,7 @@ for csvfile in `ls /root/downloads/menus`; do
 
 
   done
-  # wp widget add "Custom Menu Wizard" left --path=/var/www/html
+  # wp sidebar list --fields=name,id --path=/var/www/html
+  # wp widget list left --path=/var/www/html
+  # wp widget add custom-menu-wizard left --path=/var/www/html
 done
