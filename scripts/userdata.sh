@@ -348,8 +348,11 @@ chown apache:apache /var/www/html/.htaccess
 #gem install nokogiri -v 1.6.8.1
 
 
-
-
+gem install selenium-webdriver
+wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
+tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
+cd geckodriver-v0.14.0-linux64
+cp * /usr/bin
 
 
 
