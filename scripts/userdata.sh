@@ -354,7 +354,7 @@ tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
 cd geckodriver-v0.14.0-linux64
 cp * /usr/bin
 
-
+echo '127.0.0.1  codingbee.net' >> /etc/hosts
 
 
 
