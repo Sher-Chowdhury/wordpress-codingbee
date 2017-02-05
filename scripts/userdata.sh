@@ -348,6 +348,10 @@ chown apache:apache /var/www/html/.htaccess
 #gem install nokogiri -v 1.6.8.1
 
 
+cp /root/downloads/wp-all-import-exports/codingbee-posts-exports.zip /var/www/html/
+cp /root/downloads/wp-all-import-exports/codingbee-pages-exports.zip /var/www/html/
+
+
 gem install selenium-webdriver
 wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
 tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
@@ -358,10 +362,15 @@ echo '127.0.0.1  codingbee.net' >> /etc/hosts
 
 
 
+# this is a wip
+# ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 
-# the following script doesn't work yet because post content contains special characters.
-#ruby /root/wordpress-codingbee/scripts/import_posts.rb
+rm /var/www/html/codingbee-posts-exports.zip
+rm /var/www/html/codingbee-pages-exports.zip
+
+
+
 
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
