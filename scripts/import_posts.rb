@@ -95,5 +95,5 @@ driver.find_element(:class, "add-new-h2").click
 sleep(5)
 driver.find_element(:class, "rad10").click
 
-# allow a minute for the actual import to take place. 
+# allow a minute for the actual import to take place.
 sleep(60)

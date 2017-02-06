@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
-# chmod u+x ~/userdata.sh 
+# chmod u+x ~/userdata.sh
 # ~/userdata.sh                     \
 # --url codingbee.net               \
-# --wp_db_name xxxx                 \ 
+# --wp_db_name xxxx                 \
 # --db_username xxxx                \
 # --db_password xxxx                \
 # --wp_web_admin_username xxxx      \
@@ -26,39 +26,39 @@ while [ $# -gt 0 ]; do
   if [[ ! ${1} =~ ^-- ]]; then
     echo "ERROR: line ${LINENO}: The parameter '${1}' is not a parameter option"
     exit 1
-  fi 
+  fi
 
   if [[ ${2} =~ ^-- ]]; then
     echo "ERROR: line ${LINENO}: The parameter '${2}' is not a parameter option"
     exit 1
-  fi 
+  fi
 
   case "$1" in
-    --url) 
+    --url)
       url=${2}
       ;;
-    --wp_db_name) 
-      wp_db_name=${2} 
+    --wp_db_name)
+      wp_db_name=${2}
       ;;
-    --db_username) 
-      db_username=${2} 
+    --db_username)
+      db_username=${2}
       ;;
-    --db_password) 
-      db_password=${2} 
+    --db_password)
+      db_password=${2}
       ;;
-    --wp_web_admin_username) 
+    --wp_web_admin_username)
       wp_web_admin_username=${2}
       ;;
-    --wp_web_admin_user_password) 
+    --wp_web_admin_user_password)
       wp_web_admin_user_password=${2}
       ;;
-    --slogan) 
+    --slogan)
       slogan=${2}
       ;;
-    --dropbox_folder_link) 
+    --dropbox_folder_link)
       dropbox_folder_link=${2}
       ;;
-    *) 
+    *)
       echo "ERROR: The parameter ${1} is not a valid parameter option"
       exit 1
       ;;
@@ -74,7 +74,7 @@ done
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
 yum install -y git          || { echo "ERROR: failed to install git"; exit 1; }
-yum install -y epel-release || { echo "ERROR: failed to install epel-release"; exit 1; } 
+yum install -y epel-release || { echo "ERROR: failed to install epel-release"; exit 1; }
 yum install -y vim          || { echo "ERROR: failed to install vim"; exit 1; }
 yum install -y wget         || { echo "ERROR: failed to install wget"; exit 1; }
 yum install -y augeas       || { echo "ERROR: failed to install augeas"; exit 1; }
@@ -137,14 +137,14 @@ systemctl start mariadb || exit 1
 echo "db_username is ${db_username}"
 echo "db_password is ${db_password}"
 
-# note: you can user curly brackets here. 
+# note: you can user curly brackets here.
 mysql -u root -e "CREATE USER '$db_username'@'localhost' IDENTIFIED BY '$db_password';" || exit 1
 mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 # another approach that should work
 #query="CREATE USER '${db_username}'@'localhost' IDENTIFIED BY '${db_password}';"
 #echo $query > /tmp/createuser.sql
-#mysql --user='root' < /tmp/createuser.sql 
+#mysql --user='root' < /tmp/createuser.sql
 #mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 # This creates new db
@@ -229,8 +229,8 @@ su -s /bin/bash apache -c 'wp plugin delete hello --path=/var/www/html/'  # remo
 su -s /bin/bash apache -c 'wp plugin delete akismet --path=/var/www/html/'      # removing default plugin
 
 su -s /bin/bash apache -c 'wp plugin install coming-soon --activate --path=/var/www/html/'
-su -s /bin/bash apache -c '# wp plugin install custom-admin-bar --activate --path=/var/www/html/'  # broken - try installing manually. 
-# wp plugin install 'contact-form-7' --activate --path='/var/www/html/'     # gives a warning message, try installing manually. 
+su -s /bin/bash apache -c '# wp plugin install custom-admin-bar --activate --path=/var/www/html/'  # broken - try installing manually.
+# wp plugin install 'contact-form-7' --activate --path='/var/www/html/'     # gives a warning message, try installing manually.
 su -s /bin/bash apache -c 'wp plugin install custom-menu-wizard --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install disable-comments --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install display-widgets --activate --path=/var/www/html/'
@@ -238,7 +238,7 @@ su -s /bin/bash apache -c 'wp plugin install duplicate-post --activate --path=/v
 su -s /bin/bash apache -c 'wp plugin install google-analytics-for-wordpress --activate --path=/var/www/html/'
 # wp plugin install 'save-grab' --activate --path='/var/www/html/'           # broken - try installing manually.
 su -s /bin/bash apache -c 'wp plugin install olevmedia-shortcodes --activate --path=/var/www/html/'
-# su -s /bin/bash apache -c 'wp plugin install image-elevator --activate --path=/var/www/html/'         # not best practice to use this. will end up making backups too big. 
+# su -s /bin/bash apache -c 'wp plugin install image-elevator --activate --path=/var/www/html/'         # not best practice to use this. will end up making backups too big.
 su -s /bin/bash apache -c 'wp plugin install post-content-shortcodes --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install post-editor-buttons-fork --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install publish-view --activate --path=/var/www/html/'
@@ -295,11 +295,11 @@ done
 
 
 
-# needed to apply the following otherwise unable to bulk delete lots of posts 
+# needed to apply the following otherwise unable to bulk delete lots of posts
 echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf || exit 1
 systemctl restart httpd  || exit 1
 
-# The following is needed for our custom permalink structure to work. 
+# The following is needed for our custom permalink structure to work.
 augtool <<-EOF
 ls /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
 print /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::directive='AllowOverride']
@@ -360,9 +360,14 @@ cp * /usr/bin
 
 echo '127.0.0.1  codingbee.net' >> /etc/hosts
 
+# http://elementalselenium.com/tips/38-headless
+yum -y install rubygems ruby-devel
+yum -y groupinstall 'Development Tools'
+yum -y install Xvfb firefox
 
+gem install headless
+gem install selenium-webdriver
 
-# this is a wip
 # ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 
@@ -376,7 +381,4 @@ rm /var/www/html/codingbee-pages-exports.zip
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
 # e.g. the following will pull down the userdata:
 curl http://169.254.169.254/metadata/v1/user-data
- 
-
-
 
