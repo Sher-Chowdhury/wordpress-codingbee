@@ -15,10 +15,14 @@ driver = Selenium::WebDriver.for :firefox
 # http://queirozf.com/entries/selenium-webdriver-with-ruby-examples-and-general-reference
 wait = Selenium::WebDriver::Wait.new(:timeout => 30)
 
+puts 'Created firefox session successfully'
+
+
 ############################################################################
 ########################### Log into wordpress #############################
 ############################################################################
 driver.navigate.to "http://codingbee.net/wp-login.php"
+wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
 
 user_login_element = driver.find_element(:id, 'user_login')
 
@@ -32,8 +36,10 @@ user_password_element.send_keys 'password'
 user_password_element.submit
 
 
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/index.php'}
 sleep(5)
 
+puts 'Successfully logged into wordpress'
 
 ############################################################################
 ################ Upload xml-to-post-mapping-template #######################
@@ -41,14 +47,17 @@ sleep(5)
 
 
 driver.navigate.to "http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings"
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings'}
 
 upload_field = driver.find_element(:name, "template_file")
 
 upload_field.send_keys '/root/downloads/wp-all-import-exports/import-and-export-plugin-templates/import-templates/import-codingbee-posts-template.txt'
 
+
 driver.find_element(:name, "import_templates").click
+sleep(10)
 
-
+puts 'Successfully uploaded xml mapping template'
 
 ############################################################################
 #################### Upload the posts xml payload ##########################
@@ -57,6 +66,8 @@ driver.find_element(:name, "import_templates").click
 
 
 driver.navigate.to "http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import"
+
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import'}
 
 driver.find_element(:class, "wpallimport-url-type").click
 
@@ -92,7 +103,7 @@ dropdownmenu = driver.find_element(:id, "load_template")
 option = Selenium::WebDriver::Support::Select.new(dropdownmenu)
 
 
-option.select_by(:text, 'import-codingbee-posts')
+option.select_by(:text, "import-codingbee-posts")
 
 sleep(5)
 
