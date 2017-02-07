@@ -1,12 +1,23 @@
 require 'selenium-webdriver'
+require 'headless'
 
 
+############################################################################
+######################## Start Firefox session #############################
+############################################################################
+
+headless = Headless.new
+
+
+headless.start
+driver = Selenium::WebDriver.for :firefox
+
+# http://queirozf.com/entries/selenium-webdriver-with-ruby-examples-and-general-reference
+wait = Selenium::WebDriver::Wait.new(:timeout => 30)
 
 ############################################################################
 ########################### Log into wordpress #############################
 ############################################################################
-
-driver = Selenium::WebDriver.for :firefox
 driver.navigate.to "http://codingbee.net/wp-login.php"
 
 user_login_element = driver.find_element(:id, 'user_login')
@@ -33,7 +44,7 @@ driver.navigate.to "http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-sett
 
 upload_field = driver.find_element(:name, "template_file")
 
-upload_field.send_keys '/Users/schowdhury/Dropbox/codingbee/wp-all-import-exports/import-and-export-plugin-templates/import-templates/import-codingbee-posts-template.txt'
+upload_field.send_keys '/root/downloads/wp-all-import-exports/import-and-export-plugin-templates/import-templates/import-codingbee-posts-template.txt'
 
 driver.find_element(:name, "import_templates").click
 
@@ -68,11 +79,13 @@ sleep(5)
 
 driver.find_element(:id, "advanced_upload").click
 
-sleep(10)
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=element'}
+sleep(5)
 
 driver.find_element(:class, "wpallimport-large-button").click
 
-sleep(10)
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=template'}
+sleep(5)
 
 dropdownmenu = driver.find_element(:id, "load_template")
 
@@ -84,16 +97,26 @@ option.select_by(:text, 'import-codingbee-posts')
 sleep(5)
 
 driver.find_element(:class, "wpallimport-large-button").click
-
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=options'}
 sleep(5)
 
+driver.find_element(:class, "wpallimport-auto-detect-unique-key").click
+
+driver.save_screenshot('/var/www/html/screenshot1.png')
 driver.find_element(:name, "save_only").click
 
 sleep(5)
-
+driver.save_screenshot('/var/www/html/screenshot2.png')
 driver.find_element(:class, "add-new-h2").click
-sleep(5)
+sleep(20)
 driver.find_element(:class, "rad10").click
 
 # allow a minute for the actual import to take place.
 sleep(60)
+
+
+############################################################################
+########################## End Firefox session #############################
+############################################################################
+driver.quit
+headless.destroy

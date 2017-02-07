@@ -355,8 +355,7 @@ cp /root/downloads/wp-all-import-exports/codingbee-pages-exports.zip /var/www/ht
 gem install selenium-webdriver
 wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
 tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
-cd geckodriver-v0.14.0-linux64
-cp * /usr/bin
+cp geckodriver /usr/bin
 
 echo '127.0.0.1  codingbee.net' >> /etc/hosts
 
@@ -381,4 +380,3 @@ rm /var/www/html/codingbee-pages-exports.zip
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
 # e.g. the following will pull down the userdata:
 curl http://169.254.169.254/metadata/v1/user-data
-
