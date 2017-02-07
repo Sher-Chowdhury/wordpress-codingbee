@@ -360,7 +360,7 @@ yum -y install rubygems ruby-devel
 yum -y groupinstall 'Development Tools'
 yum -y install Xvfb firefox
 
-cd 
+cd /root
 gem install headless
 gem install selenium-webdriver
 
