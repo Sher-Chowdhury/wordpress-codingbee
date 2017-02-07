@@ -352,10 +352,6 @@ cp /root/downloads/wp-all-import-exports/codingbee-posts-exports.zip /var/www/ht
 cp /root/downloads/wp-all-import-exports/codingbee-pages-exports.zip /var/www/html/
 
 
-gem install selenium-webdriver
-wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
-tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
-cp geckodriver /usr/bin
 
 echo '127.0.0.1  codingbee.net' >> /etc/hosts
 
@@ -364,10 +360,15 @@ yum -y install rubygems ruby-devel
 yum -y groupinstall 'Development Tools'
 yum -y install Xvfb firefox
 
+cd 
 gem install headless
 gem install selenium-webdriver
 
-# ruby /root/wordpress-codingbee/scripts/import_posts.rb
+wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
+tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
+cp geckodriver /usr/bin
+
+ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 
 rm /var/www/html/codingbee-posts-exports.zip
