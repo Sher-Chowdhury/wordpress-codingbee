@@ -91,7 +91,14 @@ driver.find_element(:class, "wpallimport-download-from-url").click
 puts 'INFO: Clicked on the next button to go to page 2 in order to view sample data'
 sleep(5)
 
-driver.find_element(:id, "advanced_upload").click
+advanced_upload_button = driver.find_element(:id, "advanced_upload")
+
+advanced_upload_button.location_once_scrolled_into_view
+
+
+driver.save_screenshot('/var/www/html/screenshot4.png')
+
+advanced_upload_button.click
 
 puts 'INFO: Clicked on the next button to go to page 3, to specify mappings'
 
