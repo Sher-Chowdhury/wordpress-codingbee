@@ -111,19 +111,19 @@ driver.find_element(:class, "wpallimport-large-button").click
 wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=template'}
 sleep(5)
 
+next_button = driver.find_element(:class, "wpallimport-large-button")
+
+next_button.location_once_scrolled_into_view
+
+
 dropdownmenu = driver.find_element(:id, "load_template")
 
 option = Selenium::WebDriver::Support::Select.new(dropdownmenu)
 
 
-option.select_by(:text, "import-codingbee-posts")
+option.select_by(:value, "import-codingbee-posts")
 
 sleep(5)
-
-next_button = driver.find_element(:class, "wpallimport-large-button")
-
-next_button.location_once_scrolled_into_view
-
 
 driver.save_screenshot('/var/www/html/screenshot3.png')
 
