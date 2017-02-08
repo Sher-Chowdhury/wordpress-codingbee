@@ -15,7 +15,7 @@ driver = Selenium::WebDriver.for :firefox
 # http://queirozf.com/entries/selenium-webdriver-with-ruby-examples-and-general-reference
 wait = Selenium::WebDriver::Wait.new(:timeout => 30)
 
-puts 'Created firefox session successfully'
+puts 'INFO: Created firefox session successfully'
 
 
 ############################################################################
@@ -36,10 +36,10 @@ user_password_element.send_keys 'password'
 user_password_element.submit
 
 
-wait.until { driver.current_url=='http://codingbee.net/wp-admin/index.php'}
+wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
 sleep(5)
 
-puts 'Successfully logged into wordpress'
+puts 'INFO: Successfully logged into wordpress'
 
 ############################################################################
 ################ Upload xml-to-post-mapping-template #######################
