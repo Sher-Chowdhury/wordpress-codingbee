@@ -107,7 +107,15 @@ option.select_by(:text, "import-codingbee-posts")
 
 sleep(5)
 
-driver.find_element(:class, "wpallimport-large-button").click
+next_button = driver.find_element(:class, "wpallimport-large-button")
+
+next_button.location_once_scrolled_into_view
+
+
+driver.save_screenshot('/var/www/html/screenshot3.png')
+
+next_button.click
+
 wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=options'}
 sleep(5)
 
