@@ -349,7 +349,6 @@ chown apache:apache /var/www/html/.htaccess
 
 
 cp /root/downloads/wp-all-import-exports/codingbee-posts-exports.zip /var/www/html/
-cp /root/downloads/wp-all-import-exports/codingbee-pages-exports.zip /var/www/html/
 
 
 
@@ -371,8 +370,8 @@ cp geckodriver /usr/bin
 ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 
-rm /var/www/html/codingbee-posts-exports.zip
-rm /var/www/html/codingbee-pages-exports.zip
+# rm /var/www/html/codingbee-posts-exports.zip
+# rm /var/www/html/codingbee-pages-exports.zip
 
 
 
