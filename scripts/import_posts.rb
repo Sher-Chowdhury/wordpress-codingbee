@@ -125,12 +125,16 @@ option.select_by(:value, "import-codingbee-posts")
 
 sleep(5)
 
+puts 'INFO: Selected the matching template.'
 driver.save_screenshot('/var/www/html/screenshot3.png')
 
 next_button.click
 
 wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=options'}
 sleep(5)
+
+
+
 
 driver.find_element(:class, "wpallimport-auto-detect-unique-key").click
 
