@@ -57,7 +57,7 @@ upload_field.send_keys '/root/downloads/wp-all-import-exports/import-and-export-
 driver.find_element(:name, "import_templates").click
 sleep(10)
 
-puts 'Successfully uploaded xml mapping template'
+puts 'INFO: Successfully uploaded xml mapping template'
 
 ############################################################################
 #################### Upload the posts xml payload ##########################
@@ -71,6 +71,7 @@ wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=p
 
 driver.find_element(:class, "wpallimport-url-type").click
 
+puts 'INFO: Clicked on the import via url option button'
 
 xml_payload_input_element = driver.find_element(:name, 'url')
 
@@ -83,12 +84,16 @@ xml_payload_input_element.send_keys 'h'
 
 xml_payload_input_element.send_keys 'ttp://codingbee.net/codingbee-posts-exports.zip'
 
+puts 'INFO: Entered the url'
 
 driver.find_element(:class, "wpallimport-download-from-url").click
 
+puts 'INFO: Clicked on the next button to go to page 2 in order to view sample data'
 sleep(5)
 
 driver.find_element(:id, "advanced_upload").click
+
+puts 'INFO: Clicked on the next button to go to page 3, to specify mappings'
 
 wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import&action=element'}
 sleep(5)
