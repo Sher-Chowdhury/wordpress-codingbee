@@ -1,5 +1,5 @@
 require 'selenium-webdriver'
-require 'headless'
+#require 'headless'   # using phantomjs instead since it can do whole page screenshots
 
 
 ############################################################################
