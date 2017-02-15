@@ -360,15 +360,21 @@ yum -y groupinstall 'Development Tools'
 yum -y install Xvfb firefox
 
 cd /root
-gem install headless
+# gem install headless   # using phantomjs instead of this
 gem install selenium-webdriver
 
-wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz
-tar -xvzf geckodriver-v0.14.0-linux64.tar.gz
-cp geckodriver /usr/bin
+#wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz    # this is headless gem dependency
+#tar -xvzf geckodriver-v0.14.0-linux64.tar.gz   # this is a headless gem dependency
+#cp geckodriver /usr/bin    # this is a headless gem dependency
 
+wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+tar -xjvf phantomjs-2.1.1-linux-x86_64.tar.bz2
+cp ./phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
+
+phantomjs --webdriver=2816 1>/dev/null &
 ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
+pkill phantomjs
 
 # rm /var/www/html/codingbee-posts-exports.zip
 # rm /var/www/html/codingbee-pages-exports.zip
