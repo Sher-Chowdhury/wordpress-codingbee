@@ -28,8 +28,21 @@ puts driver.manage.window.size
 ############################################################################
 ########################### Log into wordpress #############################
 ############################################################################
-driver.navigate.to "http://codingbee.net/wp-login.php"
-wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
+
+
+# first attempt to login fails, so making a few attempts
+begin
+  retries ||= 0
+  puts "try ##{ retries }"
+  sleep(5)
+  driver.navigate.to "http://codingbee.net/wp-login.php"
+  wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
+rescue
+  retry if (retries += 1) < 3
+end
+
+
+
 
 user_login_element = driver.find_element(:id, 'user_login')
 
@@ -51,7 +64,7 @@ puts 'INFO: Successfully logged into wordpress'
 ############################################################################
 ################ Upload xml-to-post-mapping-template #######################
 ############################################################################
-=begin
+#=begin
 
 driver.navigate.to "http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings"
 wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings'}
@@ -65,7 +78,7 @@ driver.find_element(:name, "import_templates").click
 sleep(10)
 
 puts 'INFO: Successfully uploaded xml mapping template'
-=end
+#=end
 ############################################################################
 #################### Upload the posts xml payload ##########################
 ############################################################################
