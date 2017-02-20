@@ -12,11 +12,16 @@ require 'selenium-webdriver'
 #headless.start
 #driver = Selenium::WebDriver.for :firefox
 
+sleep(20)
+puts 'about to start the selenium script'
 driver = Selenium::WebDriver.for(:remote , :url=> "http://localhost:2816")
 
+sleep(20)
 
+puts 'About to set wait time to 30 seconds'
 # http://queirozf.com/entries/selenium-webdriver-with-ruby-examples-and-general-reference
 wait = Selenium::WebDriver::Wait.new(:timeout => 30)
+puts 'Finished setting wait time'
 
 puts 'INFO: Created new browser session successfully'
 
