@@ -57,8 +57,8 @@ user_login_element.send_keys 'sher'
 user_password_element = driver.find_element(:id, 'user_pass')
 
 
-#user_password_element.send_keys 'password'
-user_password_element.submit
+user_password_element.send_keys 'password'
+#user_password_element.submit
 
 driver.find_element(:id, "wp-submit").click
 
