@@ -12,11 +12,11 @@ require 'selenium-webdriver'
 #headless.start
 #driver = Selenium::WebDriver.for :firefox
 
-sleep(20)
+sleep(5)
 puts 'about to start the selenium script'
 driver = Selenium::WebDriver.for(:remote , :url=> "http://localhost:2816")
 
-sleep(20)
+sleep(5)
 
 puts 'About to set wait time to 30 seconds'
 # http://queirozf.com/entries/selenium-webdriver-with-ruby-examples-and-general-reference
@@ -61,7 +61,14 @@ user_password_element.send_keys 'password'
 user_password_element.submit
 
 
-wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
+begin
+  retries ||= 0
+  puts "Waiting for http://codingbee.net/wp-admin/ to laod - try ##{ retries }"
+  sleep(5)
+  wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
+rescue
+  retry if (retries += 1) < 10
+end
 sleep(5)
 
 puts 'INFO: Successfully logged into wordpress'
