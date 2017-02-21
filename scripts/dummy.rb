@@ -1,6 +1,8 @@
 require 'selenium-webdriver'
 #require 'headless'   # using phantomjs instead since it can do whole page screenshots
 
+# Added the following line to output to jenkins console in realtime. 
+STDOUT.sync = true
 
 ############################################################################
 ######################## Start Firefox session #############################
