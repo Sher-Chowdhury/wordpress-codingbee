@@ -1,7 +1,8 @@
 #!/bin/bash
 
 IFS=$'\n'
-for csvfile in `ls /root/downloads/menus`; do
+cd /root/downloads/menus
+for csvfile in `ls *.csv`; do
   menu_title=`basename ${csvfile} .csv`
   echo "About to create menu called ${menu_title}"
   menu_id=`wp menu create "${menu_title}" --porcelain --path=/var/www/html`
