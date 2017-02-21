@@ -10,9 +10,9 @@ for csvfile in `ls *.csv`; do
 
   for line in `cat /root/downloads/menus/$csvfile`; do
     echo "about to process: $line"
-    post_title=`echo ${line} | cut -d',' -f1`
-    parent_post_title=`echo ${line} | cut -d',' -f2`
-    menu_label=`echo ${line} | cut -d',' -f3`
+    post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}' 
+    parent_post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $2}'`
+    menu_label=`echo ${line} | awk 'BEGIN {FS=":::"} {print $3}'`
 
     #echo "The post title is ${post_title}"
     #echo "The parent post title is ${parent_post_title}"
