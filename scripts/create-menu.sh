@@ -10,7 +10,7 @@ for csvfile in `ls *.csv`; do
 
   for line in `cat /root/downloads/menus/$csvfile`; do
     echo "about to process: $line"
-    post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}' 
+    post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}'`
     parent_post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $2}'`
     menu_label=`echo ${line} | awk 'BEGIN {FS=":::"} {print $3}'`
 
