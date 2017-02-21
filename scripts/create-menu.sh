@@ -10,14 +10,13 @@ for csvfile in `ls *.csv`; do
 
   for line in `cat /root/downloads/menus/$csvfile`; do
     echo "about to process: $line"
-    post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}'`
-    parent_post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $2}'`
-    menu_label=`echo ${line} | awk 'BEGIN {FS=":::"} {print $3}'`
+    post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
+    parent_post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $2}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
+    menu_label=`echo ${line} | awk 'BEGIN {FS=":::"} {print $3}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
 
-    #echo "The post title is ${post_title}"
-    #echo "The parent post title is ${parent_post_title}"
-    #echo "The menu item label is ${menu_label}"
-
+    echo "The post title is ${post_title}"
+    echo "The parent post title is ${parent_post_title}"
+    echo "The menu item label is ${menu_label}"
 
     if [[ ${parent_post_title} == 'null' && ${menu_label} == 'null' ]] ; then
        post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2;}'`
