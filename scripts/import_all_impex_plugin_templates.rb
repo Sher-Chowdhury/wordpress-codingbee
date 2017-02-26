@@ -51,13 +51,14 @@ end
 begin
   retries ||= 0
   puts "Waiting for http://codingbee.net/wp-admin/ to laod - try ##{ retries }"
+  driver.save_screenshot("/var/www/html/screenshot-admin#{retries}.png")
 
   user_login_element = driver.find_element(:id, 'user_login')
   user_login_element.send_keys 'sher'
   user_password_element = driver.find_element(:id, 'user_pass')
   user_password_element.send_keys 'password'
-  driver.save_screenshot("/var/www/html/screenshot-admin#{retries}.png")
-  puts driver.current_url
+  driver.find_element(:id, "wp-submit").click
+  puts "current url is still driver.current_url"
   sleep(5)
   wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
 rescue

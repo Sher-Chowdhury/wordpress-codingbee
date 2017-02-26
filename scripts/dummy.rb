@@ -57,7 +57,7 @@ user_login_element.send_keys 'sher'
 
 
 user_password_element = driver.find_element(:id, 'user_pass')
-
+sleep 5
 
 user_password_element.send_keys 'password'
 #user_password_element.submit
