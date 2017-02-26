@@ -15,7 +15,7 @@ STDOUT.sync = true
 #driver = Selenium::WebDriver.for :firefox
 
 sleep(5)
-puts 'about to start the selenium script'
+puts 'INFO: about to start the impex template import selenium script'
 driver = Selenium::WebDriver.for(:remote , :url=> "http://localhost:2816")
 
 sleep(5)

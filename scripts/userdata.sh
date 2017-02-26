@@ -373,7 +373,7 @@ cp ./phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
 
 phantomjs --webdriver=2816 1>/dev/null &
 ruby /root/wordpress-codingbee/scripts/dummy.rb
-rugy /root/wordpress-codingbee/scripts/import_all_impex_plugin_templates.rb
+ruby /root/wordpress-codingbee/scripts/import_all_impex_plugin_templates.rb
 ruby /root/wordpress-codingbee/scripts/import_posts.rb
 
 pkill phantomjs
