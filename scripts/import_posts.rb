@@ -79,27 +79,8 @@ sleep(5)
 puts 'INFO: Successfully logged into wordpress'
 
 ############################################################################
-################ Upload xml-to-post-mapping-template #######################
-############################################################################
-#=begin
-
-driver.navigate.to "http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings"
-wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings'}
-
-upload_field = driver.find_element(:name, "template_file")
-
-upload_field.send_keys '/root/downloads/wp-all-import-exports/import-and-export-plugin-templates/import-templates/import-codingbee-posts-template.txt'
-
-
-driver.find_element(:name, "import_templates").click
-sleep(10)
-
-puts 'INFO: Successfully uploaded xml mapping template'
-#=end
-############################################################################
 #################### Upload the posts xml payload ##########################
 ############################################################################
-
 
 
 driver.navigate.to "http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-import"
