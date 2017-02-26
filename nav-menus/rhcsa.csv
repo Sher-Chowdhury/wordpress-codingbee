@@ -1,0 +1,122 @@
+RHCSA - About this Course                      :::    null                            :::    null
+RHCSA - Exam Objectives                        :::    RHCSA - About this Course       :::    null
+RHCSA - 5 Critical things you need to know       :::    RHCSA - About this Course       :::    null
+RHCSA - List of all resources that needs to be persistant       :::    RHCSA - About this Course       :::    null
+RHCSA - Installing RHEL       :::    null       :::    null
+RHCSA - Automating RHEL installations using Kickstart       :::    RHCSA - Installing RHEL       :::    null
+RHCSA - How to create Kickstart files       :::    RHCSA - Installing RHEL       :::    null
+RHCSA - The Bash Terminal       :::    null       :::    null
+RHCSA - Command Line shortcuts       :::    RHCSA - The Bash Terminal       :::    null
+RHCSA - Overview of the file system hierarchy       :::    RHCSA - The Bash Terminal       :::    null
+RHCSA - Standard Outputs, Inputs, and Errors       :::    null       :::    null
+RHCSA - Piping and Redirection       :::    null       :::    null
+RHCSA - The grep command       :::    null       :::    null
+RHCSA - Accessing built-in help guides                                        :::    null       :::    null
+RHCSA - Binary files (aka executables)                                        :::    null       :::    null
+RHCSA - Using the Linux find command                                          :::    null       :::    null
+RHCSA - Hard and Soft Links                                                   :::    null       :::    null
+RHCSA - Compressing files and folders using gzip and tar                      :::    null       :::    null
+RHCSA -  Secure Shell (SSH)                                                    :::    null       :::    null
+RHCSA - SSH fingerprint authentication                                        :::    RHCSA -  Secure Shell (SSH)       :::    null
+RHCSA - Create SSH session without typing a password (Public/Private Key Authentication)       :::    RHCSA -  Secure Shell (SSH)       :::    null
+RHCSA - Copying files from one server to another using SCP       :::    RHCSA -  Secure Shell (SSH)       :::    null
+RHCSA - Adding, modifying, and deleting users       :::    null       :::    null
+RHCSA - Creating, modifying, and deleting groups       :::    null       :::    null
+RHCSA - Password properties (passwd and chage commands)       :::    null       :::    null
+RHCSA - LDAP Overview       :::    null       :::    null
+RHCSA - Setting up an LDAP client       :::    RHCSA - LDAP Overview       :::    null
+RHCSA - Automounting the home directory       :::    RHCSA - LDAP Overview       :::    null
+RHCSA - NFS and CIFS (remote folders)       :::    null       :::    null
+RHCSA - Accessing remote NFS folders and CIFS folders       :::    RHCSA - NFS and CIFS (remote folders)       :::    null
+RHCSA - Automounting remotely shared folders (NFS and CIFS)       :::    RHCSA - NFS and CIFS (remote folders)       :::    null
+RHCSA - File and Folder Permissions       :::    null       :::    null
+RHCSA - User mask (umask)       :::    RHCSA - File and Folder Permissions       :::    null
+RHCSA - Special File and Folder Permissions       :::    RHCSA - File and Folder Permissions       :::    null
+RHCSA - Access Control List (ACL)       :::    RHCSA - File and Folder Permissions       :::    null
+RHCSA - The ACL’s mask setting       :::    RHCSA - File and Folder Permissions       :::    null
+RHCSA - Applying ACLs to directories       :::    RHCSA - File and Folder Permissions       :::    null
+RHCSA - Networking basics       :::    null       :::    null
+RHCSA - Configuring hostnames and DNS       :::    RHCSA - Networking basics       :::    null
+RHCSA - The “ip” command       :::    RHCSA - Networking basics       :::    null
+RHCSA - Network Interface Card (NIC)       :::    RHCSA - Networking basics       :::    null
+RHCSA - Connections config files       :::    RHCSA - Networking basics       :::    null
+RHCSA - Network Manager (including nmcli and nmtui)       :::    RHCSA - Networking basics       :::    null
+RHCSA - The concept of default routes and DNS       :::    RHCSA - Networking basics       :::    null
+RHCSA - Handy command line utilities for network troubleshooting       :::    RHCSA - Networking basics       :::    null
+RHCSA - Shell Jobs       :::    null       :::    null
+RHCSA - Memory usage       :::    null       :::    null
+RHCSA - Processes       :::    null       :::    null
+RHCSA - Monitoring system load using the Top command       :::    RHCSA - Processes       :::    null
+RHCSA - Signals and stopping processes       :::    RHCSA - Processes       :::    null
+RHCSA - Setting process priorities by setting nice values       :::    RHCSA - Processes       :::    null
+RHCSA - Package management with yum and rpm       :::    null       :::    null
+RHCSA - Using RPM       :::    RHCSA - Package management with yum and rpm       :::    null
+RHCSA - Yum Repositories       :::    RHCSA - Package management with yum and rpm       :::    null
+RHCSA - Yum Repository GPG keys       :::    RHCSA - Package management with yum and rpm       :::    null
+RHCSA - Create a local Yum repo from an ISO file       :::    RHCSA - Package management with yum and rpm       :::    null
+RHCSA - Using Yum       :::    RHCSA - Package management with yum and rpm       :::    null
+RHCSA - Query packages before installing them       :::    RHCSA - Package management with yum and rpm       :::    null
+RHCSA - Managing KVM based Virtual Machines       :::    null       :::    null
+RHCSA - virsh and virt-manager       :::    RHCSA - Managing KVM based Virtual Machines       :::    null
+RHCSA - Autostarting a vm after a reboot       :::    RHCSA - Managing KVM based Virtual Machines       :::    null
+RHCSA - Scheduling jobs       :::    null       :::    null
+RHCSA - Scheduling jobs with cron       :::    RHCSA - Scheduling jobs       :::    null
+RHCSA - Scheduling jobs with Anacron       :::    RHCSA - Scheduling jobs       :::    null
+RHCSA - Scheduling jobs with the “at” utility       :::    RHCSA - Scheduling jobs       :::    null
+RHCSA - Controlling who is allowed to schedule jobs       :::    RHCSA - Scheduling jobs       :::    null
+RHCSA - Rsyslogd and Journald       :::    null       :::    null
+RHCSA - Rsyslog logging       :::    RHCSA - Rsyslogd and Journald       :::    null
+RHCSA - Using Journald       :::    RHCSA - Rsyslogd and Journald       :::    null
+RHCSA - understanding Logrotate       :::    RHCSA - Rsyslogd and Journald       :::    null
+RHCSA - Overview of Partitions and Logical Volumes       :::    null       :::    null
+RHCSA - Creating Partitions       :::    RHCSA - Overview of Partitions and Logical Volumes       :::    null
+RHCSA - Installing a Filesystem onto a partition (aka formatting)       :::    RHCSA - Overview of Partitions and Logical Volumes       :::    null
+RHCSA - mounting a partition       :::    RHCSA - Overview of Partitions and Logical Volumes       :::    null
+RHCSA - Encrypted Filesystems       :::    RHCSA - Overview of Partitions and Logical Volumes       :::    null
+RHCSA - Automounting Encrypted Filesystems during boot time       :::    RHCSA - Overview of Partitions and Logical Volumes       :::    null
+RHCSA - Logical Volume Management (LVM) Overview       :::    null       :::    null
+RHCSA - Creating a Logical Volume       :::    RHCSA - Logical Volume Management (LVM) Overview       :::    null
+RHCSA - LVM names and the Device Mapper       :::    RHCSA - Logical Volume Management (LVM) Overview       :::    null
+RHCSA - Creating swap disks       :::    RHCSA - Logical Volume Management (LVM) Overview       :::    null
+RHCSA - Extending and shrinking a Logical Volume       :::    RHCSA - Logical Volume Management (LVM) Overview       :::    null
+RHCSA - Deleting a Physical Volume       :::    RHCSA - Logical Volume Management (LVM) Overview       :::    null
+RHCSA - Linux Kernal Overview       :::    null       :::    null
+RHCSA - Update the kernel       :::    RHCSA - Linux Kernal Overview       :::    null
+RHCSA - Setting the default kernel version       :::    RHCSA - Linux Kernal Overview       :::    null
+RHCSA - Kernel Modules       :::    RHCSA - Linux Kernal Overview       :::    null
+RHCSA - Kernel Parameters (aka system settings)       :::    RHCSA - Linux Kernal Overview       :::    null
+RHCSA - The Boot Process       :::    null       :::    null
+RHCSA - Understanding GRUB2       :::    RHCSA - The Boot Process       :::    null
+RHCSA - Resetting the root password (via GRUB2)       :::    RHCSA - The Boot Process       :::    null
+RHCSA - Understanding systemd       :::    null       :::    null
+RHCSA - The anatomy of a unit file       :::    RHCSA - Understanding systemd        :::    null
+RHCSA - The “target” unit       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - The emergency.target       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - Adjusting a unit’s settings       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - Managing Services with systemctl       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - Mount Filesystems during boot time using Systemd       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - Automounting using systemd and autofs       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - SELinux Overview       :::    null       :::    null
+RHCSA - SELinux Modes       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - How does SELinux work?       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Viewing SELinux Contexts       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - SELinux Policy Types and SELinux Attributes       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Editing a file’s Security Context       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - SELinux Booleans       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - The “user”, “role” and “level” security attributes       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Active Vector Cache (AVC)       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - SELinux extended man pages       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - SELinux Log Files       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Copying verses moving files in Linux       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Common SELinux network service related problems       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - SELInux Summary       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Using Firewalld       :::    null       :::    null
+RHCSA - Services that makes use of a network       :::    null       :::    null
+RHCSA - The ss utility       :::    RHCSA - Services that makes use of a network       :::    null
+RHCSA - Installing and setting up the Apache web server       :::    RHCSA - Services that makes use of a network       :::    null
+RHCSA - Setting up an FTP server       :::    RHCSA - Services that makes use of a network       :::    null
+RHCSA - NTP, system time, and the Hardware clock       :::    RHCSA - Services that makes use of a network       :::    null
+RHCSA - Starting a “login shell” or “interactive shell” using the switch user (su) command       :::    null       :::    null
+RHCSA - missing topics       :::    null       :::    null
+RHCSA - Interactive shells and login shells       :::    null       :::    null
+Linux - Introducing “VIM”, a powerful text editor       :::    null       :::    null
