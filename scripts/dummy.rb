@@ -72,7 +72,7 @@ begin
   sleep(5)
   wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
 rescue
-  retry if (retries += 1) < 10
+  retry if (retries += 1) < 3 
 end
 sleep(5)
 
