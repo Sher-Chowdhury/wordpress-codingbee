@@ -1,14 +1,14 @@
 #!/bin/bash
 
 IFS=$'\n'
-cd /root/downloads/menus
+cd /root/wordpress-codingbee/nav-menus
 for csvfile in `ls *.csv`; do
   menu_title=`basename ${csvfile} .csv`
   echo "About to create menu called ${menu_title}"
   menu_id=`wp menu create "${menu_title}" --porcelain --path=/var/www/html`
   echo "The menu ${menu_title} has the id: ${menu_id}"
 
-  for line in `cat /root/downloads/menus/$csvfile`; do
+  for line in `cat /root/wordpress-codingbee/nav-menus/$csvfile`; do
     echo "about to process: $line"
     post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
     parent_post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $2}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
