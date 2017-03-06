@@ -193,6 +193,15 @@ rm download.zip || exit 1
 
 chown -R apache:apache /root/downloads
 
+cd /root/downloads/premium-plugins/backupbuddy
+
+cp backup-codingbee_net.zip /var/www/html/
+cp importbuddy.php /var/www/html/
+
+chown -R apache:apache /var/www/html/
+
+
+
 
 exit 0
 
