@@ -181,7 +181,7 @@ php --ini
 
 sed -i 's/^memory_limit.*/memory_limit = 512M/g' /etc/php.ini
 sed -i 's/^upload_max_filesize.*/upload_max_filesize = 100M/g' /etc/php.ini
-sed -i 's/^post_max_size.*/post_max_size = 100M/g' /etc/php.ini
+sed -i 's/^post_max_size.*/post_max_size = 200M/g' /etc/php.ini
 sed -i 's/^max_execution_time.*/max_execution_time = 300/g' /etc/php.ini
 systemctl restart httpd || exit 1
 
