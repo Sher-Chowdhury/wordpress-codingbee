@@ -196,7 +196,7 @@ chown -R apache:apache /root/downloads
 
 cd /root/downloads/premium-plugins/backupbuddy
 
-cp backup-codingbee_net.zip /var/www/html/
+cp backup-codingbee_net* /var/www/html/
 cp importbuddy.php /var/www/html/
 
 chown -R apache:apache /var/www/html/
