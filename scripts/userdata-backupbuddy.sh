@@ -185,6 +185,13 @@ sed -i 's/^max_execution_time.*/max_execution_time = 300/g' /etc/php.ini
 systemctl restart httpd || exit 1
 
 
+mkdir /root/downloads  || exit 1
+cd /root/downloads || exit 1
+curl -L ${dropbox_folder_link} > /root/downloads/download.zip || exit 1
+unzip download.zip -x / || exit 1
+rm download.zip || exit 1
+
+chown -R apache:apache /root/downloads
 
 
 exit 0
