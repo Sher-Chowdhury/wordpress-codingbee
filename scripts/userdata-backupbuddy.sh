@@ -78,7 +78,8 @@ yum install -y epel-release || { echo "ERROR: failed to install epel-release"; e
 yum install -y vim          || { echo "ERROR: failed to install vim"; exit 1; }
 yum install -y wget         || { echo "ERROR: failed to install wget"; exit 1; }
 yum install -y augeas       || { echo "ERROR: failed to install augeas"; exit 1; }
-yum install -y unzip        || { echo "ERROR: failed to install augeas"; exit 1; }
+yum install -y zip          || { echo "ERROR: failed to install zip"; exit 1; }
+yum install -y unzip        || { echo "ERROR: failed to install unzip"; exit 1; }
 #yum install -y php-gd      || { echo "ERROR: failed to install php-gd"; exit 1; }
 
 echo -e "\n\n\n" | ssh-keygen -P ""
