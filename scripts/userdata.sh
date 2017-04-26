@@ -62,6 +62,9 @@ while [ $# -gt 0 ]; do
     --dropbox_folder_link)
       dropbox_folder_link=${2}
       ;;
+    --wp_web_guest_admin_user_password)
+      wp_web_guest_admin_user_password=${2}
+      ;;
     --follow_up_userdata)
       follow_up_userdata=${2}
       ;;
