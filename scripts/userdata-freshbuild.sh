@@ -39,7 +39,10 @@ PHP"
 
 
 su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${url}\" --title=Codingbee --admin_user=${wp_web_admin_username} --admin_password=${wp_web_admin_user_password} --admin_email=YOU@YOURDOMAIN.com"
-su -s /bin/bash apache -c "wp core install --path=/var/www/html --url=\"${url}\" --title=Codingbee --admin_user=guestadmin --admin_password=${wp_web_guest_admin_user_password} --admin_email=YOU@YOURDOMAIN.com"
+
+# note, a random password is generated for the new user.
+su -s /bin/bash apache -c "wp user create guestadmin guestadmin@example.com --role=administrator --path=/var/www/html"
+
 
 su -s /bin/bash apache -c "wp option update blogdescription \"$slogan\" --path=/var/www/html/"
 
