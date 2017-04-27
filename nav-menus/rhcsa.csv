@@ -16,8 +16,8 @@ RHCSA - Binary files (aka executables)                                        ::
 RHCSA - Using the Linux find command                                          :::    null       :::    null
 RHCSA - Hard and Soft Links                                                   :::    null       :::    null
 RHCSA - Compressing files and folders using gzip and tar                      :::    null       :::    null
-RHCSA -  Secure Shell (SSH)                                                    :::    null       :::    null
-RHCSA -  SSH fingerprint authentication                                        :::    RHCSA -  Secure Shell (SSH)       :::    null
+RHCSA - Secure Shell (SSH)                                                    :::    null       :::    null
+RHCSA - SSH fingerprint authentication                                        :::    RHCSA -  Secure Shell (SSH)       :::    null
 RHCSA - Create SSH session without typing a password (Public/Private Key Authentication)       :::    RHCSA -  Secure Shell (SSH)       :::    null
 RHCSA - Copying files from one server to another using SCP       :::    RHCSA -  Secure Shell (SSH)       :::    null
 RHCSA - Adding, modifying, and deleting users       :::    null       :::    null
@@ -43,7 +43,7 @@ RHCSA - Connections config files       :::    RHCSA - Networking basics       ::
 RHCSA - Network Manager (including nmcli and nmtui)       :::    RHCSA - Networking basics       :::    null
 RHCSA - The concept of default routes and DNS       :::    RHCSA - Networking basics       :::    null
 RHCSA - Handy command line utilities for network troubleshooting       :::    RHCSA - Networking basics       :::    null
-RHCSA - Shell Jobs       :::    null       :::    null
+RHCSA - Job Scheduling       :::    null       :::    null
 RHCSA - Memory usage       :::    null       :::    null
 RHCSA - Processes       :::    null       :::    null
 RHCSA - Monitoring system load using the Top command       :::    RHCSA - Processes       :::    null
