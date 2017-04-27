@@ -17,7 +17,7 @@ RHCSA - Using the Linux find command                                          ::
 RHCSA - Hard and Soft Links                                                   :::    null       :::    null
 RHCSA - Compressing files and folders using gzip and tar                      :::    null       :::    null
 RHCSA -  Secure Shell (SSH)                                                    :::    null       :::    null
-RHCSA - SSH fingerprint authentication                                        :::    RHCSA -  Secure Shell (SSH)       :::    null
+RHCSA -  SSH fingerprint authentication                                        :::    RHCSA -  Secure Shell (SSH)       :::    null
 RHCSA - Create SSH session without typing a password (Public/Private Key Authentication)       :::    RHCSA -  Secure Shell (SSH)       :::    null
 RHCSA - Copying files from one server to another using SCP       :::    RHCSA -  Secure Shell (SSH)       :::    null
 RHCSA - Adding, modifying, and deleting users       :::    null       :::    null
@@ -33,11 +33,11 @@ RHCSA - File and Folder Permissions       :::    null       :::    null
 RHCSA - User mask (umask)       :::    RHCSA - File and Folder Permissions       :::    null
 RHCSA - Special File and Folder Permissions       :::    RHCSA - File and Folder Permissions       :::    null
 RHCSA - Access Control List (ACL)       :::    RHCSA - File and Folder Permissions       :::    null
-RHCSA - The ACL’s mask setting       :::    RHCSA - File and Folder Permissions       :::    null
+RHCSA - The ACL's mask setting       :::    RHCSA - File and Folder Permissions       :::    null
 RHCSA - Applying ACLs to directories       :::    RHCSA - File and Folder Permissions       :::    null
 RHCSA - Networking basics       :::    null       :::    null
 RHCSA - Configuring hostnames and DNS       :::    RHCSA - Networking basics       :::    null
-RHCSA - The “ip” command       :::    RHCSA - Networking basics       :::    null
+RHCSA - The .ip. command       :::    RHCSA - Networking basics       :::    null
 RHCSA - Network Interface Card (NIC)       :::    RHCSA - Networking basics       :::    null
 RHCSA - Connections config files       :::    RHCSA - Networking basics       :::    null
 RHCSA - Network Manager (including nmcli and nmtui)       :::    RHCSA - Networking basics       :::    null
@@ -90,9 +90,9 @@ RHCSA - Understanding GRUB2       :::    RHCSA - The Boot Process       :::    n
 RHCSA - Resetting the root password (via GRUB2)       :::    RHCSA - The Boot Process       :::    null
 RHCSA - Understanding systemd       :::    null       :::    null
 RHCSA - The anatomy of a unit file       :::    RHCSA - Understanding systemd        :::    null
-RHCSA - The “target” unit       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - The .target. unit       :::    RHCSA - Understanding systemd       :::    null
 RHCSA - The emergency.target       :::    RHCSA - Understanding systemd       :::    null
-RHCSA - Adjusting a unit’s settings       :::    RHCSA - Understanding systemd       :::    null
+RHCSA - Adjusting a unit's settings       :::    RHCSA - Understanding systemd       :::    null
 RHCSA - Managing Services with systemctl       :::    RHCSA - Understanding systemd       :::    null
 RHCSA - Mount Filesystems during boot time using Systemd       :::    RHCSA - Understanding systemd       :::    null
 RHCSA - Automounting using systemd and autofs       :::    RHCSA - Understanding systemd       :::    null
@@ -101,9 +101,9 @@ RHCSA - SELinux Modes       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - How does SELinux work?       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - Viewing SELinux Contexts       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - SELinux Policy Types and SELinux Attributes       :::    RHCSA - SELinux Overview       :::    null
-RHCSA - Editing a file’s Security Context       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - Editing a file's Security Context       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - SELinux Booleans       :::    RHCSA - SELinux Overview       :::    null
-RHCSA - The “user”, “role” and “level” security attributes       :::    RHCSA - SELinux Overview       :::    null
+RHCSA - The .user., .role. and .level. security attributes       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - Active Vector Cache (AVC)       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - SELinux extended man pages       :::    RHCSA - SELinux Overview       :::    null
 RHCSA - SELinux Log Files       :::    RHCSA - SELinux Overview       :::    null
@@ -116,7 +116,7 @@ RHCSA - The ss utility       :::    RHCSA - Services that makes use of a network
 RHCSA - Installing and setting up the Apache web server       :::    RHCSA - Services that makes use of a network       :::    null
 RHCSA - Setting up an FTP server       :::    RHCSA - Services that makes use of a network       :::    null
 RHCSA - NTP, system time, and the Hardware clock       :::    RHCSA - Services that makes use of a network       :::    null
-RHCSA - Starting a “login shell” or “interactive shell” using the switch user (su) command       :::    null       :::    null
+RHCSA - Starting a .login shell. or .interactive shell. using the switch user (su) command       :::    null       :::    null
 RHCSA - missing topics       :::    null       :::    null
 RHCSA - Interactive shells and login shells       :::    null       :::    null
-Linux - Introducing “VIM”, a powerful text editor       :::    null       :::    null
+Linux - Introducing .VIM., a powerful text editor       :::    null       :::    null
