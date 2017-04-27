@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# At this point we have a standard LAMP server and we now need to 
-# set up a fresh wordpress install and customize it. 
+# At this point we have a standard LAMP server and we now need to
+# set up a fresh wordpress install and customize it.
 
 echo '##################################################################'
 echo '####################### Install wp-cli ###########################'
@@ -187,3 +187,9 @@ pkill phantomjs
 
 # rm /var/www/html/codingbee-posts-exports.zip
 # rm /var/www/html/codingbee-pages-exports.zip
+
+/root/wordpress-codingbee/scripts/create-menu.sh rhcsa
+/root/wordpress-codingbee/scripts/create-menu.sh csharp
+/root/wordpress-codingbee/scripts/create-menu.sh powershell
+/root/wordpress-codingbee/scripts/create-menu.sh puppet
+/root/wordpress-codingbee/scripts/create-menu.sh tutorials
