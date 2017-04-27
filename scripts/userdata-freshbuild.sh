@@ -188,8 +188,10 @@ pkill phantomjs
 # rm /var/www/html/codingbee-posts-exports.zip
 # rm /var/www/html/codingbee-pages-exports.zip
 
+systemctl restart httpd
+
 /root/wordpress-codingbee/scripts/create-menu.sh rhcsa
-/root/wordpress-codingbee/scripts/create-menu.sh csharp
-/root/wordpress-codingbee/scripts/create-menu.sh powershell
-/root/wordpress-codingbee/scripts/create-menu.sh puppet
-/root/wordpress-codingbee/scripts/create-menu.sh tutorials
+#/root/wordpress-codingbee/scripts/create-menu.sh csharp
+#/root/wordpress-codingbee/scripts/create-menu.sh powershell
+#/root/wordpress-codingbee/scripts/create-menu.sh puppet
+#/root/wordpress-codingbee/scripts/create-menu.sh tutorials
