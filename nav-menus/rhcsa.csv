@@ -117,6 +117,6 @@ RHCSA - Installing and setting up the Apache web server       :::    RHCSA - Ser
 RHCSA - Setting up an FTP server       :::    RHCSA - Services that makes use of a network       :::    null
 RHCSA - NTP, system time, and the Hardware clock       :::    RHCSA - Services that makes use of a network       :::    null
 RHCSA - Starting a .login shell. or .interactive shell. using the switch user (su) command       :::    null       :::    null
-RHCSA - missing topics       :::    null       :::    null
+RHCSA -  missing topics       :::    null       :::    null
 RHCSA - Interactive shells and login shells       :::    null       :::    null
 Linux - Introducing .VIM., a powerful text editor       :::    null       :::    null
