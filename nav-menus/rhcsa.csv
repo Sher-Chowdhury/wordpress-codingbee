@@ -19,7 +19,7 @@ RHCSA - Compressing files and folders using gzip and tar                      ::
 RHCSA - Secure Shell (SSH)                                                    :::    null       :::    null
 RHCSA - SSH fingerprint authentication                                        :::    RHCSA - Secure Shell (SSH)       :::    null
 RHCSA - Create SSH session without typing a password (Public/Private Key Authentication)       :::    RHCSA - Secure Shell (SSH)       :::    null
-RHCSA - Copying files from one server to another using SCP       :::    RHCSA -  Secure Shell (SSH)       :::    null
+RHCSA - Copying files from one server to another using SCP       :::    RHCSA - Secure Shell (SSH)       :::    null
 RHCSA - Adding, modifying, and deleting users       :::    null       :::    null
 RHCSA - Creating, modifying, and deleting groups       :::    null       :::    null
 RHCSA - Password properties (passwd and chage commands)       :::    null       :::    null
@@ -62,7 +62,7 @@ RHCSA - Autostarting a vm after a reboot       :::    RHCSA - Managing KVM based
 RHCSA - Job Scheduling       :::    null       :::    null
 RHCSA - Scheduling jobs with cron       :::    RHCSA - Job Scheduling       :::    null
 RHCSA - Scheduling jobs with Anacron       :::    RHCSA - Job Scheduling      :::    null
-RHCSA - Scheduling jobs with the “at” utility       :::    RHCSA - Job Scheduling       :::    null
+RHCSA - Scheduling jobs with the .at. utility       :::    RHCSA - Job Scheduling       :::    null
 RHCSA - Controlling who is allowed to schedule jobs       :::    RHCSA - Job Scheduling       :::    null
 RHCSA - Rsyslogd and Journald       :::    null       :::    null
 RHCSA - Rsyslog logging       :::    RHCSA - Rsyslogd and Journald       :::    null
