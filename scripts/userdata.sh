@@ -80,6 +80,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 
+sleep 60
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
