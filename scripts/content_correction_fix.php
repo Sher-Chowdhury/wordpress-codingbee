@@ -39,15 +39,16 @@ foreach($xml->post as $post)
   $escaped_post_content = mysqli_real_escape_string($con, $post_content);
   $escaped_post_tags = mysqli_real_escape_string($con, $post_tags);
 
+  $sql = "UPDATE wp_posts SET post_content='$escaped_post_content' WHERE post_title='$escaped_post_title'";
 
+  if (!mysqli_query($con,$sql)) {
+    die('Error: ' . mysqli_error($con));
+  }
 
-
-
-
-
-  echo (string) $post->Title;
+  echo "The following post has been update: $post_title";
   echo "<br />";
 
    
 }
+mysqli_close($con);
 ?>
