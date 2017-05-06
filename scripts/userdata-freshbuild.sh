@@ -33,8 +33,6 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
 define('WP_MEMORY_LIMIT', '256M');
-define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', 'utf8_general_ci' );
 PHP"
 
 
@@ -197,6 +195,7 @@ sed -i "s/PASSWORD/$db_password/g" /var/www/html/content_correction_fix.php
 sed -i "s/DATABASENAME/$wp_db_name/g" /var/www/html/content_correction_fix.php
 
 cp /var/www/html/bundle/codingbee-posts-exports.xml /var/www/html/
+cd /var/www/html/
 unzip /var/www/html/codingbee-posts-exports.zip
 chown -R apache:apache /var/www/html/
 
@@ -204,7 +203,7 @@ curl http://localhost/content_correction_fix.php
 
 systemctl restart httpd
 
-/root/wordpress-codingbee/scripts/create-menu.sh rhcsa
+#/root/wordpress-codingbee/scripts/create-menu.sh rhcsa
 #/root/wordpress-codingbee/scripts/create-menu.sh csharp
 #/root/wordpress-codingbee/scripts/create-menu.sh powershell
 #/root/wordpress-codingbee/scripts/create-menu.sh puppet
