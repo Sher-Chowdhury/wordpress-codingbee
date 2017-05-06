@@ -51,7 +51,13 @@ I fixed this with following sql queries
 
 // https://digwp.com/2011/07/clean-up-weird-characters-in-database/
 
-$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'Â', ' ')";
+// The following doesn't work, becuase you can't place special characters inside php script.
+// so left broken code for reference only
+// instead will rewrite this inside shell script
+// See the bash script called remove-special-characters-from-mysql.sh 
+/*
+$sql = 'UPDATE wp_posts SET post_content = replace(post_content, "Â", " ")';
+$sql = 'UPDATE wp_posts SET post_content = replace(post_content, "displays", " ")';
 if (!mysqli_query($con,$sql)) {
   die('Error: ' . mysqli_error($con));
 }
@@ -83,7 +89,7 @@ $sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€¦', '…
 if (!mysqli_query($con,$sql)) {
   die('Error: ' . mysqli_error($con));
 }
-
+*/
 
 mysqli_close($con);
 ?>

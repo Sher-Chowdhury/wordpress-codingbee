@@ -201,6 +201,8 @@ chown -R apache:apache /var/www/html/
 
 curl http://localhost/content_correction_fix.php
 
+. ~/wordpress-codingbee/scripts/remove-special-characters-from-mysql.sh ${wp_db_name}
+
 systemctl restart httpd
 
 #/root/wordpress-codingbee/scripts/create-menu.sh rhcsa
