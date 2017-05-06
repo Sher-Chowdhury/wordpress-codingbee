@@ -163,7 +163,10 @@ mysql --user='root' -e 'select host, user, password from mysql.user;'
 #mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 # This creates new db
-mysql -u root -e "CREATE DATABASE $wp_db_name CHARACTER SET utf8 COLLATE utf8_general_ci" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
+mysql -u root -e "CREATE DATABASE $wp_db_name CHARACTER SET utf8 COLLATE utf8_general_ci" || { echo "ERROR: failed to create DB"; exit 1; }
+
+# The following will list out all the databases along with they're encoding and collation settings
+mysql -u root -e "SELECT SCHEMA_NAME 'database', default_character_set_name 'charset', DEFAULT_COLLATION_NAME 'collation' FROM information_schema.SCHEMATA;" 
 
 # grant full priveleges of db user to wordpress db:
 echo "About to grant priveleges"
