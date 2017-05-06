@@ -43,6 +43,9 @@ foreach($xml->post as $post)
 
 }
 
+// The above foreach loop introduced other brand new weird looking characters which I ended up fixing with the
+// following sql queries
+
 
 // https://digwp.com/2011/07/clean-up-weird-characters-in-database/
 
