@@ -81,9 +81,9 @@ while [ $# -gt 0 ]; do
 done
 
 # the following is a workaround to get mysql2 gem to install successfully, because mysql2 doesn't install with the latest mariadb rpms from mariadb repo.
-yum install -y MariaDB-server mariadb-devel mariadb-libs gcc rubygems ruby-devel
-gem install mysql2
-yum remove -y MariaDB-server mariadb-devel mariadb-libs gcc rubygems ruby-devel
+#yum install -y MariaDB-server mariadb-devel mariadb-libs gcc rubygems ruby-devel
+#gem install mysql2
+#yum remove -y MariaDB-server mariadb-devel mariadb-libs gcc rubygems ruby-devel
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7
 
@@ -163,7 +163,7 @@ mysql --user='root' -e 'select host, user, password from mysql.user;'
 #mysql --user='root' -e 'select host, user, password from mysql.user;'
 
 # This creates new db
-mysql -u root -e "CREATE DATABASE $wp_db_name" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
+mysql -u root -e "CREATE DATABASE $wp_db_name CHARACTER SET utf8 COLLATE utf8_general_ci" || { echo "ERROR: line ${LINENO}: failed to create DB"; exit 1; }
 
 # grant full priveleges of db user to wordpress db:
 echo "About to grant priveleges"

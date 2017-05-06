@@ -1,3 +1,8 @@
+##
+## Note this sceipt doesn't work because mysql2 gem can't escape whole strings
+## before inserting them into msyqldb. 
+##
+
 require 'rubygems'
 require 'nokogiri'
 require 'mysql2'
