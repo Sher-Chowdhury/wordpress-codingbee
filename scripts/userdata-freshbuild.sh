@@ -33,6 +33,8 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
 define('WP_MEMORY_LIMIT', '256M');
+define( 'DB_CHARSET', 'utf8' );
+define( 'DB_COLLATE', 'utf8_general_ci' );
 PHP"
 
 
@@ -157,7 +159,7 @@ chown apache:apache /var/www/html/.htaccess
 
 cp /root/downloads/wp-all-import-exports/codingbee-posts-exports.zip /var/www/html/
 
-
+systemctl restart httpd
 
 echo '127.0.0.1  codingbee.net' >> /etc/hosts
 
@@ -187,6 +189,14 @@ pkill phantomjs
 
 # rm /var/www/html/codingbee-posts-exports.zip
 # rm /var/www/html/codingbee-pages-exports.zip
+
+cp /root/wordpress-codingbee/scripts/content_correction_fix.php /var/www/html
+
+cp /var/www/html/bundle/codingbee-posts-exports.xml /var/www/html/
+unzip /var/www/html/codingbee-posts-exports.zip
+chown -R apache:apache /var/www/html/
+
+curl http://localhost/content_correction_fix.php
 
 systemctl restart httpd
 
