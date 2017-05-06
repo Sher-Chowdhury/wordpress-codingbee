@@ -46,23 +46,38 @@ foreach($xml->post as $post)
 
 // https://digwp.com/2011/07/clean-up-weird-characters-in-database/
 
-/*
-$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€', '”')";
-
-
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€œ', '“');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€', '”');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€™', '’');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€˜', '‘');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€”', '–');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€“', '—');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€¢', '-');
-UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€¦', '…');
-
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'Â', ' ')";
 if (!mysqli_query($con,$sql)) {
   die('Error: ' . mysqli_error($con));
 }
-*/
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€œ', '“')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€™', '’')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€˜', '‘')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€”', '-')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€“', '-')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€¢', '-')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
+$sql = "UPDATE wp_posts SET post_content = REPLACE(post_content, 'â€¦', '…')";
+if (!mysqli_query($con,$sql)) {
+  die('Error: ' . mysqli_error($con));
+}
 
 
 mysqli_close($con);
