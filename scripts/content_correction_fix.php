@@ -1,20 +1,14 @@
 <?php
-echo "My first PHP script!";
+//echo "My first PHP script!";
 
 
 
-
-$con=mysqli_connect("localhost","xxxxxxx","xxxxxxxx","xxxxxxxxx");
+$con=mysqli_connect("localhost","xxxxxxxxxx","xxxxxxxxxx","xxxxxxxxxx");
 
 // Check connection
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-
-
-
-
-
 
 
 
@@ -30,10 +24,9 @@ foreach($xml->post as $post)
 {
 
   // escape variables for security
-  post_title=$post->Title
-  post_content=$post->Content
-  post_tags=$post->Tags
-
+  $post_title=$post->Title;
+  $post_content=$post->Content;
+  $post_tags=$post->Tags;
 
   $escaped_post_title = mysqli_real_escape_string($con, $post_title);
   $escaped_post_content = mysqli_real_escape_string($con, $post_content);
@@ -44,11 +37,10 @@ foreach($xml->post as $post)
   if (!mysqli_query($con,$sql)) {
     die('Error: ' . mysqli_error($con));
   }
-
   echo "The following post has been update: $post_title";
   echo "<br />";
 
-   
+
 }
 mysqli_close($con);
 ?>
