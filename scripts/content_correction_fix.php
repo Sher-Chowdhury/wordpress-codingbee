@@ -43,9 +43,11 @@ foreach($xml->post as $post)
 
 }
 
-// The above foreach loop introduced other brand new weird looking characters which I ended up fixing with the
-// following sql queries
-
+/*
+The above foreach loop introduced other brand new weird looking characters, see:
+https://www.google.co.uk/search?q=iso-8859-1+wordpress&oq=iso-8859-1+wordpress&aqs=chrome.0.69i59j69i60l3.3502j0j7&sourceid=chrome&ie=UTF-8
+I fixed this with following sql queries
+*/
 
 // https://digwp.com/2011/07/clean-up-weird-characters-in-database/
 
