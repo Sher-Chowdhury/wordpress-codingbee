@@ -194,9 +194,9 @@ sed -i "s/USERNAME/$db_username/g" /var/www/html/content_correction_fix.php
 sed -i "s/PASSWORD/$db_password/g" /var/www/html/content_correction_fix.php
 sed -i "s/DATABASENAME/$wp_db_name/g" /var/www/html/content_correction_fix.php
 
-cp /var/www/html/bundle/codingbee-posts-exports.xml /var/www/html/
 cd /var/www/html/
 unzip /var/www/html/codingbee-posts-exports.zip
+cp /var/www/html/bundle/codingbee-posts-exports.xml /var/www/html/
 chown -R apache:apache /var/www/html/
 
 curl http://localhost/content_correction_fix.php
