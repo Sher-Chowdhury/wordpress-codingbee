@@ -182,7 +182,7 @@ phantomjs --webdriver=2816 1>/dev/null &
 ruby /root/wordpress-codingbee/scripts/dummy.rb
 ruby /root/wordpress-codingbee/scripts/import_all_impex_plugin_templates.rb
 ruby /root/wordpress-codingbee/scripts/import_posts.rb
-
+sleep 10
 pkill phantomjs
 
 # rm /var/www/html/codingbee-posts-exports.zip
