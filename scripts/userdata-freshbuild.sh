@@ -51,6 +51,10 @@ su -s /bin/bash apache -c "wp option update blogdescription \"$slogan\" --path=/
 su -s /bin/bash apache -c 'wp plugin delete hello --path=/var/www/html/'  # removing default plugin
 su -s /bin/bash apache -c 'wp plugin delete akismet --path=/var/www/html/'      # removing default plugin
 
+
+echo "Vanilla Wordpress now setup"
+exit
+
 su -s /bin/bash apache -c 'wp plugin install coming-soon --activate --path=/var/www/html/'
 su -s /bin/bash apache -c '# wp plugin install custom-admin-bar --activate --path=/var/www/html/'  # broken - try installing manually.
 # wp plugin install 'contact-form-7' --activate --path='/var/www/html/'     # gives a warning message, try installing manually.
