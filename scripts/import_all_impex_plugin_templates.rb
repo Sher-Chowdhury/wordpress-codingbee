@@ -53,6 +53,8 @@ begin
   puts "Waiting for http://codingbee.net/wp-admin/ to laod - try ##{ retries }"
   driver.save_screenshot("/var/www/html/screenshot-admin#{retries}.png")
 
+  driver.navigate.to "http://codingbee.net/wp-login.php"
+  wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
   user_login_element = driver.find_element(:id, 'user_login')
   user_login_element.send_keys 'sher'
   user_password_element = driver.find_element(:id, 'user_pass')
