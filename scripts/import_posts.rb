@@ -194,8 +194,8 @@ driver.find_element(:xpath, "(//input[@value='Confirm & Run Import'])[2]").click
 #driver.find_element(:class, "rad10").click
 
 # allow a minute for the actual import to take place.
-sleep(60)
-
+sleep(120)
+driver.save_screenshot('/var/www/html/screenshot10.png')
 
 ############################################################################
 ########################## End Firefox session #############################
