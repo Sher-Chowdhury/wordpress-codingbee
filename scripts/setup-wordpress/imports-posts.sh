@@ -1,9 +1,23 @@
 #1/bin/bash
 
 phantomjs --webdriver=2816 1>/dev/null &
-ruby /root/wordpress-codingbee/scripts/dummy.rb
-ruby /root/wordpress-codingbee/scripts/import_all_impex_plugin_templates.rb
-ruby /root/wordpress-codingbee/scripts/import_posts.rb
+sleep 10
+pkill phantomjs
+
+phantomjs --webdriver=2816 1>/dev/null &
+
+echo '##################################################################'
+echo '################# running dummy.rb script ########################'
+echo '##################################################################'
+ruby /root/wordpress-codingbee/scripts/selenium-scripts/dummy.rb
+echo '##################################################################'
+echo '###### running import_all_impex_plugin_templates.rb script #######'
+echo '##################################################################'
+ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_all_impex_plugin_templates.rb
+echo '##################################################################'
+echo '###### running import_all_impex_plugin_templates.rb script #######'
+echo '##################################################################'
+ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_posts.rb
 sleep 10
 pkill phantomjs
 

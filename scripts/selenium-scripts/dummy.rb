@@ -1,7 +1,7 @@
 require 'selenium-webdriver'
 #require 'headless'   # using phantomjs instead since it can do whole page screenshots
 
-# Added the following line to output to jenkins console in realtime. 
+# Added the following line to output to jenkins console in realtime.
 STDOUT.sync = true
 
 ############################################################################
@@ -40,7 +40,7 @@ puts driver.manage.window.size
 # first attempt to login fails, so making a few attempts
 begin
   retries ||= 0
-  puts "try ##{ retries }"
+  puts "Dummy script - try ##{ retries }"
   sleep(5)
   driver.navigate.to "http://codingbee.net/wp-login.php"
   wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
@@ -72,10 +72,10 @@ begin
   sleep(5)
   wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
 rescue
-  retry if (retries += 1) < 3 
+  retry if (retries += 1) < 3
 end
 sleep(5)
 
-puts 'INFO: Dummy over'
+puts 'INFO: Dummy script over'
 
 driver.quit
