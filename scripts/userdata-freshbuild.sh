@@ -10,4 +10,4 @@
 . ~/wordpress-codingbee/scripts/setup-wordpress/create-wordpress-categories.sh
 . ~/wordpress-codingbee/scripts/setup-wordpress/install-selenium.sh
 . ~/wordpress-codingbee/scripts/setup-wordpress/imports-posts.sh
-#. ~/wordpress-codingbee/scripts/setup-wordpress/create-custom-menus.sh
+. ~/wordpress-codingbee/scripts/setup-wordpress/create-custom-menus.sh

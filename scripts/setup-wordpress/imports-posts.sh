@@ -1,4 +1,4 @@
-#/bin/bash
+#1/bin/bash
 
 phantomjs --webdriver=2816 1>/dev/null &
 sleep 10
@@ -10,20 +10,14 @@ echo '##################################################################'
 echo '################# running dummy.rb script ########################'
 echo '##################################################################'
 ruby /root/wordpress-codingbee/scripts/selenium-scripts/dummy.rb
-
-
 echo '##################################################################'
 echo '###### running import_all_impex_plugin_templates.rb script #######'
 echo '##################################################################'
 ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_all_impex_plugin_templates.rb
-
-
 echo '##################################################################'
-echo '###### running import_all_impex_plugin_templates.rb script #######'
+echo '############### running import_posts.rb script ###################'
 echo '##################################################################'
-cp /root/downloads/wp-all-import-exports/codingbee-posts-exports.zip /var/www/html/
 ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_posts.rb
-
 sleep 10
 pkill phantomjs
 
@@ -36,6 +30,7 @@ sed -i "s/USERNAME/$db_username/g" /var/www/html/content_correction_fix.php
 sed -i "s/PASSWORD/$db_password/g" /var/www/html/content_correction_fix.php
 sed -i "s/DATABASENAME/$wp_db_name/g" /var/www/html/content_correction_fix.php
 
+cp /root/downloads/wp-all-import-exports/codingbee-posts-exports.zip /var/www/html/
 cd /var/www/html/
 unzip /var/www/html/codingbee-posts-exports.zip
 cp /var/www/html/bundle/codingbee-posts-exports.xml /var/www/html/
