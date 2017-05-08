@@ -111,9 +111,9 @@ git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 #/opt/puppetlabs/bin/puppet module install hunner-wordpress --version 1.0.0 || exit 1
 #/opt/puppetlabs/bin/puppet module install mayflower-php --version 4.0.0-beta1
 
-. ~/wordpress-codingbee/scripts/setup-vanilla-lamp.sh
-. ~/wordpress-codingbee/scripts/create-new-db-for-wordpress.sh
-. ~/wordpress-codingbee/scripts/optimize-php-for-wordpress.sh
+. ~/wordpress-codingbee/scripts/base/setup-vanilla-lamp.sh
+. ~/wordpress-codingbee/scripts/base/create-new-db-for-wordpress.sh
+. ~/wordpress-codingbee/scripts/base/optimize-php-for-wordpress.sh
 
 
 . ~/wordpress-codingbee/scripts/${follow_up_userdata}
