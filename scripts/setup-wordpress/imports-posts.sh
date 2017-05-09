@@ -6,18 +6,19 @@ pkill phantomjs
 
 phantomjs --webdriver=2816 1>/dev/null &
 
+
 echo '##################################################################'
 echo '################# running dummy.rb script ########################'
 echo '##################################################################'
-ruby /root/wordpress-codingbee/scripts/selenium-scripts/dummy.rb
+ruby /root/wordpress-codingbee/scripts/selenium-scripts/dummy.rb ${wp_web_admin_username} ${wp_web_admin_user_password}
 echo '##################################################################'
 echo '###### running import_all_impex_plugin_templates.rb script #######'
 echo '##################################################################'
-ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_all_impex_plugin_templates.rb
+ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_all_impex_plugin_templates.rb ${wp_web_admin_username} ${wp_web_admin_user_password}
 echo '##################################################################'
 echo '############### running import_posts.rb script ###################'
 echo '##################################################################'
-ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_posts.rb
+ruby /root/wordpress-codingbee/scripts/selenium-scripts/import_posts.rb ${wp_web_admin_username} ${wp_web_admin_user_password}
 sleep 10
 pkill phantomjs
 

@@ -4,6 +4,11 @@ require 'selenium-webdriver'
 # Added the following line to output to jenkins console in realtime.
 STDOUT.sync = true
 
+wp_web_admin_username = ARGV[0]
+wp_web_admin_user_password = ARGV[1]
+puts "The wordpress frontend admin username: #{wp_web_admin_username}"
+puts "The wordpress frontend admin password: #{wp_web_admin_user_password}"
+
 ############################################################################
 ######################## Start Firefox session #############################
 ############################################################################
@@ -56,9 +61,9 @@ begin
   driver.navigate.to "http://codingbee.net/wp-login.php"
   wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
   user_login_element = driver.find_element(:id, 'user_login')
-  user_login_element.send_keys 'sher'
+  user_login_element.send_keys "#{wp_web_admin_username}"
   user_password_element = driver.find_element(:id, 'user_pass')
-  user_password_element.send_keys 'password'
+  user_password_element.send_keys "#{wp_web_admin_user_password}"
   driver.find_element(:id, "wp-submit").click
   puts "current url is still driver.current_url"
   sleep(5)
