@@ -1,69 +1,69 @@
-Puppet – Intro,null,null
-Puppet – The Puppet Narrative (learning technique),null,null
-Puppet – Install/set-up the Puppet Master and it’s Agents,null,null
-Puppet – Regenerating certificates,null,null
-Puppet – Certificates troubleshooting,null,null
-Puppet – subcommands,null,null
-Puppet – Resources,null,null
-Puppet – Manifests,null,null
-Puppet – Issue catalog to puppet agents (using node definitions),null,null
-Puppet – Classes,null,null
-Puppet – Class Parameters,null,null
-Puppet – Adding a class to a node (aka declaring a class),null,null
-Puppet – Create a custom resource type (aka Defined Types),null,null
-Puppet – Class Inheritance,null,null
-Puppet – Ordering your resources,null,null
-Puppet – Ordering your classes,null,null
-Puppet – Ordering using “Run Stages”,null,null
-Puppet – Variables, If-statements, and Environment variables,null,null
-Puppet – Functions,null,null
-Puppet – Custom Functions,null,null
-Puppet – Organising your puppet code into separate files,null,null
-Puppet – Using the “import” keyword,Puppet – Organising your puppet code into separate files,null
-Puppet – The “puppet apply” approach,Puppet – Organising your puppet code into separate files,null
-Puppet – Modules, a quick taster,Puppet – Organising your puppet code into separate files,null
-Puppet – Modules,null,null
-Puppet – Adding other manifests/classes to a module,null,null
-Puppet – Modules (the “files” folder),null,null
-Puppet – Modules (the “templates” folder),null,null
-Augeas,null,null
-Puppet – The Augeas command line utility,Augeas,null
-Puppet – The Augeas resource type,Augeas,null
-Puppet – Uncommenting a line in a config file,Augeas,null
-Puppet – The file_in resource type,Augeas,null
-Puppet – Using Augeasproviders,Augeas,null
-Puppet – Using third-party modules from Puppetforge,null,null
-Puppet – r10k,null,null
-Puppet – r10k.yaml,null,null
-Puppet – r10k and the Puppetfile,null,null
-Puppet – Regular expressions,null,null
-Puppet – Using double colon (::) notation,null,null
-Puppet – webrick vs passeger web server,null,null
-Facter and Special Variables,null,null
-Puppet – What is Facter,Facter and Special Variables,null
-Puppet – Facts,Facter and Special Variables,null
-Puppet – Writing Custom Facts,Facter and Special Variables,null
-Puppet – Special Variables,Facter and Special Variables,null
-Puppet – External Facts,Facter and Special Variables,null
-Puppet – Directory Environments,null,null
-Puppet – The Puppet main config file (puppet.conf),null,null
-Hiera,null,null
-Puppet – What is Hiera,Hiera,null
-Puppet – Install Hiera,Hiera,null
-Puppet – The hiera.yaml config file,Hiera,null
-Puppet – Using Hiera on it’s own,Hiera,null
-Puppet – Retrieving different data types using Hiera,Hiera,null
-Puppet – Hiera lookup Behaviours,Hiera,null
-Puppet – How Puppet Modules makes use of Hiera,Hiera,null
-Puppet – Generate files from templates using Hiera data,Hiera,null
-Puppet – Working with a dynamic hiera.yaml file,Hiera,null
-Puppet – Hiera troubleshooting,Hiera,null
-Puppet – Hiera lookup functions,Hiera,null
-Puppet – Assigning a class to a node using Hiera,Hiera,null
-Puppet – ENC,null,null
-Puppet – External Node Classifiers (ENC),Puppet – ENC,null
-Puppet – Format of the ENC’s output,Puppet – ENC,null
-Puppet – What is Foreman,Puppet – ENC,null
-Puppet – Roles and Profiles,null,null
-Puppet – Setting user password,null,null
-Puppet – PuppetDB,null,null
+Puppet – Intro ::: null ::: null
+Puppet – The Puppet Narrative (learning technique) ::: null ::: null
+Puppet – Install/set-up the Puppet Master and it’s Agents ::: null ::: null
+Puppet – Regenerating certificates ::: null ::: null
+Puppet – Certificates troubleshooting ::: null ::: null
+Puppet – subcommands ::: null ::: null
+Puppet – Resources ::: null ::: null
+Puppet – Manifests ::: null ::: null
+Puppet – Issue catalog to puppet agents (using node definitions) ::: null ::: null
+Puppet – Classes ::: null ::: null
+Puppet – Class Parameters ::: null ::: null
+Puppet – Adding a class to a node (aka declaring a class) ::: null ::: null
+Puppet – Create a custom resource type (aka Defined Types) ::: null ::: null
+Puppet – Class Inheritance ::: null ::: null
+Puppet – Ordering your resources ::: null ::: null
+Puppet – Ordering your classes ::: null ::: null
+Puppet – Ordering using “Run Stages”                                ::: null ::: null
+Puppet – Variables, If-statements, and Environment variables         ::: null ::: null
+Puppet – Functions                                                   :::   null ::: null
+Puppet – Custom Functions                                            :::   null ::: null
+Puppet – Organising your puppet code into separate files             :::   null :::null
+Puppet – Using the “import” keyword                                  :::   Puppet – Organising your puppet code into separate files  :::    null
+Puppet – The “puppet apply” approach                                 :::   Puppet – Organising your puppet code into separate files  :::    null
+Puppet – Modules, a quick taster                                     :::   Puppet – Organising your puppet code into separate files  :::    null
+Puppet – Modules                                                     :::   null                                                      :::    null
+Puppet – Adding other manifests/classes to a module                  :::   null                                                      :::    null
+Puppet – Modules (the “files” folder)                                :::   null                                                      :::    null
+Puppet – Modules (the “templates” folder)                            :::   null                                                      :::    null
+Augeas                                                               :::   null                                                      :::    null
+Puppet – The Augeas command line utility                             :::   Augeas                                                    :::    null
+Puppet – The Augeas resource type                                    :::   Augeas                                                    :::    null
+Puppet – Uncommenting a line in a config file                        :::   Augeas                                                    :::    null
+Puppet – The file_in resource type                                   :::   Augeas                                                    :::    null
+Puppet – Using Augeasproviders                                       :::   Augeas                                                    :::    null
+Puppet – Using third-party modules from Puppetforge                  :::   null                                                      :::    null
+Puppet – r10k                                                        :::   null ::: null
+Puppet – r10k.yaml   :::    null  ::: null
+Puppet – r10k and the Puppetfile   ::: null  ::: null
+Puppet – Regular expressions ::: null :::  null
+Puppet – Using double colon (::) notation  ::: null ::: null
+Puppet – webrick vs passeger web server ::: null ::: null
+Facter and Special Variables  :::   null  ::: null
+Puppet – What is Facter                                              :::   Facter and Special Variables                              :::   null
+Puppet – Facts                                                       :::   Facter and Special Variables                              :::   null
+Puppet – Writing Custom Facts                                        :::   Facter and Special Variables                              :::   null
+Puppet – Special Variables                                           :::   Facter and Special Variables                              :::   null
+Puppet – External Facts                                              :::   Facter and Special Variables                              :::   null
+Puppet – Directory Environments                                      ::: null  ::: null
+Puppet – The Puppet main config file (puppet.conf) ::: null ::: null
+Hiera ::: null ::: null
+Puppet – What is Hiera                                               :::   Hiera                                                     :::   null
+Puppet – Install Hiera                                               :::   Hiera                                                     :::   null
+Puppet – The hiera.yaml config file                                  :::   Hiera                                                     :::   null
+Puppet – Using Hiera on it’s own                                     :::   Hiera                                                     :::   null
+Puppet – Retrieving different data types using Hiera                 :::   Hiera                                                     :::   null
+Puppet – Hiera lookup Behaviours                                     :::   Hiera                                                     :::   null
+Puppet – How Puppet Modules makes use of Hiera                       :::   Hiera                                                     :::   null
+Puppet – Generate files from templates using Hiera data              :::   Hiera                                                     :::   null
+Puppet – Working with a dynamic hiera.yaml file                      :::   Hiera                                                     :::   null
+Puppet – Hiera troubleshooting                                       :::   Hiera                                                     :::   null
+Puppet – Hiera lookup functions                                      :::   Hiera                                                     :::   null
+Puppet – Assigning a class to a node using Hiera                     :::   Hiera                                                     :::   null
+Puppet – ENC                                        ::: null  ::: null
+Puppet – External Node Classifiers (ENC)                             :::   Puppet – ENC                                              :::   null
+Puppet – Format of the ENC’s output                                  :::   Puppet – ENC                                              :::   null
+Puppet – What is Foreman                                             :::   Puppet – ENC                                              :::   null
+Puppet – Roles and Profiles ::: null ::: null
+Puppet – Setting user password ::: null ::: null
+Puppet – PuppetDB ::: null ::: null
