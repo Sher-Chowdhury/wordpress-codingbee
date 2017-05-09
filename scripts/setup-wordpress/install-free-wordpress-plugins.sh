@@ -26,4 +26,5 @@ su -s /bin/bash apache -c 'wp plugin install syntaxhighlighter --activate --path
 su -s /bin/bash apache -c 'wp plugin install table-of-contents-plus --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install tablepress --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install wp-github-gist --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install customizer-export-import --activate --path=/var/www/html/'
 #su -s /bin/bash apache -c 'wp plugin install wordpress-importer --activate --path=/var/www/html/'
