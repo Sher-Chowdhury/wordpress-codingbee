@@ -1,4 +1,4 @@
-#1/bin/bash
+#!/bin/bash
 
 phantomjs --webdriver=2816 1>/dev/null &
 sleep 10
