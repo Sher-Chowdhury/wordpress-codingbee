@@ -59,6 +59,9 @@ end
 user_login_element = driver.find_element(:id, 'user_login')
 user_login_element.send_keys "#{wp_web_admin_username}"
 puts "Typed in the username as: #{wp_web_admin_username}"
+driver.save_screenshot("/var/www/html/import-posts_filled-in-username-in-login-page.png")
+sleep(5)
+
 
 user_password_element = driver.find_element(:id, 'user_pass')
 user_password_element.send_keys "#{wp_web_admin_user_password}"
@@ -66,6 +69,7 @@ puts "Typed in the username as: #{wp_web_admin_user_password}"
 
 driver.save_screenshot("/var/www/html/filled-in-login-page.png")
 #user_password_element.submit
+sleep(5)
 
 driver.find_element(:id, "wp-submit").click
 
