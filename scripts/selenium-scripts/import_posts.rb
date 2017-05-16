@@ -98,11 +98,12 @@ wait.until { driver.current_url=='http://codingbee.net/wp-admin/admin.php?page=p
 ##   2. click upload button
 ##   3. then go to next page.
 
-driver.save_screenshot('/var/www/html/screenshot1a.png')
+driver.save_screenshot('/var/www/html/import_posts-navigated-to-import-posts-page.png')
 driver.find_element(:class, "wpallimport-url-type").click
 
 puts 'INFO: Clicked on the import via url option button'
 
+driver.save_screenshot('/var/www/html/import_posts-clicked-import-via-url-button.png')
 xml_payload_input_element = driver.find_element(:name, 'url')
 xml_payload_input_element.send_keys 'h'
 #xml_payload_input_element.send_keys :backspace , :backspace , :backspace , :backspace , :backspace , :backspace , :backspace , :backspace , :backspace , :backspace
