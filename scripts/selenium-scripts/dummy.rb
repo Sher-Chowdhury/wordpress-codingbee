@@ -65,7 +65,7 @@ user_login_element.send_keys "#{wp_web_admin_username}"
 user_password_element = driver.find_element(:id, 'user_pass')
 sleep 5
 
-user_password_element.send_keys "#{wp_web_admin_username}"
+user_password_element.send_keys "#{wp_web_admin_user_password}"
 #user_password_element.submit
 
 driver.find_element(:id, "wp-submit").click
@@ -73,7 +73,7 @@ driver.find_element(:id, "wp-submit").click
 begin
   retries ||= 0
   puts "Waiting for http://codingbee.net/wp-admin/ to laod - try ##{ retries }"
-  driver.save_screenshot("/var/www/html/screenshot-admin#{retries}.png")
+  driver.save_screenshot("/var/www/html/dummy-screenshot-admin#{retries}.png")
   puts driver.current_url
   sleep(5)
   wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
