@@ -1,5 +1,10 @@
 #!/bin/bash
 
+systemctl stop httpd
+sleep 30
+systemctl stop httpd
+sleep 30
+
 echo '##################################################################'
 echo '############## About to create RHCSA custom menu #################'
 echo '##################################################################'
