@@ -20,18 +20,18 @@ for line in `cat /root/wordpress-codingbee/nav-menus/${menu_title}.csv`; do
 
   if [[ ${parent_post_title} == 'null' && ${menu_label} == 'null' ]] ; then
     echo 'SCENARIO-1 - About to add a simple parent menu item'
-    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2;}'`
     set -x
+    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2}'`
     wp menu item add-post ${menu_title} ${post_id} --path=/var/www/html   || exit 1
     set +x
   fi
 
   if [[ ${parent_post_title} != 'null' && ${menu_label} == 'null' ]] ; then
     echo 'SCENARIO-2 - About to add a simple child menu item'
-    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2;}'`
-    parent_post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${parent_post_title}" | awk '{print $2;}'`
-    db_id=`wp menu item list ${menu_title} --path=/var/www/html --fields=db_id,title,object_id | grep "${parent_post_id} *|$" | awk '{print $2}'`
     set -x
+    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2}'`
+    parent_post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${parent_post_title}" | awk '{print $2}'`
+    db_id=`wp menu item list ${menu_title} --path=/var/www/html --fields=db_id,title,object_id | grep "${parent_post_id} *|$" | awk '{print $2}'`
     wp menu item add-post ${menu_title} ${post_id} --parent-id=${db_id} --path=/var/www/html   || exit 1
     set +x
   fi
@@ -39,18 +39,18 @@ for line in `cat /root/wordpress-codingbee/nav-menus/${menu_title}.csv`; do
 
   if [[ ${parent_post_title} == 'null' && ${menu_label} != 'null' ]] ; then
     echo 'SCENARIO-3 - About to add a parent menu item with custom label'
-    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2;}'`
     set -x
+    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2}'`
     wp menu item add-post ${menu_title} ${post_id} --title=${menu_label} --path=/var/www/html    || exit 1
     set +x
   fi
 
   if [[ ${parent_post_title} != 'null' && ${menu_label} != 'null' ]] ; then
     echo 'SCENARIO-4 - About to add a child menu item with custom menu'
-    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2;}'`
+    set -x
+    post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${post_title}" | awk '{print $2}'`
     parent_post_id=`wp post list --path=/var/www/html --fields=ID,post_title | grep "${parent_post_title}" | awk '{print $2;}'`
     db_id=`wp menu item list ${menu_title} --path=/var/www/html --fields=db_id,title,object_id | grep "${parent_post_id} *|$" | awk '{print $2}'`
-    set -x
     wp menu item add-post ${menu_title} ${post_id} --title=${menu_label} --parent-id=${db_id} --path=/var/www/html   || exit 1
     set +x
   fi
