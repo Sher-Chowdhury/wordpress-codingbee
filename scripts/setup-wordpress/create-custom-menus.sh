@@ -1,8 +1,8 @@
 #!/bin/bash
 
 systemctl stop httpd
-sleep 30
-systemctl stop httpd
+sleep 10
+systemctl start httpd
 sleep 30
 
 echo '##################################################################'
