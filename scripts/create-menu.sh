@@ -11,7 +11,7 @@ echo "The menu ${menu_title} has the id: ${menu_id}"
 
 wp post list --path=/var/www/html --fields=ID,post_title --format=csv > /tmp/posts_along_with_ids.txt
 
-# The following is a workaround of a bug in the wp-cli utility.
+# The following is a workaround since double quotes are used as an escape character in the world of csv files.  
 # https://github.com/wp-cli/wp-cli/issues/4082
 sed -i -e 's/""/"/g' /tmp/posts_along_with_ids.txt
 
