@@ -10,6 +10,10 @@ echo '############## About to create RHCSA custom menu #################'
 echo '##################################################################'
 /root/wordpress-codingbee/scripts/create-menu.sh rhcsa
 
+#wp sidebar list --path=/var/www/html/
+wp widget add nav_menu left 1 --title="RHCSA" --path=/var/www/html/
+
+
 echo '##################################################################'
 echo '############## About to create csharp custom menu ################'
 echo '##################################################################'
