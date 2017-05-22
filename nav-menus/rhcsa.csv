@@ -37,7 +37,7 @@ RHCSA - The ACL's mask setting       :::    RHCSA - File and Folder Permissions 
 RHCSA - Applying ACLs to directories       :::    RHCSA - File and Folder Permissions       :::    null
 RHCSA - Networking basics       :::    null       :::    null
 RHCSA - Configuring hostnames and DNS       :::    RHCSA - Networking basics       :::    null
-RHCSA - The .ip. command       :::    RHCSA - Networking basics       :::    null
+RHCSA - The "ip" command       :::    RHCSA - Networking basics       :::    null
 RHCSA - Network Interface Card (NIC)       :::    RHCSA - Networking basics       :::    null
 RHCSA - Connections config files       :::    RHCSA - Networking basics       :::    null
 RHCSA - Network Manager (including nmcli and nmtui)       :::    RHCSA - Networking basics       :::    null
