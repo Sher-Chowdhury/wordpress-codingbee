@@ -11,6 +11,10 @@ echo "The menu ${menu_title} has the id: ${menu_id}"
 
 wp post list --path=/var/www/html --fields=ID,post_title --format=csv > /tmp/posts_along_with_ids.txt
 
+# The following is a workaround of a bug in the wp-cli utility.
+# https://github.com/wp-cli/wp-cli/issues/4082
+sed -i -e 's/""/"/g' /tmp/posts_along_with_ids.txt
+
 for line in `cat /root/wordpress-codingbee/nav-menus/${menu_title}.csv`; do
   echo "about to process: $line"
   post_title=`echo ${line} | awk 'BEGIN {FS=":::"} {print $1}' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
@@ -33,7 +37,7 @@ for line in `cat /root/wordpress-codingbee/nav-menus/${menu_title}.csv`; do
     echo 'SCENARIO-2 - About to add a simple child menu item'
     set -x
     grep "${post_title}" /tmp/posts_along_with_ids.txt > /tmp/matched_post.txt
-    post_id=$(awk '{print $2}' /tmp/matched_post.txt)
+    post_id=$(awk '{print $1}' /tmp/matched_post.txt)
     parent_post_id=`grep "${parent_post_title}" /tmp/posts_along_with_ids.txt | awk -F"," '{print $1}'`
     db_id=`wp menu item list ${menu_title} --path=/var/www/html --fields=db_id,title,object_id | grep "${parent_post_id} *|$" | awk '{print $2}'`
     wp menu item add-post ${menu_title} ${post_id} --parent-id=${db_id} --path=/var/www/html   || exit 1
