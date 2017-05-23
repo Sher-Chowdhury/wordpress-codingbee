@@ -8,7 +8,7 @@
 
 
 # you can run this script by doing the following
-# ./sample-wordpress-login-script.rb        
+# source("/sample-wordpress-login-script.rb")
 # https://stackoverflow.com/questions/13112245/ruby-how-to-load-a-file-into-interactive-ruby-console-irb
 
  
