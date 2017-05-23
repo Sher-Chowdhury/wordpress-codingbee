@@ -7,8 +7,8 @@
 # - geckodriver executable binary - https://github.com/mozilla/geckodriver/releases
 
 
-# you can run this script by doing the following
-# source("/sample-wordpress-login-script.rb")
+# you can run this script (via the irb command line) by doing the following
+# source("sample-wordpress-login-script.rb")
 # https://stackoverflow.com/questions/13112245/ruby-how-to-load-a-file-into-interactive-ruby-console-irb
 
  
