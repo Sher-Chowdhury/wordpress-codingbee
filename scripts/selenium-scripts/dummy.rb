@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'selenium-webdriver'
 #require 'headless'   # using phantomjs instead since it can do whole page screenshots
 
