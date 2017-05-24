@@ -37,23 +37,31 @@ widget_header.click
 
 sleep(2)
 
-# the following works:
-dropdown_list = driver.find_element(:class, 'nav-menu-widget-form-controls').find_element(:xpath, "//select[starts-with(@id, 'widget-#{dropdown_menu_html_id}-nav_menu')]")
-
-sleep(2)
-
-#dropdown_list = Selenium::WebDriver::Support::Select.new(select_menu_dropdown)
-#option_list.select_by(:text, 'rhcsa')
-
-# had to take this convolated appraoch to select this dropdown list item.
-options_list =  dropdown_list.find_elements(:tag_name, "option")
+select_menu_name_from_dropdown_list = driver.find_element(:class, 'nav-menu-widget-form-controls').find_element(:xpath, "//select[starts-with(@id, 'widget-#{dropdown_menu_html_id}-nav_menu')]")
+options_list = select_menu_name_from_dropdown_list.find_elements(:tag_name, "option")
 options_list.each do |option|
   puts option.text
-  if option.text == 'rhcsa'
+  if option.text == menu_name.downcase
      option.click
   end
 end
 
+
+select_visibility_from_dropdown_list = driver.find_element(:id, "widget-#{dropdown_menu_html_id}-dw_include")
+options_list = select_visibility_from_dropdown_list.find_elements(:tag_name, "option")
+options_list.each do |option|
+  puts option.text
+  if option.text == 'Show on checked pages'
+     option.click
+  end
+end
+
+
+category_checkbox = driver.find_element(:id, "widget-#{dropdown_menu_html_id}-cat-#{category_html_id}")
+category_checkbox.click
+
+save_button = driver.find_element(:id, "widget-#{dropdown_menu_html_id}-savewidget")
+save_button.click
 exit
 
 # driver.quit
