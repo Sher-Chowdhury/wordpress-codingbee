@@ -3,6 +3,33 @@
 # you can run this script (from the irb command line) by doing the following
 # source("configure-widget.rb")
 
+
+=begin
+menu_name = ARGV[0]
+wp_web_admin_username = ARGV[1]
+wp_web_admin_user_password = ARGV[2]
+puts "The wordpress frontend admin username: #{wp_web_admin_username}"
+puts "The wordpress frontend admin password: #{wp_web_admin_user_password}"
+dropdown_menu_html_id = ARGV[3]
+category_html_id = ARGV[4]
+puts "The dropdown_menu_html_id: #{dropdown_menu_html_id}"
+puts "The category_html_id: #{category_html_id}"
+=end
+
+
+menu_name = rhcsa 
+wp_web_admin_username = 'sher'
+wp_web_admin_user_password = 'password'
+puts "The wordpress frontend admin username: #{wp_web_admin_username}"
+puts "The wordpress frontend admin password: #{wp_web_admin_user_password}"
+dropdown_menu_html_id = 'nav_menu-1' 
+category_html_id = '20'
+puts "The dropdown_menu_html_id: #{dropdown_menu_html_id}"
+puts "The category_html_id: #{category_html_id}"
+############################################################################
+######################## Start Firefox session #############################
+############################################################################
+
  
 require 'selenium-webdriver'
 driver = Selenium::WebDriver.for :firefox
@@ -18,9 +45,10 @@ driver.navigate.to "http://codingbee.net/wp-admin/widgets.php"
 widget_header = driver.find_element(:id, 'left').find_element(:xpath, './/*[contains(., "RHCSA")]')
 widget_header.click
 
+=begin
+
 
 sleep(2)
-select_menu_dropdown = driver.find_element(:class, 'nav-menu-widget-form-controls').find_element(:xpath, '//select[starts-with(@id, "widget-nav_menu")]')
 
 # the following works:
 driver.find_element(:class, 'nav-menu-widget-form-controls').find_element(:xpath, "//select[starts-with(@id, 'widget-nav_menu-1-nav_menu')]").click
@@ -41,3 +69,5 @@ end
 
 
 # driver.quit
+
+=end
