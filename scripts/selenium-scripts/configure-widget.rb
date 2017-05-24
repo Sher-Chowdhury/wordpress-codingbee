@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# ruby configure-widget.rb RHCSA sher password nav_menu-1 20
+
 # you can run this script (from the irb command line) by doing the following
 # source("configure-widget.rb")
 
