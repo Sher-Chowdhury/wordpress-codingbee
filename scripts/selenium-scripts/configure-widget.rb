@@ -21,7 +21,28 @@ puts "The category_html_id: #{category_html_id}"
 
 
 require 'selenium-webdriver'
-driver = Selenium::WebDriver.for :firefox
+
+
+
+
+#driver = Selenium::WebDriver.for :firefox
+
+
+driver = Selenium::WebDriver.for(:remote , :url=> "http://localhost:2816")
+puts 'About to set wait time to 30 seconds'
+# http://queirozf.com/entries/selenium-webdriver-with-ruby-examples-and-general-reference
+wait = Selenium::WebDriver::Wait.new(:timeout => 30)
+target_size = Selenium::WebDriver::Dimension.new(1400, 768)
+driver.manage.window.size = target_size
+puts driver.manage.window.size
+
+
+
+
+
+
+
+
 driver.navigate.to "http://codingbee.net/wp-login.php"
 user_login_element = driver.find_element(:id, 'user_login')
 user_login_element.send_keys wp_web_admin_username
