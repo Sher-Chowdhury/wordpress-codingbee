@@ -38,14 +38,15 @@ widget_header.click
 sleep(2)
 
 # the following works:
-select_menu_dropdown = driver.find_element(:class, 'nav-menu-widget-form-controls').find_element(:xpath, "//select[starts-with(@id, 'widget-#{dropdown_menu_html_id}-nav_menu')]")
+dropdown_list = driver.find_element(:class, 'nav-menu-widget-form-controls').find_element(:xpath, "//select[starts-with(@id, 'widget-#{dropdown_menu_html_id}-nav_menu')]")
 
 sleep(2)
 
-options_list = Selenium::WebDriver::Support::Select.new(select_menu_dropdown)
+#dropdown_list = Selenium::WebDriver::Support::Select.new(select_menu_dropdown)
 #option_list.select_by(:text, 'rhcsa')
 
-
+# had to take this convolated appraoch to select this dropdown list item.
+options_list =  dropdown_list.find_elements(:tag_name, "option")
 options_list.each do |option|
   puts option.text
   if option.text == 'rhcsa'
