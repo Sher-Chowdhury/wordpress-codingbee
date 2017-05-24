@@ -3,6 +3,8 @@
 systemctl stop httpd
 sleep 10
 systemctl start httpd
+
+phantomjs --webdriver=2816 1>/dev/null &
 sleep 30
 
 echo '##################################################################'
@@ -29,3 +31,5 @@ echo '##################################################################'
 #/root/wordpress-codingbee/scripts/create-menu.sh powershell
 #/root/wordpress-codingbee/scripts/create-menu.sh puppet
 #/root/wordpress-codingbee/scripts/create-menu.sh tutorials
+
+pkill phantomjs

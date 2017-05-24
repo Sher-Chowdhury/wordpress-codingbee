@@ -19,14 +19,14 @@ puts "The category_html_id: #{category_html_id}"
 ######################## Start Firefox session #############################
 ############################################################################
 
- 
+
 require 'selenium-webdriver'
 driver = Selenium::WebDriver.for :firefox
 driver.navigate.to "http://codingbee.net/wp-login.php"
 user_login_element = driver.find_element(:id, 'user_login')
-user_login_element.send_keys "sher"
+user_login_element.send_keys wp_web_admin_username
 user_password_element = driver.find_element(:id, 'user_pass')
-user_password_element.send_keys "password"
+user_password_element.send_keys wp_web_admin_user_password
 sleep(2)
 driver.find_element(:id, "wp-submit").click
 sleep(2)
@@ -62,7 +62,10 @@ category_checkbox.click
 
 save_button = driver.find_element(:id, "widget-#{dropdown_menu_html_id}-savewidget")
 save_button.click
+
+driver.quit
+
+
 exit
 
 # driver.quit
-
