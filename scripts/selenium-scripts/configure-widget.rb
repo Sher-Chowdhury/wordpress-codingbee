@@ -38,20 +38,76 @@ puts driver.manage.window.size
 
 
 
+############################################################################
+########################### Log into wordpress #############################
+############################################################################
 
 
+# first attempt to login fails, so making a few attempts
+begin
+  retries ||= 0
+  puts "try ##{ retries }"
+  sleep(5)
+  driver.navigate.to "http://codingbee.net/wp-login.php"
+  wait.until { driver.current_url=='http://codingbee.net/wp-login.php'}
+rescue
+  retry if (retries += 1) < 3
+end
 
 
-
-driver.navigate.to "http://codingbee.net/wp-login.php"
 user_login_element = driver.find_element(:id, 'user_login')
-user_login_element.send_keys wp_web_admin_username
+user_login_element.send_keys "#{wp_web_admin_username}"
+puts "Typed in the username as: #{wp_web_admin_username}"
+driver.save_screenshot("/var/www/html/configure-widgets_filled-in-username-in-login-page.png")
+sleep(5)
+
+
 user_password_element = driver.find_element(:id, 'user_pass')
-user_password_element.send_keys wp_web_admin_user_password
-sleep(2)
+user_password_element.send_keys "#{wp_web_admin_user_password}"
+puts "Typed in the username as: #{wp_web_admin_user_password}"
+
+driver.save_screenshot("/var/www/html/filled-in-login-page.png")
+#user_password_element.submit
+sleep(5)
+
 driver.find_element(:id, "wp-submit").click
-sleep(2)
+
+begin
+  retries ||= 0
+  puts "Waiting for http://codingbee.net/wp-admin/ to laod - try ##{ retries }"
+  driver.save_screenshot("/var/www/html/configure-widgets_screenshot-admin#{retries}.png")
+  puts driver.current_url
+  sleep(5)
+  wait.until { driver.current_url=='http://codingbee.net/wp-admin/'}
+rescue
+  retry if (retries += 1) < 10
+end
+sleep(5)
+
+puts 'INFO: Successfully logged into wordpress'
+
+
+
+
 driver.navigate.to "http://codingbee.net/wp-admin/widgets.php"
+
+
+
+# first attempt to login fails, so making a few attempts
+begin
+  retries ||= 0
+  puts "try ##{ retries }"
+  driver.navigate.to "http://codingbee.net/wp-admin/widgets.php"
+  sleep(5)
+  driver.save_screenshot("/var/www/html/configure-widgets_screenshot-admin-widgets-page-#{retries}.png")
+  wait.until { driver.current_url=='http://codingbee.net/wp-admin/widgets.php'}
+rescue
+  retry if (retries += 1) < 3
+end
+
+
+
+
 widget_header = driver.find_element(:id, 'left').find_element(:xpath, ".//*[contains(., '#{menu_name}')]")
 widget_header.click
 
