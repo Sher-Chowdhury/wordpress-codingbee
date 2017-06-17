@@ -15,7 +15,7 @@ yum -y install Xvfb firefox
 
 cd /root
 # gem install headless   # using phantomjs instead of this
-gem install selenium-webdriver
+gem install selenium-webdriver -v 3.4.0
 
 #wget https://github.com/mozilla/geckodriver/releases/download/v0.14.0/geckodriver-v0.14.0-linux64.tar.gz    # this is headless gem dependency
 #tar -xvzf geckodriver-v0.14.0-linux64.tar.gz   # this is a headless gem dependency
