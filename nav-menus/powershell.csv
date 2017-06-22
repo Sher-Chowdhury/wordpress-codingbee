@@ -36,12 +36,12 @@ PowerShell - Creating Powershell workflows  :::   null   :::   null
 PowerShell - Troubleshooting pipeline input  :::   null   :::   null
 PowerShell - Using object hierarchies for complex output  :::   null   :::   null
 PowerShell - Utilising the .NET framework and embeding c# in PowerShell  :::   null   :::   null
-PowerShell - Creating a GUI tool  :::   null   :::   null
-PowerShell - Working with xml (via DOM and XPATH)  :::   null   :::   null
-PowerShell - Working withed zipped files/folders  :::   null   :::   null
-PowerShell - Run sql queries (using sqlplus)  :::   null   :::   null
-PowerShell - exiting out of outerloop  :::   null   :::   null
-PowerShell - find and replace text in a file  :::   null   :::   null
+PowerShell -  Creating a GUI tool  :::   null   :::   null
+PowerShell -  Working with xml (via DOM and XPATH)  :::   null   :::   null
+PowerShell -  Working withed zipped files/folders  :::   null   :::   null
+PowerShell -  Run sql queries (using sqlplus)  :::   null   :::   null
+PowerShell -  exiting out of outerloop  :::   null   :::   null
+PowerShell -  find and replace text in a file  :::   null   :::   null
 PowerShell - Web services, WSDL, and SOAP  :::   null   :::   null
 PowerShell - Using WinSCP to copy files to/from Linux machines  :::   null   :::   null
 PowerShell - IIS automation  :::   null   :::   null
