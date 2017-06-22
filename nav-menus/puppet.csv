@@ -14,7 +14,7 @@ Puppet - Create a custom resource type (aka Defined Types) ::: null ::: null
 Puppet - Class Inheritance ::: null ::: null
 Puppet - Ordering your resources ::: null ::: null
 Puppet - Ordering your classes ::: null ::: null
-Puppet - Ordering using “Run Stages”                                ::: null ::: null
+Puppet - Ordering using \"Run Stages\"                                ::: null ::: null
 Puppet - Variables, If-statements, and Environment variables         ::: null ::: null
 Puppet - Functions                                                   :::   null ::: null
 Puppet - Custom Functions                                            :::   null ::: null
