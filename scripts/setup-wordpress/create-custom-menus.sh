@@ -86,6 +86,18 @@ wp widget add nav_menu left 1 --title="git" --path=/var/www/html/
 
 
 
+
+echo '##################################################################'
+echo '############## About to create ansible custom menu ################'
+echo '##################################################################'
+
+
+/root/wordpress-codingbee/scripts/create-menu.sh ansible
+wp widget add nav_menu left 1 --title="ansible" --path=/var/www/html/
+
+
+
+
 echo '##################################################################'
 echo '############## About to create tutorials custom menu ################'
 echo '##################################################################'
