@@ -26,7 +26,6 @@ Puppet - Puppet Modules                                                     ::: 
 Puppet - Adding other manifests/classes to a module                  :::   null                                                      :::    null
 Puppet - Modules (the \"files\" folder)                                :::   null                                                      :::    null
 Puppet - Modules (the \"templates\" folder)                            :::   null                                                      :::    null
-Augeas                                                               :::   null                                                      :::    null
 Puppet - The Augeas command line utility                             :::   Augeas                                                    :::    null
 Puppet - The Augeas resource type                                    :::   Augeas                                                    :::    null
 Puppet - Uncommenting a line in a config file                        :::   Augeas                                                    :::    null
