@@ -99,6 +99,18 @@ wp widget add nav_menu left 1 --title="ansible" --path=/var/www/html/
 
 
 echo '##################################################################'
+echo '############## About to create python custom menu ################'
+echo '##################################################################'
+
+
+/root/wordpress-codingbee/scripts/create-menu.sh python
+wp widget add nav_menu left 1 --title="python" --path=/var/www/html/
+
+
+
+
+
+echo '##################################################################'
 echo '############## About to create tutorials custom menu ################'
 echo '##################################################################'
 
