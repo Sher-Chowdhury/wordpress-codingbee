@@ -26,11 +26,11 @@ Puppet - Puppet Modules                                                     ::: 
 Puppet - Adding other manifests/classes to a module                  :::   null                                                      :::    null
 Puppet - Modules (the \"files\" folder)                                :::   null                                                      :::    null
 Puppet - Modules (the \"templates\" folder)                            :::   null                                                      :::    null
-Puppet - The Augeas command line utility                             :::   Augeas                                                    :::    null
-Puppet - The Augeas resource type                                    :::   Augeas                                                    :::    null
-Puppet - Uncommenting a line in a config file                        :::   Augeas                                                    :::    null
-Puppet - The file_in resource type                                   :::   Augeas                                                    :::    null
-Puppet - Using Augeasproviders                                       :::   Augeas                                                    :::    null
+Puppet - The Augeas command line utility                             :::   null                                                    :::    null
+Puppet - The Augeas resource type                                    :::   null                                                    :::    null
+Puppet - Uncommenting a line in a config file                        :::   null                                                    :::    null
+Puppet - The file_in resource type                                   :::   null                                                    :::    null
+Puppet - Using Augeasproviders                                       :::   null                                                    :::    null
 Puppet - Using third-party modules from Puppetforge                  :::   null                                                      :::    null
 Puppet - r10k                                                        :::   null ::: null
 Puppet - r10k.yaml   :::    null  ::: null
