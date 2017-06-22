@@ -46,7 +46,7 @@ Puppet - The Puppet main config file (puppet.conf) ::: null ::: null
 Puppet - What is Hiera                                               :::   null                                                     :::   null
 Puppet - Install Hiera                                               :::   null                                                     :::   null
 Puppet - The hiera.yaml config file                                  :::   null                                                     :::   null
-Puppet - Using Hiera on it’s own                                     :::   null                                                     :::   null
+Puppet - Using Hiera on it's own                                     :::   null                                                     :::   null
 Puppet - Retrieving different data types using Hiera                 :::   null                                                     :::   null
 Puppet - Hiera lookup Behaviours                                     :::   null                                                     :::   null
 Puppet - How Puppet Modules makes use of Hiera                       :::   null                                                     :::   null
