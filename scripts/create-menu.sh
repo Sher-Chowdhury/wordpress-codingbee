@@ -48,7 +48,7 @@ for line in `cat /root/wordpress-codingbee/nav-menus/${menu_title}.csv`; do
   if [[ ${parent_post_title} == 'null' && ${menu_label} != 'null' ]] ; then
     echo 'SCENARIO-3 - About to add a parent menu item with custom label'
     set -x
-    post_id=`grep "${post_title}" /tmp/posts_along_with_ids.txt | awk '{print $2}'`
+    post_id=`grep "${post_title}" /tmp/posts_along_with_ids.txt | awk  -F',' '{print $1}'`
     wp menu item add-post ${menu_title} ${post_id} --title=${menu_label} --path=/var/www/html    || exit 1
     set +x
   fi
