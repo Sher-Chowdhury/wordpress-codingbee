@@ -36,12 +36,11 @@ Puppet - r10k and the Puppetfile   ::: null  ::: null
 Puppet - Regular expressions ::: null :::  null
 Puppet - Using double colon (::) notation  ::: null ::: null
 Puppet - webrick vs passeger web server ::: null ::: null
-Facter and Special Variables  :::   null  ::: null
-Puppet - What is Facter                                              :::   Facter and Special Variables                              :::   null
-Puppet - Facts                                                       :::   Facter and Special Variables                              :::   null
-Puppet - Writing Custom Facts                                        :::   Facter and Special Variables                              :::   null
-Puppet - Special Variables                                           :::   Facter and Special Variables                              :::   null
-Puppet - External Facts                                              :::   Facter and Special Variables                              :::   null
+Puppet - What is Facter                                              :::   null                              :::   null
+Puppet - Facts                                                       :::   null                              :::   null
+Puppet - Writing Custom Facts                                        :::   null                              :::   null
+Puppet - Special Variables                                           :::   null                              :::   null
+Puppet - External Facts                                              :::   null                              :::   null
 Puppet - Directory Environments                                      ::: null  ::: null
 Puppet - The Puppet main config file (puppet.conf) ::: null ::: null
 Hiera ::: null ::: null
