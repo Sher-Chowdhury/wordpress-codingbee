@@ -3,8 +3,8 @@ c# - What you should already know  :::   null   :::   null
 c# - Hello World  :::   null   :::   null
 c# - Adding comments to your code  :::   null   :::   null
 c# - Methods, Classes, and Namespaces  :::   null   :::   null
-c# - Storing data inside objects (by using “fields”)  :::   null   :::   null
-c# - Storing data inside objects (by using “Properties”)  :::   null   :::   null
+c# - Storing data inside objects (by using "fields")  :::   null   :::   null
+c# - Storing data inside objects (by using "Properties")  :::   null   :::   null
 c# - Instantiate an object and set it’s Properties simultaneously (using the Initialization approach)  :::   null   :::   null
 c# - Instantiate an object and set it’s Properties simultaneously (using the Constructors approach)  :::   null   :::   null
 c# - Create a read-only property (aka a constant)  :::   null   :::   null
@@ -13,14 +13,14 @@ c# - What are Variables Types  :::   null   :::   null
 c# - An overview of commonly used variables  :::   null   :::   null
 c# - Static and Non-Static Methods  :::   null   :::   null
 c# - Input Parameters and Return Values  :::   null   :::   null
-c# - The “Main” method  :::   null   :::   null
-c# - The if-else statements (using the “?:” shorthand syntax)  :::   null   :::   null
+c# - The "Main" method  :::   null   :::   null
+c# - The if-else statements (using the "?:" shorthand syntax)  :::   null   :::   null
 c# - Booleans  :::   null   :::   null
 c# - Embed variables in a string using the substition technique  :::   null   :::   null
 c# - Switch statements (aka case statements)  :::   null   :::   null
 c# - Create a variable that can only hold a fixed set of values (aka an Enum Constant)  :::   null   :::   null
 c# - Declare variables outside if-else statement scope  :::   null   :::   null
-c# - The “this” keyword  :::   null   :::   null
+c# - The "this" keyword  :::   null   :::   null
 c# - The 5 Pillars of Object Oriented Programming  :::   null   :::   null
 c# - A practical example of OOP in action  :::   null   :::   null
 c# - Inheritence in Action  :::   null   :::   null
@@ -33,7 +33,7 @@ c# - Generics: Lists  :::   null   :::   null
 c# - Generics: Queue  :::   null   :::   null
 c# - Generics: Stack  :::   null   :::   null
 c# - Generics: Dictionary (aka hashtable)  :::   null   :::   null
-c# - Using the “Null” object  :::   null   :::   null
+c# - Using the "Null" object  :::   null   :::   null
 c# - Intro to Exceptions  :::   null   :::   null
 c# - The Interface  :::   null   :::   null
 c# - Abstract Classes  :::   null   :::   null

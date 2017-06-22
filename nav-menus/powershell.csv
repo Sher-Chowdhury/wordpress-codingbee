@@ -1,54 +1,54 @@
 What is PowerShell?  :::   null   :::   null
-PowerShell – Running commands  :::   null   :::   null
-PowerShell – Using the builtin help system  :::   null   :::   null
-PowerShell – Variables and Objects  :::   null   :::   null
-PowerShell – Data in the form of “objects”  :::   null   :::   null
-PowerShell – Combine commands together using pipes  :::   null   :::   null
-PowerShell – A deeper understanding of the pipeline  :::   null   :::   null
-PowerShell – Working with providers  :::   null   :::   null
-PowerShell – Extend PowerShell’s capability by installing Modules and Snapins  :::   null   :::   null
-PowerShell – Changing a command output’s default formatting  :::   null   :::   null
-PowerShell – Filtering and Comparisons  :::   null   :::   null
-PowerShell – Run commands on remote machines  :::   null   :::   null
-PowerShell – Windows Media Instrumentation (WMI)  :::   null   :::   null
-PowerShell – Running tasks in the background  :::   null   :::   null
-PowerShell – Processing each row in a table (for-each)  :::   null   :::   null
-PowerShell – Security Alert  :::   null   :::   null
-PowerShell – Input and Output  :::   null   :::   null
-PowerShell – Intro to writing PowerShell scripts  :::   null   :::   null
-PowerShell – Parameterizing your PowerShell scripts  :::   null   :::   null
-PowerShell – Regular Expressions  :::   null   :::   null
-PowerShell – Additional random tips tricks and techniques  :::   null   :::   null
-PowerShell – Using Someone else’s script  :::   null   :::   null
-PowerShell – Scripting overview  :::   null   :::   null
-PowerShell – Simple scripts and functions  :::   null   :::   null
-PowerShell – Scope  :::   null   :::   null
-PowerShell – Advanced Functions (part 1)  :::   null   :::   null
-PowerShell – Advanced Functions (part 2)  :::   null   :::   null
-PowerShell – Writing help  :::   null   :::   null
-PowerShell – Error Handling  :::   null   :::   null
-PowerShell – Debugging Techniques  :::   null   :::   null
-PowerShell – Creating Custom Format Views  :::   null   :::   null
-PowerShell – Script and manifest modules  :::   null   :::   null
-PowerShell – Making tools that makes changes  :::   null   :::   null
-PowerShell – Creating a Custom Type Extension  :::   null   :::   null
-PowerShell – Creating Powershell workflows  :::   null   :::   null
-PowerShell – Troubleshooting pipeline input  :::   null   :::   null
-PowerShell – Using object hierarchies for complex output  :::   null   :::   null
-PowerShell – Utilising the .NET framework and embeding c# in PowerShell  :::   null   :::   null
-PowerShell – Creating a GUI tool  :::   null   :::   null
-PowerShell – Working with xml (via DOM and XPATH)  :::   null   :::   null
-PowerShell – Working withed zipped files/folders  :::   null   :::   null
-PowerShell – Run sql queries (using sqlplus)  :::   null   :::   null
-PowerShell – exiting out of outerloop  :::   null   :::   null
-PowerShell – find and replace text in a file  :::   null   :::   null
-PowerShell – Web services, WSDL, and SOAP  :::   null   :::   null
-PowerShell – Using WinSCP to copy files to/from Linux machines  :::   null   :::   null
-PowerShell – IIS automation  :::   null   :::   null
-Powershell – Accessing the registry  :::   null   :::   null
-PowerShell – Detect what version of .NET is installed  :::   null   :::   null
-PowerShell – Using psexec to automate UI tasks on remote machines  :::   null   :::   null
-PowerShell – Remote Deskop Protocol (RDP)  :::   null   :::   null
-Jenkins & PowerShell – Create Jenkins environment variables during a job run  :::   null   :::   null
-PowerShell – nslookup  :::   null   :::   null
-PowerShell – Use CredSSP to run commands remotely with fewer issues  :::   null   :::   null
+PowerShell - Running commands  :::   null   :::   null
+PowerShell - Using the builtin help system  :::   null   :::   null
+PowerShell - Variables and Objects  :::   null   :::   null
+PowerShell - Data in the form of "objects"  :::   null   :::   null
+PowerShell - Combine commands together using pipes  :::   null   :::   null
+PowerShell - A deeper understanding of the pipeline  :::   null   :::   null
+PowerShell - Working with providers  :::   null   :::   null
+PowerShell - Extend PowerShell’s capability by installing Modules and Snapins  :::   null   :::   null
+PowerShell - Changing a command output’s default formatting  :::   null   :::   null
+PowerShell - Filtering and Comparisons  :::   null   :::   null
+PowerShell - Run commands on remote machines  :::   null   :::   null
+PowerShell - Windows Media Instrumentation (WMI)  :::   null   :::   null
+PowerShell - Running tasks in the background  :::   null   :::   null
+PowerShell - Processing each row in a table (for-each)  :::   null   :::   null
+PowerShell - Security Alert  :::   null   :::   null
+PowerShell - Input and Output  :::   null   :::   null
+PowerShell - Intro to writing PowerShell scripts  :::   null   :::   null
+PowerShell - Parameterizing your PowerShell scripts  :::   null   :::   null
+PowerShell - Regular Expressions  :::   null   :::   null
+PowerShell - Additional random tips tricks and techniques  :::   null   :::   null
+PowerShell - Using Someone else’s script  :::   null   :::   null
+PowerShell - Scripting overview  :::   null   :::   null
+PowerShell - Simple scripts and functions  :::   null   :::   null
+PowerShell - Scope  :::   null   :::   null
+PowerShell - Advanced Functions (part 1)  :::   null   :::   null
+PowerShell - Advanced Functions (part 2)  :::   null   :::   null
+PowerShell - Writing help  :::   null   :::   null
+PowerShell - Error Handling  :::   null   :::   null
+PowerShell - Debugging Techniques  :::   null   :::   null
+PowerShell - Creating Custom Format Views  :::   null   :::   null
+PowerShell - Script and manifest modules  :::   null   :::   null
+PowerShell - Making tools that makes changes  :::   null   :::   null
+PowerShell - Creating a Custom Type Extension  :::   null   :::   null
+PowerShell - Creating Powershell workflows  :::   null   :::   null
+PowerShell - Troubleshooting pipeline input  :::   null   :::   null
+PowerShell - Using object hierarchies for complex output  :::   null   :::   null
+PowerShell - Utilising the .NET framework and embeding c# in PowerShell  :::   null   :::   null
+PowerShell - Creating a GUI tool  :::   null   :::   null
+PowerShell - Working with xml (via DOM and XPATH)  :::   null   :::   null
+PowerShell - Working withed zipped files/folders  :::   null   :::   null
+PowerShell - Run sql queries (using sqlplus)  :::   null   :::   null
+PowerShell - exiting out of outerloop  :::   null   :::   null
+PowerShell - find and replace text in a file  :::   null   :::   null
+PowerShell - Web services, WSDL, and SOAP  :::   null   :::   null
+PowerShell - Using WinSCP to copy files to/from Linux machines  :::   null   :::   null
+PowerShell - IIS automation  :::   null   :::   null
+Powershell - Accessing the registry  :::   null   :::   null
+PowerShell - Detect what version of .NET is installed  :::   null   :::   null
+PowerShell - Using psexec to automate UI tasks on remote machines  :::   null   :::   null
+PowerShell - Remote Deskop Protocol (RDP)  :::   null   :::   null
+Jenkins & PowerShell - Create Jenkins environment variables during a job run  :::   null   :::   null
+PowerShell - nslookup  :::   null   :::   null
+PowerShell - Use CredSSP to run commands remotely with fewer issues  :::   null   :::   null

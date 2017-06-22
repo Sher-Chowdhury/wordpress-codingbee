@@ -1,67 +1,67 @@
-Ruby – Introduction                       :::    null                            :::    null
-Ruby – The Interactive Ruby Shell (IRB)                      :::    null                            :::    null
-Ruby – A hello world ruby script example                      :::    null                            :::    null
-Ruby – Environment Variable                      :::    null                            :::    null
-Ruby – Variables                      :::    null                            :::    null
-Ruby – Methods                      :::    null                            :::    null
-Ruby – If-Else Statements and other conditional statements                      :::    null                            :::    null
-Ruby – If-else statements                      :::    null                            :::    null
-Ruby – Operators                      :::    null                            :::    null
-Ruby – Prompt for user input                      :::    null                            :::    null
-Ruby – The “Initialize” method                      :::    null                            :::    null
-Ruby – Modules                      :::    null                            :::    null
-Ruby – Use backticks and system to run Bash or Powershell commands                      :::    null                            :::    null
-Ruby – Creating classes and objects                      :::    null                            :::    null
-Ruby – Methods and Instance Variables                      :::    null                            :::    null
-Ruby – Storing data inside an Object (aka Instance Variables)                      :::    null                            :::    null
-Ruby – Inheritance                      :::    null                            :::    null
-Ruby – Use “super” to extend inherited methods                      :::    null                            :::    null
-Ruby – Duck Typing                      :::    null                            :::    null
-Ruby – Class Variables                      :::    null                            :::    null
-Ruby – Class Instance Variables                      :::    null                            :::    null
-Ruby – Public and Private Methods                      :::    null                            :::    null
-Ruby – Protected Methods                      :::    null                            :::    null
-Ruby – Executable Class Bodies                      :::    null                            :::    null
-Ruby – Open Classes and Monkey Patching                      :::    null                            :::    null
-Ruby – Checking whether 2 objects are equal                      :::    null                            :::    null
-Ruby – If-else statements                      :::    null                            :::    null
-Ruby – Ternary Operator (single line If-Else statement)                      :::    null                            :::    null
-Ruby – “unless” statements                      :::    null                            :::    null
-Ruby – The “and” and “or” operators                      :::    null                            :::    null
-Ruby – The case statement                      :::    null                            :::    null
-Ruby – The while loop                      :::    null                            :::    null
-Ruby – The “until” loop                      :::    null                            :::    null
-Ruby – The “for” loop                      :::    null                            :::    null
-Ruby – Iterators and Blocks                      :::    null                            :::    null
-Ruby – Creating an infinite loop                      :::    null                            :::    null
-Ruby – Looping through numbers tips and tricks                      :::    null                            :::    null
-Ruby – Controlling loops using next/break/redo                      :::    null                            :::    null
-Ruby – Variable Scope                      :::    null                            :::    null
-Ruby – Exceptions Handling                      :::    null                            :::    null
-Ruby – Raising Exceptions                      :::    null                            :::    null
-Ruby – Cleanup (the “ensure” clause)                      :::    null                            :::    null
-Ruby – Retrying if error encountered the first time                      :::    null                            :::    null
-Ruby – Throw and Catch                      :::    null                            :::    null
-Ruby – Escaping character in strings                      :::    null                            :::    null
-Ruby – Multiline String Variable (using heredoc)                      :::    null                            :::    null
-Ruby – Booleans                      :::    null                            :::    null
-Ruby – Numbers                      :::    null                            :::    null
-Ruby – Strings                      :::    null                            :::    null
-Ruby – String Operators                      :::    null                            :::    null
-Ruby – String Methods                      :::    null                            :::    null
-Ruby – Regular Expressions                      :::    null                            :::    null
-Ruby – Symbols                      :::    null                            :::    null
-Ruby – Arrays                      :::    null                            :::    null
-Ruby – Enumerables                      :::    null                            :::    null
-Ruby – Hashes                      :::    null                            :::    null
-Ruby – Ranges                      :::    null                            :::    null
-Ruby – Parrallel Assignment                      :::    null                            :::    null
-Ruby – Gems                      :::    null                            :::    null
-Ruby – GemFile                      :::    null                            :::    null
-Ruby – The ERB templating system                      :::    null                            :::    null
-Ruby – Installing RVM                      :::    null                            :::    null
-RVM – Installing a version of ruby                      :::    null                            :::    null
-RVM – Deleting a Ruby version                      :::    null                            :::    null
-RVM – Using rvmsudo instead of sudo                      :::    null                            :::    null
-Ruby – What is bundler                      :::    null                            :::    null
-Ruby – How to write a gem                      :::    null                            :::    null
+Ruby - Introduction                       :::    null                            :::    null
+Ruby - The Interactive Ruby Shell (IRB)                      :::    null                            :::    null
+Ruby - A hello world ruby script example                      :::    null                            :::    null
+Ruby - Environment Variable                      :::    null                            :::    null
+Ruby - Variables                      :::    null                            :::    null
+Ruby - Methods                      :::    null                            :::    null
+Ruby - If-Else Statements and other conditional statements                      :::    null                            :::    null
+Ruby - If-else statements                      :::    null                            :::    null
+Ruby - Operators                      :::    null                            :::    null
+Ruby - Prompt for user input                      :::    null                            :::    null
+Ruby - The "Initialize" method                      :::    null                            :::    null
+Ruby - Modules                      :::    null                            :::    null
+Ruby - Use backticks and system to run Bash or Powershell commands                      :::    null                            :::    null
+Ruby - Creating classes and objects                      :::    null                            :::    null
+Ruby - Methods and Instance Variables                      :::    null                            :::    null
+Ruby - Storing data inside an Object (aka Instance Variables)                      :::    null                            :::    null
+Ruby - Inheritance                      :::    null                            :::    null
+Ruby - Use "super" to extend inherited methods                      :::    null                            :::    null
+Ruby - Duck Typing                      :::    null                            :::    null
+Ruby - Class Variables                      :::    null                            :::    null
+Ruby - Class Instance Variables                      :::    null                            :::    null
+Ruby - Public and Private Methods                      :::    null                            :::    null
+Ruby - Protected Methods                      :::    null                            :::    null
+Ruby - Executable Class Bodies                      :::    null                            :::    null
+Ruby - Open Classes and Monkey Patching                      :::    null                            :::    null
+Ruby - Checking whether 2 objects are equal                      :::    null                            :::    null
+Ruby - If-else statements                      :::    null                            :::    null
+Ruby - Ternary Operator (single line If-Else statement)                      :::    null                            :::    null
+Ruby - "unless" statements                      :::    null                            :::    null
+Ruby - The "and" and "or" operators                      :::    null                            :::    null
+Ruby - The case statement                      :::    null                            :::    null
+Ruby - The while loop                      :::    null                            :::    null
+Ruby - The "until" loop                      :::    null                            :::    null
+Ruby - The "for" loop                      :::    null                            :::    null
+Ruby - Iterators and Blocks                      :::    null                            :::    null
+Ruby - Creating an infinite loop                      :::    null                            :::    null
+Ruby - Looping through numbers tips and tricks                      :::    null                            :::    null
+Ruby - Controlling loops using next/break/redo                      :::    null                            :::    null
+Ruby - Variable Scope                      :::    null                            :::    null
+Ruby - Exceptions Handling                      :::    null                            :::    null
+Ruby - Raising Exceptions                      :::    null                            :::    null
+Ruby - Cleanup (the "ensure" clause)                      :::    null                            :::    null
+Ruby - Retrying if error encountered the first time                      :::    null                            :::    null
+Ruby - Throw and Catch                      :::    null                            :::    null
+Ruby - Escaping character in strings                      :::    null                            :::    null
+Ruby - Multiline String Variable (using heredoc)                      :::    null                            :::    null
+Ruby - Booleans                      :::    null                            :::    null
+Ruby - Numbers                      :::    null                            :::    null
+Ruby - Strings                      :::    null                            :::    null
+Ruby - String Operators                      :::    null                            :::    null
+Ruby - String Methods                      :::    null                            :::    null
+Ruby - Regular Expressions                      :::    null                            :::    null
+Ruby - Symbols                      :::    null                            :::    null
+Ruby - Arrays                      :::    null                            :::    null
+Ruby - Enumerables                      :::    null                            :::    null
+Ruby - Hashes                      :::    null                            :::    null
+Ruby - Ranges                      :::    null                            :::    null
+Ruby - Parrallel Assignment                      :::    null                            :::    null
+Ruby - Gems                      :::    null                            :::    null
+Ruby - GemFile                      :::    null                            :::    null
+Ruby - The ERB templating system                      :::    null                            :::    null
+Ruby - Installing RVM                      :::    null                            :::    null
+RVM - Installing a version of ruby                      :::    null                            :::    null
+RVM - Deleting a Ruby version                      :::    null                            :::    null
+RVM - Using rvmsudo instead of sudo                      :::    null                            :::    null
+Ruby - What is bundler                      :::    null                            :::    null
+Ruby - How to write a gem                      :::    null                            :::    null
