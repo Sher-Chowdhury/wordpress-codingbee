@@ -22,7 +22,6 @@ Puppet - Organising your puppet code into separate files             :::   null 
 Puppet - Using the \"import\" keyword                                  :::   Puppet - Organising your puppet code into separate files  :::    null
 Puppet - The \"puppet apply\" approach                                 :::   Puppet - Organising your puppet code into separate files  :::    null
 Puppet - Modules, a quick taster                                     :::   Puppet - Organising your puppet code into separate files  :::    null
-Puppet - Puppet Modules                                                     :::   null                                                      :::   null 
 Puppet - Adding other manifests/classes to a module                  :::   null                                                      :::    null
 Puppet - Modules (the \"files\" folder)                                :::   null                                                      :::    null
 Puppet - Modules (the \"templates\" folder)                            :::   null                                                      :::    null
@@ -32,7 +31,6 @@ Puppet - Uncommenting a line in a config file                        :::   null 
 Puppet - The file_in resource type                                   :::   null                                                    :::    null
 Puppet - Using Augeasproviders                                       :::   null                                                    :::    null
 Puppet - Using third-party modules from Puppetforge                  :::   null                                                      :::    null
-Puppet - r10k                                                        :::   null ::: null
 Puppet - r10k.yaml   :::    null  ::: null
 Puppet - r10k and the Puppetfile   ::: null  ::: null
 Puppet - Regular expressions ::: null :::  null
