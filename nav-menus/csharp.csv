@@ -10,10 +10,10 @@ c# - Instantiate an object and set it's Properties simultaneously (using the Con
 c# - Create a read-only property (aka a constant)  :::   null   :::   null
 c# - Method Overloading: Have two or methods of the same name  :::   null   :::   null
 c# -  What are Variables Types  :::   null   :::   null
-c# - An overview of commonly used variables  :::   null   :::   null
-c# - Static and Non-Static Methods  :::   null   :::   null
-c# - Input Parameters and Return Values  :::   null   :::   null
-c# - The "Main" method  :::   null   :::   null
+c# -  An overview of commonly used variables  :::   null   :::   null
+c# -  Static and Non-Static Methods  :::   null   :::   null
+c# -  Input Parameters and Return Values  :::   null   :::   null
+c# -  The "Main" method  :::   null   :::   null
 c# - The if-else statements (using the "?:" shorthand syntax)  :::   null   :::   null
 c# - Booleans  :::   null   :::   null
 c# - Embed variables in a string using the substition technique  :::   null   :::   null
