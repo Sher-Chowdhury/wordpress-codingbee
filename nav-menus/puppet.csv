@@ -19,13 +19,13 @@ Puppet - Variables, If-statements, and Environment variables         ::: null ::
 Puppet - Functions                                                   :::   null ::: null
 Puppet - Custom Functions                                            :::   null ::: null
 Puppet - Organising your puppet code into separate files             :::   null :::null
-Puppet - Using the “import” keyword                                  :::   Puppet - Organising your puppet code into separate files  :::    null
-Puppet - The “puppet apply” approach                                 :::   Puppet - Organising your puppet code into separate files  :::    null
+Puppet - Using the \"import\" keyword                                  :::   Puppet - Organising your puppet code into separate files  :::    null
+Puppet - The \"puppet apply\" approach                                 :::   Puppet - Organising your puppet code into separate files  :::    null
 Puppet - Modules, a quick taster                                     :::   Puppet - Organising your puppet code into separate files  :::    null
 Puppet - Modules                                                     :::   null                                                      :::    null
 Puppet - Adding other manifests/classes to a module                  :::   null                                                      :::    null
-Puppet - Modules (the “files” folder)                                :::   null                                                      :::    null
-Puppet - Modules (the “templates” folder)                            :::   null                                                      :::    null
+Puppet - Modules (the \"files\" folder)                                :::   null                                                      :::    null
+Puppet - Modules (the \"templates\" folder)                            :::   null                                                      :::    null
 Augeas                                                               :::   null                                                      :::    null
 Puppet - The Augeas command line utility                             :::   Augeas                                                    :::    null
 Puppet - The Augeas resource type                                    :::   Augeas                                                    :::    null
