@@ -22,7 +22,7 @@ Puppet - Organising your puppet code into separate files             :::   null 
 Puppet - Using the \"import\" keyword                                  :::   Puppet - Organising your puppet code into separate files  :::    null
 Puppet - The \"puppet apply\" approach                                 :::   Puppet - Organising your puppet code into separate files  :::    null
 Puppet - Modules, a quick taster                                     :::   Puppet - Organising your puppet code into separate files  :::    null
-Puppet - Modules                                                     :::   null                                                      :::    null
+Puppet - Modules                                                     :::   null                                                      :::   Puppet - Puppet Modules
 Puppet - Adding other manifests/classes to a module                  :::   null                                                      :::    null
 Puppet - Modules (the \"files\" folder)                                :::   null                                                      :::    null
 Puppet - Modules (the \"templates\" folder)                            :::   null                                                      :::    null
