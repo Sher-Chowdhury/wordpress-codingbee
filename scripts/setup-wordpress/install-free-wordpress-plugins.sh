@@ -10,7 +10,6 @@ su -s /bin/bash apache -c '# wp plugin install custom-admin-bar --activate --pat
 # wp plugin install 'contact-form-7' --activate --path='/var/www/html/'     # gives a warning message, try installing manually.
 su -s /bin/bash apache -c 'wp plugin install custom-menu-wizard --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install disable-comments --activate --path=/var/www/html/'
-su -s /bin/bash apache -c 'wp plugin install display-widgets --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install duplicate-post --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install google-analytics-for-wordpress --activate --path=/var/www/html/'
 # wp plugin install 'save-grab' --activate --path='/var/www/html/'           # broken - try installing manually.
@@ -27,4 +26,5 @@ su -s /bin/bash apache -c 'wp plugin install table-of-contents-plus --activate -
 su -s /bin/bash apache -c 'wp plugin install tablepress --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install wp-github-gist --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install customizer-export-import --activate --path=/var/www/html/'
+su -s /bin/bash apache -c 'wp plugin install widget-options --activate --path=/var/www/html/'
 #su -s /bin/bash apache -c 'wp plugin install wordpress-importer --activate --path=/var/www/html/'
