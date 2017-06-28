@@ -47,7 +47,7 @@ print('*' * 50)
 if computer == 'l':
     dir_in = "/data/upwork/Sher_Chowdhury/"
 else:
-    dir_in = "/home/guestadmin/"
+    dir_in = "/root/"
 
 timeout = 10
 # using geckodriver
