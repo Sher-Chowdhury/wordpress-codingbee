@@ -15,7 +15,7 @@ wp widget reset left --path=/var/www/html/
 # wp widget deactivate meta-2 --path=/var/www/html/
 # wp widget deactivate categories-2 --path=/var/www/html/
 
-
+cd /root/wordpress-codingbee/scripts/selenium-scripts
 
 echo '##################################################################'
 echo '############## About to create RHCSA custom menu #################'
@@ -25,20 +25,21 @@ echo '##################################################################'
 #wp sidebar list --path=/var/www/html/
 wp widget add nav_menu left 1 --title="RHCSA" --path=/var/www/html/
 
-# cant get this to work which is to customise the widget:
-# dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i rhcsa | cut -d',' -f1)
-# category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i rhcsa | cut -d',' -f1)
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i rhcsa | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i rhcsa | cut -d',' -f1)
 # wp widget update ${dropdown_menu_html_id} --title='RHCSA' --cat-${category_html_id}=1 --dw_include=1 --dw_logged="" --other_ids="" --path=/var/www/html/
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} RHCSA rhcsa ${dropdown_menu_html_id} ${category_html_id}
 
-
-# cant get the following ruby script to work yet. It works when using 
-#ruby /root/wordpress-codingbee/scripts/selenium-scripts/configure-widget.rb rhcsa ${wp_web_admin_username} ${wp_web_admin_user_password} $dropdown_menu_html_id $category_html_id
 echo '##################################################################'
 echo '############## About to create csharp custom menu ################'
 echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh csharp
 wp widget add nav_menu left 1 --title="csharp" --path=/var/www/html/
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i csharp | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i csharp | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s sher password csharp csharp ${dropdown_menu_html_id} ${category_html_id}
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} csharp csharp ${dropdown_menu_html_id} ${category_html_id}
 
 echo '##################################################################'
 echo '############ About to create Powershell custom menu ##############'
@@ -46,6 +47,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh powershell
 wp widget add nav_menu left 1 --title="powershell" --path=/var/www/html/
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i powershell | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i powershell | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} powershell powershell ${dropdown_menu_html_id} ${category_html_id}
 
 
 echo '##################################################################'
@@ -55,6 +59,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh puppet
 wp widget add nav_menu left 1 --title="puppet" --path=/var/www/html/
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i puppet | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i puppet | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} puppet puppet ${dropdown_menu_html_id} ${category_html_id}
 
 
 echo '##################################################################'
@@ -64,6 +71,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh ruby
 wp widget add nav_menu left 1 --title="ruby" --path=/var/www/html/
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i ruby | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i ruby | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} ruby ruby ${dropdown_menu_html_id} ${category_html_id}
 
 
 echo '##################################################################'
@@ -73,6 +83,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh vagrant
 wp widget add nav_menu left 1 --title="vagrant" --path=/var/www/html/
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i vagrant | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i vagrant | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} vagrant vagrant ${dropdown_menu_html_id} ${category_html_id}
 
 
 
@@ -83,7 +96,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh git
 wp widget add nav_menu left 1 --title="git" --path=/var/www/html/
-
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i git | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i git | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} git git ${dropdown_menu_html_id} ${category_html_id}
 
 
 
@@ -94,7 +109,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh ansible
 wp widget add nav_menu left 1 --title="ansible" --path=/var/www/html/
-
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i ansible | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i ansible | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} ansible ansible ${dropdown_menu_html_id} ${category_html_id}
 
 
 
@@ -105,6 +122,9 @@ echo '##################################################################'
 
 /root/wordpress-codingbee/scripts/create-menu.sh python
 wp widget add nav_menu left 1 --title="python" --path=/var/www/html/
+dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i python | cut -d',' -f1)
+category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i python | cut -d',' -f1)
+xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} python python ${dropdown_menu_html_id} ${category_html_id}
 
 
 
