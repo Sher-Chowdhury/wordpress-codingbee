@@ -68,6 +68,12 @@ while [ $# -gt 0 ]; do
     --follow_up_userdata)
       follow_up_userdata=${2}
       ;;
+    --ssh_guestadmin_username)
+      ssh_guestadmin_username=${2}
+      ;;
+    --ssh_guestadmin_password)
+      ssh_guestadmin_password=${2}
+      ;;
     *)
       echo "ERROR: The parameter ${1} is not a valid parameter option"
       exit 1
@@ -114,6 +120,7 @@ git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 . ~/wordpress-codingbee/scripts/base/setup-vanilla-lamp.sh
 . ~/wordpress-codingbee/scripts/base/create-new-db-for-wordpress.sh
 . ~/wordpress-codingbee/scripts/base/optimize-php-for-wordpress.sh
+. ~/wordpress-codingbee/scripts/base/create_guest_admin_login_account.sh
 
 
 . ~/wordpress-codingbee/scripts/${follow_up_userdata}
