@@ -20,8 +20,8 @@ echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
 
-if [ $# -ne 20 ]; then
-  echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 10 parameters required"
+if [ $# -ne 24 ]; then
+  echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 20 parameters required"
   exit 1
 fi
 
