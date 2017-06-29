@@ -1,22 +1,23 @@
 #!/bin/bash
 
-curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
-chmod u+x ~/userdata.sh
-~/userdata.sh                                      \
---url codingbee.net                                \
---wp_db_name xxxx                                 \
---db_username xxxxxx                                \
---db_password xxxxxxxxx                          \
---wp_web_admin_username xxxxxxxxx                       \
---wp_web_admin_user_password xxxxxxxx              \
---wp_web_guest_admin_user_password xxxxxxx        \
---slogan xxxxxxxxx                               \
---ssh_guestadmin_username xxxxxxxxxx               \
---ssh_guestadmin_password xxxxxxxxxx                  \
---backupbuddy_username xxxxxxxxxx                   \
---backupbuddy_password xxxxxxxxxx                \
---dropbox_folder_link https://www.dropbox.com/sh/qgqz82xlkq4dhfj/AADJv_s5GdXJYAv4xar5ofaFa?dl=1              \
---follow_up_userdata userdata-freshbuild.sh         # should equal to either:
+#curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
+#chmod u+x ~/userdata.sh
+#~/userdata.sh                                      \
+#--url codingbee.net                                \
+#--wp_db_name xxxx                                 \
+#--db_username xxxxxx                                \
+#--db_password xxxxxxxxx                          \
+#--wp_web_admin_username xxxxxxxxx                       \
+#--wp_web_admin_user_password xxxxxxxx              \
+#--wp_web_guest_admin_user_password xxxxxxx        \
+#--slogan xxxxxxxxx                               \
+#--ssh_guestadmin_username xxxxxxxxxx               \
+#--ssh_guestadmin_password xxxxxxxxxx                  \
+#--backupbuddy_username xxxxxxxxxx                   \
+#--backupbuddy_password xxxxxxxxxx                \
+#--premium_theme_licence_key xxxxxxxxxxxxx                \
+#--dropbox_folder_link https://www.dropbox.com/sh/qgqz82xlkq4dhfj/AADJv_s5GdXJYAv4xar5ofaFa?dl=1              \
+#--follow_up_userdata userdata-freshbuild.sh         # should equal to either:
                                                       # userdata-backupbuddy.sh
                                                       # userdata-freshbuild.sh
 
@@ -27,8 +28,8 @@ echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
 
-if [ $# -ne 24 ]; then
-  echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 20 parameters required"
+if [ $# -ne 30 ]; then
+  echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 15 parameters required"
   exit 1
 fi
 
@@ -86,6 +87,9 @@ while [ $# -gt 0 ]; do
       ;;
     --backupbuddy_password)
       backupbuddy_password=${2}
+      ;;
+    --premium_theme_licence_key)
+      premium_theme_licence_key=${2}
       ;;
     *)
       echo "ERROR: The parameter ${1} is not a valid parameter option"
