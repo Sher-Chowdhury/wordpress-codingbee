@@ -17,6 +17,9 @@ wp widget reset left --path=/var/www/html/
 
 cd /root/wordpress-codingbee/scripts/selenium-scripts
 
+set -x
+
+
 echo '##################################################################'
 echo '############## About to create RHCSA custom menu #################'
 echo '##################################################################'
@@ -140,7 +143,7 @@ wp widget add nav_menu left 1 --title="Available Tutorials" --path=/var/www/html
 
 
 
-
+set +x
 
 #/root/wordpress-codingbee/scripts/create-menu.sh tutorials
 
