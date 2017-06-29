@@ -41,7 +41,6 @@ echo '##################################################################'
 wp widget add nav_menu left 1 --title="csharp" --path=/var/www/html/
 dropdown_menu_html_id=$(wp widget list left --path=/var/www/html/ --fields=id,options --format=csv | grep -i csharp | cut -d',' -f1)
 category_html_id=$(wp term list category --path=/var/www/html/ --fields=term_id,slug --format=csv | grep -i csharp | cut -d',' -f1)
-xvfb-run python3.6 configure-widget.py s sher password csharp csharp ${dropdown_menu_html_id} ${category_html_id}
 xvfb-run python3.6 configure-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} csharp csharp ${dropdown_menu_html_id} ${category_html_id}
 
 echo '##################################################################'
