@@ -1,20 +1,27 @@
 #!/bin/bash
 
-# curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
-# chmod u+x ~/userdata.sh
-# ~/userdata.sh                           \
-# --url codingbee.net                     \
-# --wp_db_name xxxx                       \
-# --db_username xxxx                      \
-# --db_password xxxx                      \
-# --wp_web_admin_username xxxx            \
-# --wp_web_admin_user_password xxxx       \
-# --wp_web_guest_admin_user_password xxxx \
-# --slogan xxxx                           \
-# --dropbox_folder_link xxxx              \
-# --follow_up_userdata xxxx         # should equal to either:
-                                    # userdata-backupbuddy.sh
-                                    # userdata-freshbuild.sh
+curl -s https://raw.githubusercontent.com/Sher-Chowdhury/wordpress-codingbee/master/scripts/userdata.sh -o ~/userdata.sh
+chmod u+x ~/userdata.sh
+~/userdata.sh                                      \
+--url codingbee.net                                \
+--wp_db_name xxxx                                 \
+--db_username xxxxxx                                \
+--db_password xxxxxxxxx                          \
+--wp_web_admin_username xxxxxxxxx                       \
+--wp_web_admin_user_password xxxxxxxx              \
+--wp_web_guest_admin_user_password xxxxxxx        \
+--slogan xxxxxxxxx                               \
+--ssh_guestadmin_username xxxxxxxxxx               \
+--ssh_guestadmin_password xxxxxxxxxx                  \
+--backupbuddy_username xxxxxxxxxx                   \
+--backupbuddy_password xxxxxxxxxx                \
+--dropbox_folder_link https://www.dropbox.com/sh/qgqz82xlkq4dhfj/AADJv_s5GdXJYAv4xar5ofaFa?dl=1              \
+--follow_up_userdata userdata-freshbuild.sh         # should equal to either:
+                                                      # userdata-backupbuddy.sh
+                                                      # userdata-freshbuild.sh
+
+
+
 
 echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
@@ -73,6 +80,12 @@ while [ $# -gt 0 ]; do
       ;;
     --ssh_guestadmin_password)
       ssh_guestadmin_password=${2}
+      ;;
+    --backupbuddy_username)
+      backupbuddy_username=${2}
+      ;;
+    --backupbuddy_password)
+      backupbuddy_password=${2}
       ;;
     *)
       echo "ERROR: The parameter ${1} is not a valid parameter option"

@@ -12,3 +12,4 @@
 . ~/wordpress-codingbee/scripts/setup-wordpress/imports-posts.sh
 . ~/wordpress-codingbee/scripts/setup-wordpress/install-xfvb-for-selenium.sh
 . ~/wordpress-codingbee/scripts/setup-wordpress/create-custom-menus.sh
+. ~/wordpress-codingbee/scripts/setup-wordpress/import-tablepress-files.sh
