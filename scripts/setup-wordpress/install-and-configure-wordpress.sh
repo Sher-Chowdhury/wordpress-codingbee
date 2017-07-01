@@ -18,14 +18,16 @@ su -s /bin/bash apache -c "wp option update blogdescription \"End-2-End AWS Infr
 # Here I am defining a wordpress permalink structure
 su -s /bin/bash apache -c "wp rewrite structure '/%category%/%postname%' --path=/var/www/html/"
 
-echo 'php_value suhosin.post.max_vars 5000
-php_value suhosin.request.max_vars 5000
-php_value memory_limit 256M
-php_value max_execution_time 600
-php_value upload_max_filesize 70M
-php_value post_max_size 128M
-php_value upload_tmp_dir 70M
-php_value max_input_vars 5000
+echo '
+# the following lines do not appear to work with siteground webhosting company.
+#php_value suhosin.post.max_vars 5000
+#php_value suhosin.request.max_vars 5000
+#php_value memory_limit 256M
+#php_value max_execution_time 600
+#php_value upload_max_filesize 70M
+#php_value post_max_size 128M
+#php_value upload_tmp_dir 70M
+#php_value max_input_vars 5000
 
 
 # BEGIN WordPress
