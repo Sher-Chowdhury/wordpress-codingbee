@@ -15,4 +15,4 @@ su -s /bin/bash apache -c 'wp plugin install ./backupbuddy/backupbuddy.zip --act
 su -s /bin/bash apache -c 'wp plugin install ./wp-all-export-pro.zip --activate --path=/var/www/html/'
 
 su -s /bin/bash apache -c 'wp plugin install ./wp-all-import-pro.zip --activate --path=/var/www/html/'
-#rm -rf /root/downloads/premium-plugins
+rm -rf /var/www/html/premium-plugins/

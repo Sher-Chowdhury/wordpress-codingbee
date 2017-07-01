@@ -16,6 +16,7 @@
 #--backupbuddy_username xxxxxxxxxx                   \
 #--backupbuddy_password xxxxxxxxxx                \
 #--premium_theme_licence_key xxxxxxxxxxxxx                \
+#--premium_plugin_wpallimport_licence_key xxxxxxxxxxxxx                \
 #--dropbox_folder_link https://www.dropbox.com/sh/qgqz82xlkq4dhfj/AADJv_s5GdXJYAv4xar5ofaFa?dl=1              \
 #--follow_up_userdata userdata-freshbuild.sh         # should equal to either:
                                                       # userdata-backupbuddy.sh
