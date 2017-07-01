@@ -17,6 +17,7 @@
 #--backupbuddy_password xxxxxxxxxx                \
 #--premium_theme_licence_key xxxxxxxxxxxxx                \
 #--premium_plugin_wpallimport_licence_key xxxxxxxxxxxxx                \
+#--premium_plugin_wpallexport_licence_key xxxxxxxxxxxxx                \
 #--dropbox_folder_link https://www.dropbox.com/sh/qgqz82xlkq4dhfj/AADJv_s5GdXJYAv4xar5ofaFa?dl=1              \
 #--follow_up_userdata userdata-freshbuild.sh         # should equal to either:
                                                       # userdata-backupbuddy.sh
@@ -29,7 +30,7 @@ echo '##################################################################'
 echo '####### About to run scripts/userdata.sh #########################'
 echo '##################################################################'
 
-if [ $# -ne 30 ]; then
+if [ $# -ne 34 ]; then
   echo "ECHO: line ${LINENO}: Incorrect number of parameters specified. $# specified, but 15 parameters required"
   exit 1
 fi
@@ -91,6 +92,12 @@ while [ $# -gt 0 ]; do
       ;;
     --premium_theme_licence_key)
       premium_theme_licence_key=${2}
+      ;;
+    --premium_plugin_wpallimport_licence_key)
+      premium_plugin_wpallimport_licence_key=${2}
+      ;;
+    --premium_plugin_wpallexport_licence_key)
+      premium_plugin_wpallexport_licence_key=${2}
       ;;
     *)
       echo "ERROR: The parameter ${1} is not a valid parameter option"
