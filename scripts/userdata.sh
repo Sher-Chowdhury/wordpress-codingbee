@@ -143,6 +143,8 @@ git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 . ~/wordpress-codingbee/scripts/${follow_up_userdata}
 
 
+# cd /var/www/html
+# rm codingbee-posts-exports.xml codingbee-posts-exports.zip content_correction_fix.php dummy* filled-in-login-page.png geckodriver geckodriver-v0.17.0-linux64.tar.gz import* screenshot*
 
 # here's a guide on how to access a droplet's metadata and userdata:
 # https://www.digitalocean.com/community/tutorials/an-introduction-to-droplet-metadata
