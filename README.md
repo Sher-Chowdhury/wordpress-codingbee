@@ -1,6 +1,10 @@
 # wordpress-codingbee
 Automate the build of a wordpress website on CentOS 7
 
+
+TO-DO LIST for Aleksandar:
+
+
 ## 1. Acitvate wordpress licence theme. 
 Navigate to:
 http://codingbee.net/wp-admin/themes.php?page=tc-licenses
