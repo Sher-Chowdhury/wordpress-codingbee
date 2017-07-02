@@ -5,7 +5,7 @@ Automate the build of a wordpress website on CentOS 7
 TO-DO LIST for Aleksandar:
 
 
-## 1. Acitvate wordpress licence theme. 
+## 1. Activate wordpress licence theme. 
 Navigate to:
 http://codingbee.net/wp-admin/themes.php?page=tc-licenses
 Then following instructions to enter key and activate. 
@@ -16,7 +16,7 @@ xvfb-run python3.6 install-theme-licence.py s ${wp_web_admin_username} ${wp_web_
 
 
 
-## 2. Acitvate wordpress backupbuddy plugins. 
+## 2. Activate wordpress backupbuddy plugins. 
 Navigate to:
 http://codingbee.net/wp-admin/options-general.php?page=ithemes-licensing
 Then following instructions to enter username and password
@@ -28,7 +28,7 @@ xvfb-run python3.6 setup-backupbuddy.py s ${wp_web_admin_username} ${wp_web_admi
 
 
 
-## 3. Acitvate wpallimport plugin 
+## 3. Activate wpallimport plugin 
 Navigate to:
 http://codingbee.net/wp-admin/admin.php?page=pmxi-admin-settings
 Then enter licence key and save/activate 
@@ -38,7 +38,7 @@ I need to be able to do this by running the following in my bash shell scripts:
 xvfb-run python3.6 install-wpallimport-licence.py s ${wp_web_admin_username} ${wp_web_admin_user_password} ${wpallimport-licence-key}
 
 
-## 4. Acitvate wpallexport plugin 
+## 4. Activate wpallexport plugin 
 Navigate to:
 http://codingbee.net/wp-admin/admin.php?page=pmxe-admin-settings
 Then enter licence key and save/activate 
