@@ -16,7 +16,7 @@ xvfb-run python3.6 install-theme-licence.py s ${wp_web_admin_username} ${wp_web_
 
 
 
-## 2. Activate wordpress backupbuddy plugins. 
+## 2. Activate wordpress backupbuddy plugin
 Navigate to:
 http://codingbee.net/wp-admin/options-general.php?page=ithemes-licensing
 Then following instructions to enter username and password
@@ -87,3 +87,6 @@ This file will live on the digital ocean droplet.
 A text widget called "Search" will exist, and this script will add some text into it (but need to select the 'text' tab first)
 
 xvfb-run python3.6 configure-search-widget.py s ${wp_web_admin_username} ${wp_web_admin_user_password} ${content} 
+
+No further configurations are required. Everything else stays the same. I.e. don't click on any further checkboxes, dropdown list, or tabs. 
+
