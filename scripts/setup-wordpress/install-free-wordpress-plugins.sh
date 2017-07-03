@@ -28,3 +28,11 @@ su -s /bin/bash apache -c 'wp plugin install wp-github-gist --activate --path=/v
 su -s /bin/bash apache -c 'wp plugin install customizer-export-import --activate --path=/var/www/html/'
 su -s /bin/bash apache -c 'wp plugin install widget-options --activate --path=/var/www/html/'
 #su -s /bin/bash apache -c 'wp plugin install wordpress-importer --activate --path=/var/www/html/'
+
+# SG Optimizer plugin, needed for enabling https security
+# https://www.siteground.com/blog/https-wordpress/?utm_source=newsletter%20feb%2017
+# https://www.siteground.com/blog/lets-encrypt-interface-new-options/#more-9923    
+# The sg optimizer plugin is not required anymore, See:
+#https://www.siteground.com/tutorials/cpanel/lets-encrypt.htm
+# also enabling lets encrypt via cpanel doesn't make any changes to the .htaccess file. 
+#su -s /bin/bash apache -c 'wp plugin install sg-cachepress --activate --path=/var/www/html/'

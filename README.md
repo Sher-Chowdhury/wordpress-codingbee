@@ -71,10 +71,6 @@ Appearance -> Customize
 
 At the bottom, select the "Export/Import" item
 
-
-http://codingbee.net/wp-admin/admin.php?page=tablepress_import
-
-
 Under the import section, import a file. 
 
 xvfb-run python3.6 import-theme-customizater-settings.py s ${wp_web_admin_username} ${wp_web_admin_user_password} ${absolute_path_to_json_file}
