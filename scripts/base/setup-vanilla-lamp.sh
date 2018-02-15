@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -ex
 
-cd ~/wordpress-codingbee || exit 1
+cd ~/wordpress-codingbee
 
 echo '##################################################################'
 echo '######################### Install apache #########################'
 echo '##################################################################'
-yum install -y httpd  || exit 1
-systemctl enable httpd || exit 1
-systemctl start httpd  || exit 1
-
+yum install -y httpd
+systemctl enable httpd
+systemctl start httpd
+chmod 775 /var/www/html
 
 echo '##################################################################'
 echo '##################### Install mariadb ############################'
@@ -28,27 +28,27 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOM
 
-yum install -y MariaDB-server || exit 1
+yum install -y MariaDB-server
 
-systemctl enable mariadb || exit 1
-systemctl start mariadb || exit 1
+systemctl enable mariadb
+systemctl start mariadb
 
 
 
 echo '##################################################################'
 echo '####################### Install php 7 ############################'
 echo '##################################################################'
-rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm || exit 1
-yum -y install php70w || exit 1
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+yum -y install php70w
 
-yum install -y php70w-mysqlnd || exit 1
+yum install -y php70w-mysqlnd
 yum install -y php70w-xml
 
-systemctl restart httpd || exit 1
+systemctl restart httpd
 
 # check that the correct version is installed:
 
-php -v || exit 1
+php -v
 
 echo '<?php phpinfo(); ?>' > /var/www/html/php-info.php
 
@@ -60,12 +60,12 @@ sed -i 's/^memory_limit.*/memory_limit = 512M/g' /etc/php.ini
 sed -i 's/^upload_max_filesize.*/upload_max_filesize = 100M/g' /etc/php.ini
 sed -i 's/^post_max_size.*/post_max_size = 200M/g' /etc/php.ini
 sed -i 's/^max_execution_time.*/max_execution_time = 300/g' /etc/php.ini
-systemctl restart httpd || exit 1
+systemctl restart httpd
 
 
 # needed to apply the following otherwise unable to bulk delete lots of posts
-echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf || exit 1
-systemctl restart httpd  || exit 1
+echo "LimitRequestLine 81900" >> /etc/httpd/conf/httpd.conf
+systemctl restart httpd
 
 # The following is needed for our custom permalink structure to work.
 augtool <<-EOF
@@ -79,4 +79,4 @@ get /files/etc/httpd/conf/httpd.conf/Directory[arg='\"/var/www/html\"']/*[self::
 save
 quit
 EOF
-systemctl restart httpd || exit 1
+systemctl restart httpd
