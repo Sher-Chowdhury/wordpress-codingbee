@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -ex
 
 cd ~/wordpress-codingbee || exit 1
 

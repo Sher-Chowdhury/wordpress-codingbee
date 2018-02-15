@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -ex
 
 useradd ${ssh_guestadmin_username} 
 usermod -aG wheel

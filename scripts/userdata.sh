@@ -148,7 +148,9 @@ git clone https://github.com/Sher-Chowdhury/wordpress-codingbee.git || exit 1
 . ~/wordpress-codingbee/scripts/base/create_guest_admin_login_account.sh
 
 
-. ~/wordpress-codingbee/scripts/${follow_up_userdata}
+mkdir -p /var/log/userdata/
+
+. ~/wordpress-codingbee/scripts/${follow_up_userdata} > /var/log/userdata/${follow_up_userdata}.log
 
 
 # cd /var/www/html
