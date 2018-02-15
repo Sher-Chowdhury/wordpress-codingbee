@@ -111,6 +111,10 @@ while [ $# -gt 0 ]; do
   shift
 done
 
+# disable selinux
+setenforce Permissive
+sed -i s/SELINUX=enforcing/SELINUX=disabled/g /etc/sysconfig/selinux
+
 # the following is a workaround to get mysql2 gem to install successfully, because mysql2 doesn't install with the latest mariadb rpms from mariadb repo.
 #yum install -y MariaDB-server mariadb-devel mariadb-libs gcc rubygems ruby-devel
 #gem install mysql2

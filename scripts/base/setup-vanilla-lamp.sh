@@ -9,7 +9,6 @@ echo '##################################################################'
 yum install -y httpd
 systemctl enable httpd
 systemctl start httpd
-chmod 775 /var/www/html
 
 echo '##################################################################'
 echo '##################### Install mariadb ############################'
