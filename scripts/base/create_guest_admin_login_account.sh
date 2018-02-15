@@ -2,7 +2,7 @@
 set -ex
 
 useradd ${ssh_guestadmin_username} 
-usermod -aG wheel
+usermod -aG wheel ${ssh_guestadmin_username} 
 
 echo ${ssh_guestadmin_password} | passwd --stdin ${ssh_guestadmin_username} 
 echo 'guestadmin  ALL=(ALL)       NOPASSWD: ALL' > /etc/sudoers.d/guestadmin
